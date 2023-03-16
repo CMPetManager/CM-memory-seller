@@ -1,0 +1,165 @@
+.registration-form {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 982px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.registration-form__exit {
+  position: absolute;
+  top: 38px;
+  left: 496px;
+  height: 22px;
+  width: 22px;
+  background: url(img/x2.png) no-repeat right center;
+}
+
+.body {
+  position: absolute;
+  top: 150px;
+  left: 483px;
+  bottom: 134px;
+  width: 546px;
+  height: 715px;
+  background: #424141;
+  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25);
+  margin: 0;
+  padding: 0;
+}
+
+.body__title {
+  margin-top: 62px;
+  margin-left: 204px;
+  font-family: "Marcellus";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 40px;
+  color: #ffffff;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.input_form {
+  box-sizing: border-box;
+  position: absolute;
+  opacity: 0.7;
+  border: 1px solid #fbdba3;
+  border-radius: 15px;
+  background-color: #424141;
+}
+
+.input_form::placeholder {
+  font-family: "Marcellus";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+  opacity: 0.7;
+  padding-left: 22px;
+}
+
+.user-name__input {
+  width: 448px;
+  height: 57px;
+  margin-left: 49px;
+  top: 146px;
+}
+
+.email__input {
+  width: 448px;
+  height: 57px;
+  margin-left: 49px;
+  top: 231px;
+}
+.password__eye-off {
+  position: absolute;
+  top: 333px;
+  left: 449px;
+  height: 22px;
+  width: 22px;
+  background: url(/src/components/Authentication/Registration/img/eye-off2.png)
+    no-repeat right center;
+}
+
+.password__input {
+  width: 448px;
+  height: 57px;
+  margin-left: 49px;
+  top: 316px;
+}
+
+.password__text {
+  position: absolute;
+  margin-left: 48px;
+  top: 381px;
+  font-family: "Marcellus";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #ffffff;
+  opacity: 0.8;
+}
+
+.confirm__btn {
+  box-sizing: border-box;
+  position: absolute;
+  width: 448px;
+  height: 48px;
+  margin-left: 49px;
+  top: 447px;
+  background: #fbdba3;
+  opacity: 0.8;
+  border: 1px solid #fbdba3;
+  border-radius: 15px;
+}
+
+.confirm__text-btn {
+  font-family: "Marcellus";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
+  color: #000000;
+}
+
+.confirm__text-log {
+  position: absolute;
+  margin-left: 176px;
+  top: 546px;
+  font-family: "Marcellus";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+}
+
+.confirm__text-log_green {
+  color: #60cd71;
+}
+
+.body__warning-footer {
+  position: absolute;
+  margin-left: 65px;
+  top: 650px;
+  max-width: 415px;
+  font-family: "Marcellus";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #ffffff;
+  opacity: 0.8;
+}
