@@ -35,7 +35,7 @@
 }
 
 .body__title {
-  margin-top: 62px;
+  margin-top: 56px;
   margin-left: 204px;
   font-family: "Marcellus";
   font-style: normal;
@@ -72,19 +72,19 @@
   width: 448px;
   height: 57px;
   margin-left: 49px;
-  top: 146px;
+  top: 138px;
 }
 
 .email__input {
   width: 448px;
   height: 57px;
   margin-left: 49px;
-  top: 231px;
+  top: 223px;
 }
 .password__eye-off {
   position: absolute;
-  top: 333px;
-  left: 449px;
+  top: 325px;
+  left: 455px;
   height: 22px;
   width: 22px;
   background: url(/src/components/Authentication/Registration/img/eye-off2.png)
@@ -95,13 +95,13 @@
   width: 448px;
   height: 57px;
   margin-left: 49px;
-  top: 316px;
+  top: 308px;
 }
 
 .password__text {
   position: absolute;
   margin-left: 48px;
-  top: 381px;
+  top: 373px;
   font-family: "Marcellus";
   font-style: normal;
   font-weight: 400;
@@ -117,7 +117,7 @@
   width: 448px;
   height: 48px;
   margin-left: 49px;
-  top: 447px;
+  top: 436px;
   background: #fbdba3;
   opacity: 0.8;
   border: 1px solid #fbdba3;
@@ -136,7 +136,7 @@
 .confirm__text-log {
   position: absolute;
   margin-left: 176px;
-  top: 546px;
+  top: 508px;
   font-family: "Marcellus";
   font-style: normal;
   font-weight: 400;
@@ -152,7 +152,7 @@
 .body__warning-footer {
   position: absolute;
   margin-left: 65px;
-  top: 650px;
+  top: 637px;
   max-width: 415px;
   font-family: "Marcellus";
   font-style: normal;
@@ -162,4 +162,24 @@
   text-align: center;
   color: #ffffff;
   opacity: 0.8;
+}
+
+.registration-form__text-error{
+  position: absolute;
+  margin-left: 49px;
+  font-family: 'Marcellus';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 20px;
+color: #E86666;
+}
+.empty-name{
+  top: 203px; 
+}
+.empty-email{
+  top: 296px;
+}
+.empty-password{
+  top: 389px;
 }
