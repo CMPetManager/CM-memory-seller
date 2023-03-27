@@ -1,11 +1,80 @@
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 import './Login.css';
 import imgX from '../../../assets/icons/x1.svg';
 import eyeCrossed from '../../../assets/icons/eye_crossed.svg';
-// import eye from '../../../assets/icons/eye.svg';
+import eye from '../../../assets/icons/eye.svg';
 
 const Login = () => {
+  const [form, setForm] = useState({
+    email: '',
+    password: '',
+  });
+
+  const [errorMsg, setErrorMsg] = useState({
+    isErrorEmail: false,
+    isErrorPsw: false,
+  });
+
+  const [isChecked, setIsChecked] = useState(false);
+  const [isShownPassword, setShownPassword] = useState(false);
+
+  useEffect(() => {
+    if (form.email && errorMsg.isErrorEmail) {
+      setErrorMsg((prev) => ({
+        ...prev,
+        isErrorEmail: false,
+      }));
+    }
+  }, [form.email]);
+
+  useEffect(() => {
+    if (form.password && errorMsg.isErrorPsw) {
+      setErrorMsg((prev) => ({
+        ...prev,
+        isErrorPsw: false,
+      }));
+    }
+  }, [form.password]);
+
+  const onInputChange = (event) => {
+    const { name, value } = event.target;
+    const { isErrorEmail, isErrorPsw } = errorMsg;
+
+    setForm((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+
+    if (name === 'email' && !value && !isErrorEmail) {
+      setErrorMsg((prev) => ({
+        ...prev,
+        isErrorEmail: true,
+      }));
+    }
+    if (name === 'password' && !value && !isErrorPsw) {
+      setErrorMsg((prev) => ({
+        ...prev,
+        isErrorPsw: true,
+      }));
+    }
+  };
+
+  const onCheckedChange = () => {
+    setIsChecked((prev) => !prev);
+  };
+
+  const onShowPassword = () => {
+    setShownPassword((prev) => !prev);
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    console.dir(errorMsg);
+    console.dir(form);
+  };
+
   return (
     <div className='login__wrap'>
       <div className='login__container'>
@@ -18,37 +87,69 @@ const Login = () => {
             Either Email or Password that you entered were incorrect
           </p>
         </div>
-        <form className='login__form form'>
+        <form className='login__form form' onSubmit={onSubmit}>
           <fieldset className='form__input-wrap'>
             <input
               type='email'
               className='form__input'
               placeholder='Email address'
+              value={form.email}
+              name='email'
+              onChange={(e) => onInputChange(e, setForm)}
+              autoFocus
               required
             />
-            <p className='error-message'>Please enter your Email</p>
+            <p
+              className={
+                errorMsg.isErrorEmail
+                  ? 'error-message error-message_show'
+                  : 'error-message'
+              }
+            >
+              Please enter your Email
+            </p>
           </fieldset>
           <fieldset className='form__input-wrap'>
             <label className='form__password-label'>
               <input
-                type='password'
+                type={isShownPassword ? 'text' : 'password'}
                 className='form__input'
                 placeholder='Password'
+                value={form.password}
+                name='password'
+                onChange={onInputChange}
                 required
               />
               <img
+                onClick={onShowPassword}
                 className='form__eye'
-                src={eyeCrossed}
-                alt='eye crossed icon'
+                src={isShownPassword ? eye : eyeCrossed}
+                alt='eye icon'
               />
             </label>
-            <p className='error-message'>Please enter your Password</p>
+            <p
+              className={
+                errorMsg.isErrorPsw
+                  ? 'error-message error-message_show'
+                  : 'error-message'
+              }
+            >
+              Please enter your Password
+            </p>
           </fieldset>
           <label className='form__label'>
-            <input type='checkbox' className='form__checkbox' />
+            <input
+              type='checkbox'
+              className='form__checkbox'
+              checked={isChecked}
+              onChange={onCheckedChange}
+              name='isChecked'
+            />
             Remember me
           </label>
-          <button className='btn'>Continue</button>
+          <button className='btn' type='submit'>
+            Continue
+          </button>
           <Link to={'../forgot-password'} className='forgot-link'>
             Forgot your password?
           </Link>

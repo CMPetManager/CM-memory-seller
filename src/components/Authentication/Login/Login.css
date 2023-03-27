@@ -229,3 +229,17 @@
   opacity: 0;
   margin-bottom: 8px;
 }
+
+.error-message_show{
+  visibility: visible;
+  opacity: 1;
+}
+
+.form__input:-webkit-autofill,
+.form__input:-webkit-autofill:hover, 
+.form__input:-webkit-autofill:focus {
+  border: 1px solid #FBDBA3;
+  -webkit-text-fill-color: #FFFFFF;
+  -webkit-box-shadow: 0 0 0px 1000px #424141 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
