@@ -1,10 +1,12 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 import './Login.css';
 import imgX from '../../../assets/icons/x1.svg';
 import eyeCrossed from '../../../assets/icons/eye_crossed.svg';
 import eye from '../../../assets/icons/eye.svg';
+
+import { loginUser } from '../../../services/users/userService';
 
 const Login = () => {
   const [form, setForm] = useState({
@@ -15,6 +17,7 @@ const Login = () => {
   const [errorMsg, setErrorMsg] = useState({
     isErrorEmail: false,
     isErrorPsw: false,
+    isErrorResponse: false,
   });
 
   const [isChecked, setIsChecked] = useState(false);
@@ -42,6 +45,12 @@ const Login = () => {
     const { name, value } = event.target;
     const { isErrorEmail, isErrorPsw } = errorMsg;
 
+    if (errorMsg.isErrorResponse) {
+      setErrorMsg((prev) => ({
+        ...prev,
+        isErrorResponse: false,
+      }));
+    }
     setForm((prev) => ({
       ...prev,
       [name]: value,
@@ -69,10 +78,30 @@ const Login = () => {
     setShownPassword((prev) => !prev);
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    console.dir(errorMsg);
-    console.dir(form);
+    const { email, password } = form;
+
+    if (!form.email || !form.password) {
+      return;
+    }
+    try {
+      const response = await loginUser(email, password);
+
+      console.log(response);
+    } catch (error) {
+      if (!error.successful) {
+        setErrorMsg((prev) => ({
+          ...prev,
+          isErrorResponse: true,
+        }));
+
+        setForm({
+          email: '',
+          password: '',
+        });
+      }
+    }
   };
 
   return (
@@ -83,7 +112,13 @@ const Login = () => {
         </Link>
         <div className='login__head-wrap'>
           <h2 className='login__title'>Welcome</h2>
-          <p className='error-message'>
+          <p
+            className={
+              errorMsg.isErrorResponse
+                ? 'error-message error-message_show'
+                : 'error-message'
+            }
+          >
             Either Email or Password that you entered were incorrect
           </p>
         </div>
@@ -95,7 +130,7 @@ const Login = () => {
               placeholder='Email address'
               value={form.email}
               name='email'
-              onChange={(e) => onInputChange(e, setForm)}
+              onChange={onInputChange}
               autoFocus
               required
             />
