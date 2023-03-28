@@ -1,0 +1,64 @@
+body {
+    background-color: #6F6D6D;
+}
+section {
+    margin: 0 auto;
+    padding: 0 100px;
+}
+
+.Home {
+    position: relative;
+}
+/*.Home__BackgroundText {
+   position: absolute;
+}*/
+.Home__BackgroundText__First, .Home__BackgroundText__Second {
+    position: absolute;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 200px;
+    line-height: 242px;
+    color: #EBEAE8;
+    opacity: 0.05;
+}
+.Home__BackgroundText__First {
+    width: 926px;
+    height: 242px;
+    left: 36px;
+    top: -38px;
+}
+.Home__BackgroundText__Second {
+    width: 931px;
+    height: 240px;
+    left: 350px;
+    top: 600px;
+}
+
+/* -------------Discription------------- */
+.Discription {
+    margin-top: 54px;
+}
+.Discription__Wrapper > h1
+{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 120%;
+    color: #D7D6D3;
+}
+
+.Discription__Wrapper p {
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25.08px;
+    color: #D7D6D3;
+}
+
+
+
+
+
+
+

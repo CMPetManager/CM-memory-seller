@@ -1,0 +1,245 @@
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.Slider {
+  position: relative;
+  height: 524px;
+  margin-top: 55px;
+  overflow: hidden;
+}
+.Slider__Container{
+  width: 2490px; /* на скільки довго прокручується контейнер */
+  height: inherit;
+  /* overflow-x: auto;  Додала горизонтальну прокрутку */
+  overflow: hidden;
+  white-space: nowrap;
+  -ms-overflow-style: none; /* приховала скроллбал Egg */
+}
+/* приховала скроллбал Chrome, Safari */
+.Slider__Container::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.Slider__Section {
+  position: relative;
+  /* margin-left: 20px; */
+}
+.Slider__Section__Photo_1 {
+  position: absolute;
+  margin-left: 3%;
+  left: 0px;
+  top: 75px;
+  z-index: 1;
+}
+.Slider__Section__Photo_1 > img {
+  width: 222px;
+  height: 348px;
+  object-fit: cover;
+}
+
+.Slider__Section__Photo_2 {
+  position: absolute;
+  margin-left: 2.5%;
+  left: 75px;
+  top: 0px;
+  z-index: -3;
+}
+.Slider__Section__Photo_2 > img {
+  width: 384px;
+  height: 524px;
+  object-fit: cover;
+}
+
+.Slider__Section__Photo_3 {
+  position: absolute;
+  margin-left: 2.5%;
+  left: 417px;
+  top: 13px;
+  z-index: 5;
+}
+.Slider__Section__Photo_3 > img {
+  object-fit: cover;
+  width: 302px;
+  height: 210px;
+}
+
+.Slider__Section__Photo_4 {
+  position: absolute;
+  margin-left: 5%;
+  left: 381px;
+  top: 353px;
+  z-index: 4;
+}
+.Slider__Section__Photo_4 > img {
+  width: 259px;
+  height: 156px;
+  object-fit: cover;
+
+}
+.Slider__Section__Photo_5 {
+  position: absolute;
+  margin-left: 2%;
+  left: 554px;
+  top: 150px;
+  z-index: -4;
+}
+.Slider__Section__Photo_5 > img {
+  object-fit: cover;
+  object-position: 0 0;
+  width: 405px;
+  height: 344px;
+}
+
+.Slider__Section__Photo_6 {
+  position: absolute;
+  left: 756px;
+  top: 65px;
+  z-index: 7;
+}
+.Slider__Section__Photo_6 > img {
+  object-fit: cover;
+  object-position: 0 20;
+  width: 335px;
+  height: 358px;
+}
+
+.Slider__Section__Photo_7 {
+  position: absolute;
+  margin-left: -2%;
+  left: 1006px;
+  top: 0px;
+  z-index: 6;
+}
+.Slider__Section__Photo_7 > img {
+  width: 269px;
+  height: 278px;
+  object-fit: cover;
+  object-position: 0 85%;
+}
+
+.Slider__Section__Photo_8 {
+  position: absolute;
+  margin-left: -2%;
+  left: 1100px;
+  top: 303px;
+  z-index: 9;
+}
+.Slider__Section__Photo_8 > img {
+  width: 248px;
+  height: 221px;
+  object-fit: cover;
+  object-position: 0 10%;
+}
+
+.Slider__Section__Photo_9 {
+  position: absolute;
+  margin-left: -4%;
+  left: 1312px;
+  top: 0px;
+  z-index: 8;
+}
+.Slider__Section__Photo_9 > img {
+  width: 384px;
+  height: 494px;
+  object-fit: cover;
+  object-position: 0 50%;
+}
+
+.Slider__Section__Photo_10 {
+  position: absolute;
+  margin-left: -6%;
+  left: 1591px;
+  top: 49px;
+  z-index: 10;
+}
+.Slider__Section__Photo_10 > img {
+  width: 267px;
+  height: 283px;
+  object-fit: cover;
+}
+
+.Slider__Section__Photo_11 {
+  position: absolute;
+  margin-left: -6%;
+  left: 1784px;
+  top: 0px;
+  z-index: 12;
+}
+.Slider__Section__Photo_11 > img {
+  width: 400px;
+  height: 196px;
+  object-fit: cover;
+  object-position: 0 20%;
+}
+.Slider__Section__Photo_12 {
+  position: absolute;
+  margin-left: -8%;
+  left: 1725px;
+  top: 353px;
+  z-index: 13;
+}
+.Slider__Section__Photo_12 > img {
+  width: 325px;
+  height: 171px;
+  object-fit: cover;
+  object-position: 0 50%;
+}
+.Slider__Section__Photo_13 {
+  position: absolute;
+  margin-left: -10%;
+  left: 1989px;
+  top: 95px;
+  z-index: 11;
+}
+.Slider__Section__Photo_13 > img {
+  width: 384px;
+  height: 429px;
+  object-fit: cover;
+  object-position: 0 50%;
+}
+.Slider__Section__Photo_14 {
+  position: absolute;
+  margin-left: -10%;
+  left: 2322px;
+  top: 0px;
+  z-index: 14;
+}
+.Slider__Section__Photo_14 > img {
+  width: 248px;
+  height: 221px;
+  object-fit: cover;
+}
+.Slider__Section__Photo_15 {
+  position: absolute;
+  margin-left: -10%;
+  left: 2308px;
+  top: 284px;
+  z-index: 15;
+}
+.Slider__Section__Photo_15 > img {
+  width: 302px;
+  height: 210px;
+  object-fit: cover;
+}
+
+/* ----------------Hower images------------------- */
+.scroll-content > .item > img {
+  opacity: 0.7;
+  filter: brightness(0.9), contrast(0.9);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.scroll-content > .item > img:hover {
+  opacity: 1;
+  filter: brightness(1.1), contrast(1.1) saturate(1.5);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: scale(1.3);
+  /* cursor: pointer; */
+}
+/* ------------вихід фото на передній план---------------
+.scroll-content .item:hover {
+  z-index: 1000;
+} */
