@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/CM-memory-seller/static/css/main.92086937.css",
-    "main.js": "/CM-memory-seller/static/js/main.35689c88.js",
+    "main.js": "/CM-memory-seller/static/js/main.8b43c7a7.js",
     "static/media/eye_crossed.svg": "/CM-memory-seller/static/media/eye_crossed.ec66ed82cd40c9efbd80defa2d5aad15.svg",
     "index.html": "/CM-memory-seller/index.html",
     "static/media/eye.svg": "/CM-memory-seller/static/media/eye.e7cda6399a3bd7036b612ef4083abcad.svg",
     "static/media/x1.svg": "/CM-memory-seller/static/media/x1.83af43c5ad2451fc6cbcb8abd0ede7c5.svg",
     "main.92086937.css.map": "/CM-memory-seller/static/css/main.92086937.css.map",
-    "main.35689c88.js.map": "/CM-memory-seller/static/js/main.35689c88.js.map"
+    "main.8b43c7a7.js.map": "/CM-memory-seller/static/js/main.8b43c7a7.js.map"
   },
   "entrypoints": [
     "static/css/main.92086937.css",
-    "static/js/main.35689c88.js"
+    "static/js/main.8b43c7a7.js"
   ]
 }
