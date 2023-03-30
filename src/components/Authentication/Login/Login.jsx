@@ -187,7 +187,7 @@ const Login = () => {
             />
             Remember me
           </label>
-          <button className='btn' type='submit'>
+          <button className='btn login__btn' type='submit'>
             Continue
           </button>
           <Link to={'../forgot-password'} className='forgot-link'>
