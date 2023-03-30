@@ -20,15 +20,9 @@
 }
 .header__login {
   position: relative;
-  display: inline-block;
   width: 98px;
   height: 42px;
-  border: 1px solid #000;
-  border-radius: 15px;
-  background-color: #FBDBA3;
-  font-size: 24px;
   margin-right: 18px;
-  transition: all 0.5s ease-in-out;
 }
 .header__login > a {
   position: absolute;
@@ -37,22 +31,11 @@
   }
 .header__registration {
   position: relative;
-  display: inline-block;
   width: 168px;
   height: 42px;
-  border: 1px solid #000;
-  border-radius: 15px;
-  border-color: #000;
-  background-color: #FBDBA3;
-  font-size: 24px;
-  transition: all 0.5s ease-in-out;
 }
 .header__registration > a {
   position: absolute;
   top: 14%;
   left: 11.5%;
   }
-.header__login:hover, .header__registration:hover {
-  background-color: #6F6D6D;
-  transition: all 0.5s ease-in-out;
-}

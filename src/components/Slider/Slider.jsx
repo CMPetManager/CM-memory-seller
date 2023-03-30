@@ -38,70 +38,70 @@ function MyLocomotiveScroll() {
               data-scroll
               data-scroll-speed='1'
             >
-              <img src='/images/photo_1.jpg ' alt='girl' />
+              <img src='/images/photo_1.webp' alt='girl' />
             </div>
             <div
               className='slider__photo-2 item'
               data-scroll
               data-scroll-speed='0.5'
             >
-              <img src='/images/photo_2.jpg ' alt='baby heels' />
+              <img src='/images/photo_2.webp ' alt='baby heels' />
             </div>
             <div
               className='slider__photo-3 item'
               data-scroll
               data-scroll-speed='2'
             >
-              <img src='/images/photo_3.jpg ' alt='mom and baby' />
+              <img src='/images/photo_3.webp ' alt='mom and baby' />
             </div>
             <div
               className='slider__photo-4 item'
               data-scroll
               data-scroll-speed='3'
             >
-              <img src='/images/photo_4.jpg ' alt='mom and daughter' />
+              <img src='/images/photo_4.webp ' alt='mom and daughter' />
             </div>
             <div
               className='slider__photo-5 item'
               data-scroll
               data-scroll-speed='1.5'
             >
-              <img src='/images/photo_5.jpg ' alt='half of a woman face' />
+              <img src='/images/photo_5.webp ' alt='half of a woman face' />
             </div>
             <div
               className='slider__photo-6 item'
               data-scroll
               data-scroll-speed='1.5'
             >
-              <img src='/images/photo_6.jpg ' alt='woman' />
+              <img src='/images/photo_6.webp ' alt='woman' />
             </div>
             <div
               className='slider__photo-7 item'
               data-scroll
               data-scroll-speed='2'
             >
-              <img src='/images/photo_7.jpg ' alt='bride and groom' />
+              <img src='/images/photo_7.webp ' alt='bride and groom' />
             </div>
             <div
               className='slider__photo-8 item'
               data-scroll
               data-scroll-speed='2'
             >
-              <img src='/images/photo_8.jpg ' alt='woman profile' />
+              <img src='/images/photo_8.webp ' alt='woman profile' />
             </div>
             <div
               className='slider__photo-9 item'
               data-scroll
               data-scroll-speed='1.5'
             >
-              <img src='/images/photo_9.jpg ' alt='man with glasses' />
+              <img src='/images/photo_9.webp ' alt='man with glasses' />
             </div>
             <div
               className='slider__photo-10 item'
               data-scroll
               data-scroll-speed='3'
             >
-              <img src='/images/photo_10.jpg ' alt='woman negative' />
+              <img src='/images/photo_10.webp ' alt='woman negative' />
             </div>
             <div
               className='slider__photo-11 item'
@@ -109,7 +109,7 @@ function MyLocomotiveScroll() {
               data-scroll-speed='1.5'
             >
               <img
-                src='/images/photo_11.jpg '
+                src='/images/photo_11.webp '
                 alt='mother and daughter with flowers'
               />
             </div>
@@ -118,21 +118,21 @@ function MyLocomotiveScroll() {
               data-scroll
               data-scroll-speed='2.5'
             >
-              <img src='/images/photo_12.jpg ' alt='woman profile negative' />
+              <img src='/images/photo_12.webp ' alt='woman profile negative' />
             </div>
             <div
               className='slider__photo-13 item'
               data-scroll
               data-scroll-speed='3'
             >
-              <img src='/images/photo_13.jpg ' alt='curly woman' />
+              <img src='/images/photo_13.webp ' alt='curly woman' />
             </div>
             <div
               className='slider__photo-14 item'
               data-scroll
               data-scroll-speed='1'
             >
-              <img src='/images/photo_14.jpg ' alt='rings on hand' />
+              <img src='/images/photo_14.webp ' alt='rings on hand' />
             </div>
             <div
               className='slider__photo-15 item'
@@ -140,7 +140,7 @@ function MyLocomotiveScroll() {
               data-scroll-speed='2'
             >
               <img
-                src='/images/photo_15.jpg '
+                src='/images/photo_15.webp '
                 alt='mother and daughter with dog'
               />
             </div>
