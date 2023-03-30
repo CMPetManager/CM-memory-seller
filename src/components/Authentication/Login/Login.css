@@ -161,28 +161,9 @@
   opacity: 0.8;
 }
 
-.btn {
-  box-sizing: border-box;
+.login__btn {
   width: 448px;
   height: 48px;
-  background: #FBDBA3;
-  opacity: 0.8;
-  border: 1px solid #000000;
-  border-radius: 15px;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 1.25;
-  color: #000000;
-  cursor: pointer;
-  transition: all 0.5s ease-in-out;
-}
-
-.btn:hover {
-  background: transparent;
-  color: #FFFFFF;
-  border: 1px solid #FBDBA3;
-  transition: all 0.5s ease-in-out;
 }
 
 .forgot-link {
@@ -233,13 +214,4 @@
 .error-message_show{
   visibility: visible;
   opacity: 1;
-}
-
-.form__input:-webkit-autofill,
-.form__input:-webkit-autofill:hover, 
-.form__input:-webkit-autofill:focus {
-  border: 1px solid #FBDBA3;
-  -webkit-text-fill-color: #FFFFFF;
-  -webkit-box-shadow: 0 0 0px 1000px #424141 inset;
-  transition: background-color 5000s ease-in-out 0s;
 }
