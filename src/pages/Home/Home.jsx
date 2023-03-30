@@ -7,23 +7,21 @@ import './Home.css';
 function Home() {
   return (
     <>
-      <div className='Home'>
-        <div className='Home__BackgroundText'>
-          <div className='Home__BackgroundText__First'>Catch the</div>
-          <div className='Home__BackgroundText__Second'>Memories</div>
+      <div className='home'>
+        <div className='home__background-text'>
+          <div className='home__background-text_first'>Catch the</div>
+          <div className='home__background-text_second'>Memories</div>
         </div>
         <Header />
         <Slider />
         <main>
-          <section className='Discription'>
-            <div className='Discription__Wrapper'>
-              <h1>Making memories</h1>
-              <p>
-                Share and collect photos and videos.
-                <br />
-                Relive the most beautiful moments.
-              </p>
-            </div>
+          <section className='discription'>
+            <h1 className='discription__title'>Making memories</h1>
+            <p className='discription__content'>
+              Share and collect photos and videos.
+              <br />
+              Relive the most beautiful moments.
+            </p>
           </section>
         </main>
         <Outlet />

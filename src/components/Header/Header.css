@@ -1,30 +1,28 @@
-.Header-Logo_buttons {
+.header-logo_buttons {
   display: flex;
 }
 
-.Header__Wrapper {
-  /* margin: 0 auto; */
+.header__wrapper {
   padding: 0 100px;
-  /* width: 1312px; */
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 60px;
 }
 
-.Header__Wrapper__Logo > a, .Discription__Wrapper > h1 {
+.header__wrapper__logo > a, .discription__wrapper > h1 {
   font-family: 'Libre Caslon Display', Serif;
   text-transform: uppercase;
 }
-.Header__Wrapper__Logo > a {
+.header__wrapper__logo > a {
     font-size: 24px;
     color: #fff;
 }
 
-.Header__Wrapper__Buttons {
+.header__wrapper__buttons {
   display: flex;
 }
-.Header__Wrapper__Buttons__Login {
+.header__wrapper__buttons__login {
   position: relative;
   display: inline-block;
   width: 98px;
@@ -36,12 +34,12 @@
   margin-right: 18px;
   transition: all 0.5s ease-in-out;
 }
-.Header__Wrapper__Buttons__Login > a {
+.header__wrapper__buttons__login > a {
   position: absolute;
   top: 14%;
   left: 20%;
   }
-.Header__Wrapper__Buttons__Registration {
+.header__wrapper__buttons__registration {
   position: relative;
   display: inline-block;
   width: 168px;
@@ -53,12 +51,12 @@
   font-size: 24px;
   transition: all 0.5s ease-in-out;
 }
-.Header__Wrapper__Buttons__Registration > a {
+.header__wrapper__buttons__registration > a {
   position: absolute;
   top: 14%;
   left: 11.5%;
   }
-.Header__Wrapper__Buttons__Login:hover, .Header__Wrapper__Buttons__Registration:hover {
+.header__wrapper__buttons__login:hover, .header__wrapper__buttons__registration:hover {
   background-color: #6F6D6D;
   transition: all 0.5s ease-in-out;
 }
