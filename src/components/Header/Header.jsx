@@ -4,16 +4,16 @@ import './Header.css';
 function Header() {
   return (
     <>
-      <header className='logo-buttons'>
+      <header className='header'>
         <div className='header__wrapper'>
-          <div className='header__wrapper__logo'>
+          <div className='header__logo'>
             <a href='/'>Catch the moment</a>
           </div>
-          <div className='header__wrapper__nuttons'>
-            <div className='header__wrapper__buttons__login'>
+          <div className='header__buttons'>
+            <div className='header__login'>
               <Link to={'/login'}>Login</Link>
             </div>
-            <div className='header__wrapper__buttons__registration'>
+            <div className='header__registration'>
               <Link to={'/registration'}>Registration</Link>
             </div>
           </div>
