@@ -21,6 +21,7 @@ function App() {
             element={<ResetPassword />}
           />
         </Route>
+        <Route path='/albums' element={<div>My Albums</div>} />
         <Route path='*' element={<div>Error</div>} />
       </Routes>
     </div>

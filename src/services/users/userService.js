@@ -1,4 +1,4 @@
-const url = 'http://localhost:4000/';
+const baseUrl = 'https://www.google.com.ua/';
 
 export const loginUser = async (email, password) => {
   const user = {
@@ -6,7 +6,7 @@ export const loginUser = async (email, password) => {
     password,
   };
   console.log(user);
-  const response = await fetch(`${url}login`, {
+  const response = await fetch(`${baseUrl}login`, {
     method: 'POST',
     body: JSON.stringify(user),
     headers: {
@@ -15,6 +15,6 @@ export const loginUser = async (email, password) => {
   });
 
   const result = await response.json();
-  // console.log(result);
+  console.log(result);
   return result;
 };

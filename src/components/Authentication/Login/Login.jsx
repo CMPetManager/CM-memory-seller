@@ -9,6 +9,7 @@ import eye from '../../../assets/icons/eye.svg';
 import { loginUser } from '../../../services/users/userService';
 
 const Login = () => {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     email: '',
     password: '',
@@ -89,8 +90,10 @@ const Login = () => {
       const response = await loginUser(email, password);
 
       console.log(response);
+      navigate('../albums');
     } catch (error) {
-      if (!error.successful) {
+      console.log(error);
+      if (error.status === 400) {
         setErrorMsg((prev) => ({
           ...prev,
           isErrorResponse: true,
@@ -100,6 +103,8 @@ const Login = () => {
           email: '',
           password: '',
         });
+      } else {
+        console.log(error.message);
       }
     }
   };
