@@ -20,9 +20,9 @@ function App() {
             path='/reset-password/:resetToken'
             element={<ResetPassword />}
           />
+          <Route path='*' element={<div>Error</div>} />
         </Route>
         <Route path='/albums' element={<div>My Albums</div>} />
-        <Route path='*' element={<div>Error</div>} />
       </Routes>
     </div>
   );
