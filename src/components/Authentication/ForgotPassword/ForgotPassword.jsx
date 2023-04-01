@@ -1,8 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
-
 import { useForm } from 'react-hook-form';
 import './ForgotPassword.css';
-import imgX from '../../../assets/icons/x1.svg';
+import imgX from '../../assets/icons/x1.svg';
 const ForgotPassword = () => {
   const navigate = useNavigate();
   const {
@@ -10,10 +9,11 @@ const ForgotPassword = () => {
     reset,
     handleSubmit,
     formState: { errors },
-  } = useForm({ mode: 'onBlur' });
+  } = useForm({ mode: 'onSubmit' });
   const onSubmit = (data) => {
     console.log(data);
     reset();
+
     navigate('/reset-password/:resetToke');
   };
   return (
