@@ -13,7 +13,6 @@ const ForgotPassword = () => {
   const onSubmit = (data) => {
     console.log(data);
     reset();
-
     navigate('/reset-password/:resetToke');
   };
   return (
