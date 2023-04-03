@@ -10,12 +10,12 @@ function Header() {
             <a href='/'>Catch the moment</a>
           </div>
           <div className='header__buttons'>
-            <div className='header__login btn'>
+            <span className='header__buttons_login btn'>
               <Link to={'/login'}>Login</Link>
-            </div>
-            <div className='header__registration btn'>
+            </span>
+            <span className='header__buttons_registration btn'>
               <Link to={'/registration'}>Registration</Link>
-            </div>
+            </span>
           </div>
         </div>
       </header>

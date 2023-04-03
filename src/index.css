@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Marcellus&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Libre+Caslon+Display&family=Marcellus&display=swap');
 
 * {
   font-family: 'Marcellus', serif;
@@ -8,7 +8,7 @@
 }
 
 html,
-body
+body,
 #root {
   width: 100%;
   height: 100%;
