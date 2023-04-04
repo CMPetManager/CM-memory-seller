@@ -1,16 +1,31 @@
 {
   "files": {
-    "main.css": "/CM-memory-seller/static/css/main.59908604.css",
-    "main.js": "/CM-memory-seller/static/js/main.2d1c90b9.js",
+    "main.css": "/CM-memory-seller/static/css/main.780f9e82.css",
+    "main.js": "/CM-memory-seller/static/js/main.0576d34e.js",
+    "static/media/photo-10.webp": "/CM-memory-seller/static/media/photo-10.6e7485d417e139f7aa53.webp",
+    "static/media/photo-7.webp": "/CM-memory-seller/static/media/photo-7.ddccb4069cd8ed1bd9ea.webp",
+    "static/media/photo-13.webp": "/CM-memory-seller/static/media/photo-13.1952b41b9d04f462f290.webp",
+    "static/media/photo-15.webp": "/CM-memory-seller/static/media/photo-15.cae7f15fed59f1258cd1.webp",
+    "static/media/photo-8.webp": "/CM-memory-seller/static/media/photo-8.f9bd1d7f80b9aac861a4.webp",
+    "static/media/photo-6.webp": "/CM-memory-seller/static/media/photo-6.ff26896c628e7389d481.webp",
+    "static/media/photo-9.webp": "/CM-memory-seller/static/media/photo-9.8e30383d6018c53bd913.webp",
+    "static/media/photo-11.webp": "/CM-memory-seller/static/media/photo-11.7988d11a7b520678df27.webp",
+    "static/media/photo-3.webp": "/CM-memory-seller/static/media/photo-3.8d129edffcbdc8e97d42.webp",
+    "static/media/photo-1.webp": "/CM-memory-seller/static/media/photo-1.299f67b85c8a42d3921f.webp",
+    "static/media/photo-4.webp": "/CM-memory-seller/static/media/photo-4.f78856f17400ba47d3fe.webp",
+    "static/media/photo-2.webp": "/CM-memory-seller/static/media/photo-2.4ec0e89268aeccea0429.webp",
+    "static/media/photo-5.webp": "/CM-memory-seller/static/media/photo-5.ad7c3a14e810cacec721.webp",
+    "static/media/photo-12.webp": "/CM-memory-seller/static/media/photo-12.7f51df6b2df71cb5d42b.webp",
+    "static/media/photo-14.webp": "/CM-memory-seller/static/media/photo-14.dee88e0b2a74c15b8c84.webp",
     "static/media/eye_crossed.svg": "/CM-memory-seller/static/media/eye_crossed.ec66ed82cd40c9efbd80defa2d5aad15.svg",
     "index.html": "/CM-memory-seller/index.html",
     "static/media/eye.svg": "/CM-memory-seller/static/media/eye.e7cda6399a3bd7036b612ef4083abcad.svg",
     "static/media/x1.svg": "/CM-memory-seller/static/media/x1.83af43c5ad2451fc6cbcb8abd0ede7c5.svg",
-    "main.59908604.css.map": "/CM-memory-seller/static/css/main.59908604.css.map",
-    "main.2d1c90b9.js.map": "/CM-memory-seller/static/js/main.2d1c90b9.js.map"
+    "main.780f9e82.css.map": "/CM-memory-seller/static/css/main.780f9e82.css.map",
+    "main.0576d34e.js.map": "/CM-memory-seller/static/js/main.0576d34e.js.map"
   },
   "entrypoints": [
-    "static/css/main.59908604.css",
-    "static/js/main.2d1c90b9.js"
+    "static/css/main.780f9e82.css",
+    "static/js/main.0576d34e.js"
   ]
 }
