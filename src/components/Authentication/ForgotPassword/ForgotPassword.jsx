@@ -1,7 +1,4 @@
-import './ForgotPassword.css';
-
 const ForgotPassword = () => {
-  return <div>Fogot password form</div>;
+  return <div>ForgotPassword</div>;
 };
-
 export default ForgotPassword;
