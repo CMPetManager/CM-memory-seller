@@ -7,6 +7,8 @@ const Registration = (props) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  // отправка формы, но куда ее отправлять?
+
   // состояние в котором значится нахождение юзера в инпуте
   const [nameDirty, setNameDirty] = useState(false);
   const [emailDirty, setEmailDirty] = useState(false);
@@ -17,31 +19,40 @@ const Registration = (props) => {
     setPasswordShown(!passwordShown);
   };
   // ошибка если инпут пустой
-  const [nameError, setNameError] = useState('Please enter your Name');
-  const [emailError, setEmailError] = useState('Please enter your Email');
-  const [passwordError, setPasswordError] = useState(
+  const [nameEmptyError, setNameEmptyError] = useState(
+    'Please enter your Name'
+  );
+  const [emailEmptyError, setEmailEmptyError] = useState(
+    'Please enter your Email'
+  );
+  const [passwordEmptyError, setPasswordEmptyError] = useState(
     'Please enter your Password'
   );
-  // let passwordText = 'Must be between 6 and 10 characters long.';
-  // let passwordText1 = passwordText == null;
-  const [passwordTextHidden, setpasswordTextHidden] = useState(
+  const [passwordError, setPasswordError] = useState(false);
+  const emptyPassword = () => {
+    if (passwordError === ' ') {
+      setPasswordError('Please enter your Email');
+    } else {
+      setPasswordError(false);
+    }
+  };
+  const [passwordTextHidden, setPasswordTextHidden] = useState(
     'Must be between 6 and 10 characters long.'
   );
-  // const hiddenText = (e) => {
-  //   {
-  //     passwordTextHidden;
-  //   }
-  //   if (setPasswordError()) {
-  //     passwordTextHidden(null);
-  //   }
-  // };
+  const textHidden = () => {
+    if (passwordError) {
+      setPasswordTextHidden(false);
+    } else {
+      setPasswordTextHidden('Must be between 6 and 10 characters long.');
+    }
+  };
   // ошибка: не соответствует критериям
   const nameHandler = (e) => {
     setName(e.target.value);
     if (e.target.value.length < 1 || e.target.value.length > 64) {
-      setNameError('The Name doesn’t match required criteria');
+      setNameEmptyError('The Name doesn’t match required criteria');
     } else {
-      setNameError('');
+      setNameEmptyError('');
     }
   };
   const emailHandler = (e) => {
@@ -49,22 +60,22 @@ const Registration = (props) => {
     const re =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (!re.test(String(e.target.value).toLowerCase())) {
-      setEmailError('The Email doesn’t match required criteria');
+      setEmailEmptyError('The Email doesn’t match required criteria');
     } else {
-      setEmailError('');
+      setEmailEmptyError('');
     }
   };
 
   const passwordHendler = (e) => {
     setPassword(e.target.value);
-    if (e.target.value.length < 6 || e.target.value.length > 64) {
+    if (e.target.value.length <= 6 || e.target.value.length > 64) {
       setPasswordError('The password doesn’t match required criteria');
     } else {
-      setPasswordError('');
+      setPasswordError(false);
     }
   };
 
-  const blurHundler = (e) => {
+  const blurHandler = (e) => {
     switch (e.target.name) {
       case 'name':
         setNameDirty(true);
@@ -92,10 +103,10 @@ const Registration = (props) => {
             <div className='registration-form__exit'></div>
           </a>
         </div>
-        <h1 className='body__title'>Welcome</h1>
-        <div className='user-name'>
+        <h1 className='registration-form__title'>Welcome</h1>
+        <div className='registration-form__input user-name'>
           <input
-            onBlur={(e) => blurHundler(e)}
+            onBlur={(e) => blurHandler(e)}
             name='name'
             id='name'
             type='text'
@@ -107,15 +118,15 @@ const Registration = (props) => {
               setName(e.target.value);
             }}
           ></input>
-          {nameDirty && nameError && (
+          {nameDirty && nameEmptyError && (
             <div className='registration-form__text-error empty-name'>
-              {nameError}
+              {nameEmptyError}
             </div>
           )}
         </div>
-        <div className='email'>
+        <div className='registration-form__exit email'>
           <input
-            onBlur={(e) => blurHundler(e)}
+            onBlur={(e) => blurHandler(e)}
             name='email'
             id='email'
             type='text'
@@ -127,15 +138,15 @@ const Registration = (props) => {
               setEmail(e.target.value);
             }}
           ></input>
-          {emailDirty && emailError && (
+          {emailDirty && emailEmptyError && (
             <div className='registration-form__text-error empty-email'>
-              {emailError}
+              {emailEmptyError}
             </div>
           )}
         </div>
-        <div className='password'>
+        <div className='registration-form__exit password'>
           <input
-            onBlur={(e) => blurHundler(e)}
+            onBlur={blurHandler}
             name='password'
             className='password__input input_form'
             type={passwordShown ? 'text' : 'password'}
@@ -143,26 +154,31 @@ const Registration = (props) => {
             placeholder='Password'
             value={password}
             onChange={(e) => {
+              emptyPassword();
+              setPasswordError(e);
               passwordHendler(e);
-              setPassword(e.target.value);
+              textHidden();
             }}
           />
-          {passwordDirty && passwordError && (
+          <div className='registration-form__text-error empty-password'>
+            {passwordError}
+          </div>
+          {passwordDirty && passwordEmptyError && (
             <div className='registration-form__text-error empty-password'>
-              {passwordError}
+              {passwordEmptyError}
             </div>
           )}
 
           <button
+            type='button'
             className='password__eye-off'
             onClick={togglePassword}
           ></button>
           <p className='password__text password__text_hidden'>
-            {/* Must be between 6 and 10 characters long. */}
-            {/* {passwordTextHidden(e.targer.value)} */}
+            {passwordTextHidden}
           </p>
         </div>
-        <div className='confirm'>
+        <div className='registration-form__confirm confirm'>
           <button type='submit' className='confirm__btn'>
             <span className='confirm__text-btn'>Confirm</span>
           </button>
@@ -175,7 +191,7 @@ const Registration = (props) => {
           </p>
         </div>
         <div>
-          <p className='body__warning-footer'>
+          <p className='registration-form__warning-footer'>
             By creating an account, I accept (Name page) Terms and Privacy
             statement
           </p>
