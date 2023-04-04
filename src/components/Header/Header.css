@@ -18,14 +18,14 @@
 .header__buttons {
   display: flex;
 }
-span.header__buttons_login {
+.header__buttons_login {
   width: 98px;
   height: 42px;
   line-height: 42px;
   text-align: center;
   margin-right: 18px;
   }
-span.header__buttons_registration {
+.header__buttons_registration {
   width: 168px;
   height: 42px;
   line-height: 42px;
