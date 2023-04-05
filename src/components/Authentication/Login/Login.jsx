@@ -52,10 +52,7 @@ const Login = () => {
         isErrorResponse: false,
       }));
     }
-    setForm((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setForm((prev) => ({ ...prev, [name]: value }));
 
     if (name === 'email' && !value && !isErrorEmail) {
       setErrorMsg((prev) => ({
@@ -199,7 +196,7 @@ const Login = () => {
           <button
             className='btn login__btn'
             type='submit'
-            disabled={!form.email && !form.password ? true : false}
+            disabled={form.email && form.password ? false : true}
           >
             Continue
           </button>
