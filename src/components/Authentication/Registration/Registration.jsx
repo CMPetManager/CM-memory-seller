@@ -40,7 +40,7 @@ const Registration = (props) => {
     'Must be between 6 and 10 characters long.'
   );
   const textHidden = () => {
-    if (passwordError) {
+    if (passwordError && passwordEmptyError) {
       setPasswordTextHidden(false);
     } else {
       setPasswordTextHidden('Must be between 6 and 10 characters long.');
@@ -104,83 +104,87 @@ const Registration = (props) => {
           </a>
         </div>
         <h1 className='registration-form__title'>Welcome</h1>
-        <div className='registration-form__input user-name'>
-          <input
-            onBlur={(e) => blurHandler(e)}
-            name='name'
-            id='name'
-            type='text'
-            className='user-name__input input_form'
-            placeholder='Name'
-            value={name}
-            onChange={(e) => {
-              nameHandler(e);
-              setName(e.target.value);
-            }}
-          ></input>
-          {nameDirty && nameEmptyError && (
-            <div className='registration-form__text-error empty-name'>
-              {nameEmptyError}
-            </div>
-          )}
-        </div>
-        <div className='registration-form__exit email'>
-          <input
-            onBlur={(e) => blurHandler(e)}
-            name='email'
-            id='email'
-            type='text'
-            className='email__input input_form'
-            placeholder='Email address'
-            value={email}
-            onChange={(e) => {
-              emailHandler(e);
-              setEmail(e.target.value);
-            }}
-          ></input>
-          {emailDirty && emailEmptyError && (
-            <div className='registration-form__text-error empty-email'>
-              {emailEmptyError}
-            </div>
-          )}
-        </div>
-        <div className='registration-form__exit password'>
-          <input
-            onBlur={blurHandler}
-            name='password'
-            className='password__input input_form'
-            type={passwordShown ? 'text' : 'password'}
-            id='password'
-            placeholder='Password'
-            value={password}
-            onChange={(e) => {
-              emptyPassword();
-              setPasswordError(e);
-              passwordHendler(e);
-              textHidden();
-            }}
-          />
-          <div className='registration-form__text-error empty-password'>
-            {passwordError}
-          </div>
-          {passwordDirty && passwordEmptyError && (
-            <div className='registration-form__text-error empty-password'>
-              {passwordEmptyError}
-            </div>
-          )}
 
-          <button
-            type='button'
-            className='password__eye-off'
-            onClick={togglePassword}
-          ></button>
-          <p className='password__text password__text_hidden'>
-            {passwordTextHidden}
-          </p>
+        <div className='registration-form__input '>
+          <div>
+            <input
+              onBlur={(e) => blurHandler(e)}
+              name='name'
+              id='name'
+              type='text'
+              className='input__user-name input_form'
+              placeholder='Name'
+              value={name}
+              onChange={(e) => {
+                nameHandler(e);
+                setName(e.target.value);
+              }}
+            ></input>
+            {nameDirty && nameEmptyError && (
+              <div className='input__text-error empty-name'>
+                {nameEmptyError}
+              </div>
+            )}
+          </div>
+          <div>
+            <input
+              onBlur={(e) => blurHandler(e)}
+              name='email'
+              id='email'
+              type='text'
+              className='input__email input_form'
+              placeholder='Email address'
+              value={email}
+              onChange={(e) => {
+                emailHandler(e);
+                setEmail(e.target.value);
+              }}
+            ></input>
+            {emailDirty && emailEmptyError && (
+              <div className='input__text-error empty-email'>
+                {emailEmptyError}
+              </div>
+            )}
+          </div>
+          <div>
+            <input
+              onBlur={blurHandler}
+              name='password'
+              className='input__password input_form'
+              type={passwordShown ? 'text' : 'password'}
+              id='password'
+              placeholder='Password'
+              value={password}
+              onChange={(e) => {
+                emptyPassword();
+                setPasswordError(e);
+                passwordHendler(e);
+                textHidden();
+              }}
+            />
+            <div className='input__text-error empty-password'>
+              {passwordError}
+            </div>
+            {passwordDirty && passwordEmptyError && (
+              <div className='input__text-error empty-password'>
+                {passwordEmptyError}
+              </div>
+            )}
+
+            <button
+              type='button'
+              className='input__password_eye-off'
+              onClick={togglePassword}
+            ></button>
+            <p className='input__text password__text_hidden'>
+              {passwordTextHidden}
+            </p>
+          </div>
         </div>
-        <div className='registration-form__confirm confirm'>
-          <button type='submit' className='confirm__btn'>
-            <span className='confirm__text-btn'>Confirm</span>
+
+        <div>
+          <button type='submit' className='input__confirm-btn'>
+            <span className='input__confirm-text'>Confirm</span>
           </button>
 
           <p className='confirm__text-log'>
@@ -191,7 +195,7 @@ const Registration = (props) => {
           </p>
         </div>
         <div>
-          <p className='registration-form__warning-footer'>
+          <p className='body__warning-footer'>
             By creating an account, I accept (Name page) Terms and Privacy
             statement
           </p>
