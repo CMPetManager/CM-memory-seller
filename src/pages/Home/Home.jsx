@@ -4,10 +4,8 @@ import ResetPassword from '../../components/Authentication/ResetPassword/ResetPa
 const Home = () => {
   return (
     <>
-      {/* <div>Home</div>
+      <div>Home</div>
       <Outlet></Outlet>
-       */}
-      <ResetPassword />
     </>
   );
 };
