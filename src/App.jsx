@@ -10,19 +10,19 @@ import Home from './pages/Home/Home';
 
 function App() {
   return (
-    <div className='App'>
+    <div className='app'>
       <Routes>
         <Route path='/' element={<Home />}>
           <Route path='/registration' element={<Registration />} />
           <Route path='/login' element={<Login />} />
           <Route path='/forgot-password' element={<ForgotPassword />} />
-          <Route path='/reset-password' element={<ResetPassword />} />
           <Route
-            path='/reset-password/:resetToken'
+            path='reset-password/:resetToken'
             element={<ResetPassword />}
           />
+          <Route path='*' element={<div>Error</div>} />
         </Route>
-        <Route path='*' element={<div>Error</div>} />
+        <Route path='/albums' element={<div>My Albums</div>} />
       </Routes>
     </div>
   );
