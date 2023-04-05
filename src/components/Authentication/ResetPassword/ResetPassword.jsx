@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { Button } from '../../Button/Button';
 import { Input } from '../../Input/Input';
+
 const ResetPassword = () => {
   const navigate = useNavigate();
   const {
@@ -13,9 +14,15 @@ const ResetPassword = () => {
     formState: { errors },
   } = useForm({ mode: 'all' });
   const onSubmit = (data) => {
-    console.log(data);
+    if (data.password === data.confirmpassword) {
+      console.log(data);
+      navigate('/login');
+    } else {
+      alert('Passwords don`t match');
+    }
     reset();
   };
+
   return (
     <div className='resetPassword__wrap'>
       <div className='resetPassword__container'>
@@ -31,23 +38,26 @@ const ResetPassword = () => {
         </div>
         <form className='resetPassword__form' onSubmit={handleSubmit(onSubmit)}>
           <Input
-            {...register('password', {
-              // required: 'errors',
-            })}
-            placeholder={'ddddd'}
+            label=' '
+            register={register}
+            required
+            placeholder='Enter your new password'
             type='password'
-            label={'label'}
             visibleIcon={true}
-            errors={errors && errors.password?.message}
+            name='password'
+            errors={errors.password?.message}
+            textError='Enter your new password'
           />
           <Input
-            {...register('confirmPassword', {
-              // required: 'Please enter your Password',
-            })}
-            placeholder={'ddddd'}
-            type='email'
-            label={'email label'}
-            errors={errors && errors.confirmPassword?.message}
+            label=' '
+            register={register}
+            required
+            placeholder='Confirm your new password'
+            type='password'
+            visibleIcon={true}
+            name='confirmpassword'
+            errors={errors.confirmpassword?.message}
+            textError='Your forgot confirm  new password'
           />
           <Button titleButton='Change Password' />
         </form>
