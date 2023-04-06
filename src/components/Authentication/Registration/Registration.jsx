@@ -25,31 +25,14 @@ const Registration = (props) => {
   const [emailEmptyError, setEmailEmptyError] = useState(
     'Please enter your Email'
   );
-  const [passwordEmptyError, setPasswordEmptyError] = useState(
-    'Please enter your Password'
-  );
   const [passwordError, setPasswordError] = useState(false);
-  const emptyPassword = () => {
-    if (passwordError === ' ') {
-      setPasswordError('Please enter your Email');
-    } else {
-      setPasswordError(false);
-    }
-  };
-  const [passwordTextHidden, setPasswordTextHidden] = useState(
-    'Must be between 6 and 10 characters long.'
-  );
-  const textHidden = () => {
-    if (passwordError && passwordEmptyError) {
-      setPasswordTextHidden(false);
-    } else {
-      setPasswordTextHidden('Must be between 6 and 10 characters long.');
-    }
-  };
+
+  const passwordText = 'Must be between 6 and 25 characters long.';
+
   // ошибка: не соответствует критериям
   const nameHandler = (e) => {
     setName(e.target.value);
-    if (e.target.value.length < 1 || e.target.value.length > 64) {
+    if (e.target.value.length < 1 || e.target.value.length > 25) {
       setNameEmptyError('The Name doesn’t match required criteria');
     } else {
       setNameEmptyError('');
@@ -68,8 +51,10 @@ const Registration = (props) => {
 
   const passwordHendler = (e) => {
     setPassword(e.target.value);
-    if (e.target.value.length <= 6 || e.target.value.length > 64) {
+    if (e.target.value.length <= 6 || e.target.value.length > 25) {
       setPasswordError('The password doesn’t match required criteria');
+    } else if (e.target.value.length === ' ') {
+      setPasswordError('Please enter your Password');
     } else {
       setPasswordError(false);
     }
@@ -156,36 +141,33 @@ const Registration = (props) => {
               placeholder='Password'
               value={password}
               onChange={(e) => {
-                emptyPassword();
                 setPasswordError(e);
                 passwordHendler(e);
-                textHidden();
               }}
             />
             <div className='input__text-error empty-password'>
-              {passwordError}
+              {/* {passwordError} */}
             </div>
-            {passwordDirty && passwordEmptyError && (
+            {/* {passwordDirty && passwordError && (
               <div className='input__text-error empty-password'>
-                {passwordEmptyError}
+                {passwordError}
               </div>
-            )}
-
+            )} */}
             <button
               type='button'
               className='input__password_eye-off'
               onClick={togglePassword}
             ></button>
             <p className='input__text password__text_hidden'>
-              {passwordTextHidden}
+              {passwordError ? passwordError : passwordText}
             </p>
           </div>
         </div>
 
         <div>
-          <button type='submit' className='input__confirm-btn'>
+          <a href='../' type='submit' className='input__confirm-btn'>
             <span className='input__confirm-text'>Confirm</span>
-          </button>
+          </a>
 
           <p className='confirm__text-log'>
             Already registered?{' '}

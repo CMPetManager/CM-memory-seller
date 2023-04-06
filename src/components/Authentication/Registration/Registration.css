@@ -73,7 +73,7 @@
   line-height: 20px;
   padding-left: 22px;
   padding-right: 40px;
-  outline:none;
+  outline: none;
 }
 
 .input_form::placeholder {
@@ -147,6 +147,8 @@
   border: 1px solid #fbdba3;
   border-radius: 15px;
   transition-duration: 0.4s;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .input__confirm-btn:hover {
@@ -155,12 +157,17 @@
 }
 
 .input__confirm-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: "Marcellus";
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
   line-height: 30px;
   color: #000000;
+  /* margin-left: 172px;
+  margin-top: 12px; */
 }
 
 .confirm__text-log {
