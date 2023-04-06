@@ -11,7 +11,6 @@ import Home from './pages/Home/Home';
 
 function App() {
   const location = useLocation();
-  // console.log(location);
   const transitions = useTransition(location, {
     from: {
       opacity: 0,
@@ -48,19 +47,6 @@ function App() {
           </Routes>
         </animated.div>
       ))}
-      {/* <Routes>
-        <Route path='/' element={<Home />}>
-          <Route path='/registration' element={<Registration />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/forgot-password' element={<ForgotPassword />} />
-          <Route
-            path='/reset-password/:resetToken'
-            element={<ResetPassword />}
-          />
-          <Route path='*' element={<div>Error</div>} />
-        </Route>
-        <Route path='/albums' element={<div>My Albums</div>} />
-      </Routes> */}
     </div>
   );
 }

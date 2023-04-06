@@ -45,7 +45,7 @@ const Login = () => {
   const onInputChange = (event) => {
     const { name, value } = event.target;
     const { isErrorEmail, isErrorPsw, isErrorResponse } = errorMsg;
-    console.log(name, value);
+
     if (isErrorResponse) {
       setErrorMsg((prev) => ({
         ...prev,
@@ -86,19 +86,14 @@ const Login = () => {
 
     try {
       const response = await loginUser(email, password);
-      // console.log(response);
 
       if (response.success) {
-        console.log(response.result);
-
         const userCredentials = await response.result;
         localStorage.setItem('user', JSON.stringify(userCredentials));
 
         navigate('/albums');
       }
     } catch (error) {
-      console.log(error);
-
       if (error.status === 400) {
         setErrorMsg((prev) => ({
           ...prev,
