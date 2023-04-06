@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/CM-memory-seller/static/css/main.780f9e82.css",
-    "main.js": "/CM-memory-seller/static/js/main.0576d34e.js",
+    "main.css": "/CM-memory-seller/static/css/main.26d153c0.css",
+    "main.js": "/CM-memory-seller/static/js/main.9fea12de.js",
     "static/media/photo-10.webp": "/CM-memory-seller/static/media/photo-10.6e7485d417e139f7aa53.webp",
     "static/media/photo-7.webp": "/CM-memory-seller/static/media/photo-7.ddccb4069cd8ed1bd9ea.webp",
     "static/media/photo-13.webp": "/CM-memory-seller/static/media/photo-13.1952b41b9d04f462f290.webp",
@@ -21,11 +21,11 @@
     "index.html": "/CM-memory-seller/index.html",
     "static/media/eye.svg": "/CM-memory-seller/static/media/eye.e7cda6399a3bd7036b612ef4083abcad.svg",
     "static/media/x1.svg": "/CM-memory-seller/static/media/x1.83af43c5ad2451fc6cbcb8abd0ede7c5.svg",
-    "main.780f9e82.css.map": "/CM-memory-seller/static/css/main.780f9e82.css.map",
-    "main.0576d34e.js.map": "/CM-memory-seller/static/js/main.0576d34e.js.map"
+    "main.26d153c0.css.map": "/CM-memory-seller/static/css/main.26d153c0.css.map",
+    "main.9fea12de.js.map": "/CM-memory-seller/static/js/main.9fea12de.js.map"
   },
   "entrypoints": [
-    "static/css/main.780f9e82.css",
-    "static/js/main.0576d34e.js"
+    "static/css/main.26d153c0.css",
+    "static/js/main.9fea12de.js"
   ]
 }
