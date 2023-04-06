@@ -11,7 +11,7 @@ import Home from './pages/Home/Home';
 
 function App() {
   const location = useLocation();
-  console.log(location);
+  // console.log(location);
   const transitions = useTransition(location, {
     from: {
       opacity: 0,
