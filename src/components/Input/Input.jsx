@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import hidePass from '../../components/assets/img/IconHidePass.svg';
-import showPass from '../../components/assets/img/IconShowPass.svg';
+import hidePass from 'assets/img/IconHidePass.svg';
+import showPass from 'assets/img/IconShowPass.svg';
 import './Input.css';
 
 export const Input = ({

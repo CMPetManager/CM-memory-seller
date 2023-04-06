@@ -1,10 +1,9 @@
 import './ResetPassword.css';
-import closeWindow from '../../assets/img/IconCloseWindow.svg';
+import closeWindow from 'assets/img/IconCloseWindow.svg';
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { Button } from '../../Button/Button';
-import { Input } from '../../Input/Input';
-
+import { Button } from 'components/Button/Button';
+import { Input } from 'components/Input/Input';
 const ResetPassword = () => {
   const navigate = useNavigate();
   const {
