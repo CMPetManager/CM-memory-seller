@@ -94,7 +94,7 @@ const Login = () => {
         const userCredentials = await response.result;
         localStorage.setItem('user', JSON.stringify(userCredentials));
 
-        navigate('../albums');
+        navigate('/albums');
       }
     } catch (error) {
       console.log(error);
@@ -200,12 +200,12 @@ const Login = () => {
           >
             Continue
           </button>
-          <Link to={'../forgot-password'} className='forgot-link'>
+          <Link to={'/forgot-password'} className='forgot-link'>
             Forgot your password?
           </Link>
           <p className='form__register-text'>
             Don't have an account yet?
-            <Link to={'../registration'} className='register-link'>
+            <Link to={'/registration'} className='register-link'>
               Register
             </Link>
           </p>
