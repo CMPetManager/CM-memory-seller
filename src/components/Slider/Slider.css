@@ -5,8 +5,8 @@ body {
 
 .slider {
   position: relative;
-  height: 524px;
-  margin-top: 55px;
+  height: 57vh;
+  margin-top: 6vh;
   overflow: hidden;
 }
 .slider__container{
@@ -25,7 +25,11 @@ body {
 
 .slider__section {
   position: relative;
+  /* min-width: 100vh; додала відображення слайдеру в межах екрану */
 }
+/* .scroll-content > .item::before {
+  height: 100%;
+} */
 .slider__photo-1 {
   position: absolute;
   margin-left: 3%;

@@ -1,13 +1,17 @@
 body {
     background-color: #6F6D6D;
 }
-section {
-    margin: 0 auto;
-    padding: 0 100px;
-}
 
 .home {
     position: relative;
+    height: 100hv;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper {
+    height: 100hv;
+    background: #423c40;
 }
 
 .home__background-text_first, .home__background-text_second {
@@ -15,42 +19,43 @@ section {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 200px;
-    line-height: 242px;
+    font-size: 20.833vh;
     color: #EBEAE8;
     opacity: 0.05;
 }
 .home__background-text_first{
-    width: 926px;
-    height: 242px;
-    left: 36px;
-    top: -38px;
+    left: 2.344vw;
+    top: -3.96vh;
 }
 .home__background-text_second {
-    width: 931px;
-    height: 240px;
-    left: 350px;
-    top: 600px;
+    left: 22.786vw;
+    top: 63.5vh;
 }
 
 /* -------------Discription------------- */
-.discription {
-    margin-top: 54px;
+main {
+    height: 30vh;
 }
+.discription {
+    /* min-height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    padding: 5.625vh 6.51vw 10vh;
+}
+
 h1.discription__title {
     font-family: 'Libre Caslon Display';
     text-transform: uppercase;
     font-style: normal;
     font-weight: 400;
-    font-size: 64px;
+    font-size: 6.66vh;
     line-height: 120%;
     color: #D7D6D3;
 }
 
 p.discription__content  {
-    margin-top: 10px;
+    margin-top: 0.625rem;
     font-weight: 400;
-    font-size: 20px;
-    line-height: 25.08px;
+    font-size: 2.083vh;
     color: #D7D6D3;
 }
