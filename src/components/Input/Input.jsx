@@ -11,7 +11,7 @@ export const Input = ({
   errors,
   visibleIcon,
   name,
-  textError,
+  required,
 }) => {
   const [visiblePass, setViseblePass] = useState(false);
   const [password, setIsPassword] = useState(type);
@@ -31,7 +31,7 @@ export const Input = ({
         <></>
       )}
       <input
-        {...register(name, { required: `${textError}` })}
+        {...register(name, required)}
         type={password}
         placeholder={placeholder}
         className='input'
