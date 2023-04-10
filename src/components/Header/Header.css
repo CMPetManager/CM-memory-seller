@@ -18,15 +18,16 @@
   display: flex;
 }
 .header__buttons_login {
-  width: 98px;
-  height: 42px;
-  line-height: 42px;
+  width: 6.38vw;
+  height: 4.375vh;
+  line-height: 4.375vh;
   text-align: center;
-  margin-right: 18px;
+  margin-right: 1.18vw;
   }
 .header__buttons_registration {
-  width: 168px;
-  height: 42px;
-  line-height: 42px;
+  min-width: 10.94vw;
+  height: 4.375vh;
+  line-height: 4.375vh;
   text-align: center;
+  padding: 0 2vw;
 }

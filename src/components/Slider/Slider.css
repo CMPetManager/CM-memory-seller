@@ -10,7 +10,7 @@ body {
   overflow: hidden;
 }
 .slider__container{
-  width: 2485px; /* на скільки довго прокручується контейнер */
+  width: 161.78vw; /* на скільки довго прокручується контейнер */
   height: inherit;
   /* overflow-x: auto;  Додала горизонтальну прокрутку */
   overflow: hidden;
@@ -28,17 +28,19 @@ body {
   min-width: 100vh; /* додала відображення слайдеру в межах екрану */
 }
 /* .scroll-content > .item::before {
+  content: '';
+  display: inline-block;
   height: 100%;
-} */
+}*/
 .slider__photo-1 {
   position: absolute;
   margin-left: 3%;
   left: 0px;
-  top: 75px;
+  top: 7.8vh;
   z-index: 1;
 }
 .slider__photo-1 > img {
-  width: 14vw;
+  width: 23vh;
   height: 36vh;
   object-fit: cover;
 }
@@ -46,7 +48,7 @@ body {
 .slider__photo-2 {
   position: absolute;
   margin-left: 2.5%;
-  left: 75px;
+  left: 7.8vw;
   top: 0px;
   z-index: 0;
 }
@@ -130,7 +132,7 @@ body {
   z-index: 9;
 }
 .slider__photo-8 > img {
-  width: 16.15vw;
+  width: 15vw;
   height: 23vh;
   object-fit: cover;
   object-position: 0 10%;
