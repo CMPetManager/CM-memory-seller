@@ -25,7 +25,7 @@ body {
 
 .slider__section {
   position: relative;
-  /* min-width: 100vh; додала відображення слайдеру в межах екрану */
+  min-width: 100vh; /* додала відображення слайдеру в межах екрану */
 }
 /* .scroll-content > .item::before {
   height: 100%;
@@ -38,8 +38,8 @@ body {
   z-index: 1;
 }
 .slider__photo-1 > img {
-  width: 222px;
-  height: 348px;
+  width: 14vw;
+  height: 36vh;
   object-fit: cover;
 }
 
@@ -48,77 +48,76 @@ body {
   margin-left: 2.5%;
   left: 75px;
   top: 0px;
-  z-index: -3;
+  z-index: 0;
 }
 .slider__photo-2 > img {
-  width: 384px;
-  height: 524px;
+  width: 25vw;
+  height: 54.583vh;
   object-fit: cover;
 }
 
 .slider__photo-3 {
   position: absolute;
   margin-left: 2.5%;
-  left: 417px;
-  top: 13px;
+  left: 27.15vw;
+  top: 2vh;
   z-index: 5;
 }
 .slider__photo-3 > img {
   object-fit: cover;
-  width: 302px;
-  height: 210px;
+  width: 20vw;
+  height: 22vh;
 }
 
 .slider__photo-4 {
   position: absolute;
   margin-left: 5%;
-  left: 381px;
-  top: 353px;
+  left: 24.8vw;
+  top: 33.77vh;
   z-index: 4;
 }
 .slider__photo-4 > img {
-  width: 259px;
-  height: 156px;
+  width: 16.86vw;
+  height: 16.25vh;
   object-fit: cover;
-
 }
 .slider__photo-5 {
   position: absolute;
   margin-left: 2%;
-  left: 554px;
-  top: 150px;
+  left: 36vw;
+  top: 17vh;
   z-index: -4;
 }
 .slider__photo-5 > img {
   object-fit: cover;
   object-position: 0 0;
-  width: 405px;
-  height: 344px;
+  width: 25vw;
+  height: 35.83vh;
 }
 
 .slider__photo-6 {
   position: absolute;
-  left: 756px;
-  top: 65px;
+  left: 49vw;
+  top: 66px;
   z-index: 7;
 }
 .slider__photo-6 > img {
   object-fit: cover;
   object-position: 0 20;
-  width: 335px;
-  height: 358px;
+  width: 21.8vw;
+  height: 37.3vh;
 }
 
 .slider__photo-7 {
   position: absolute;
   margin-left: -2%;
-  left: 1006px;
+  left: 65vw;
   top: 0px;
   z-index: 6;
 }
 .slider__photo-7 > img {
-  width: 269px;
-  height: 278px;
+  width: 17.513vw;
+  height: 29vh;
   object-fit: cover;
   object-position: 0 85%;
 }
@@ -126,13 +125,13 @@ body {
 .slider__photo-8 {
   position: absolute;
   margin-left: -2%;
-  left: 1100px;
-  top: 303px;
+  left: 72vw;
+  top: 31.56vh;
   z-index: 9;
 }
 .slider__photo-8 > img {
-  width: 248px;
-  height: 221px;
+  width: 16.15vw;
+  height: 23vh;
   object-fit: cover;
   object-position: 0 10%;
 }
@@ -140,13 +139,13 @@ body {
 .slider__photo-9 {
   position: absolute;
   margin-left: -4%;
-  left: 1312px;
-  top: 0px;
+  left: 85.4vw;
+  top: 0;
   z-index: 8;
 }
 .slider__photo-9 > img {
-  width: 384px;
-  height: 494px;
+  width: 25vw;
+  height: 51.46vh;
   object-fit: cover;
   object-position: 0 50%;
 }
@@ -154,77 +153,77 @@ body {
 .slider__photo-10 {
   position: absolute;
   margin-left: -6%;
-  left: 1591px;
-  top: 49px;
+  left: 103.58vw;
+  top: 5vh;
   z-index: 10;
 }
 .slider__photo-10 > img {
-  width: 267px;
-  height: 283px;
+  width: 17.38vw;
+  height: 30vh;
   object-fit: cover;
 }
 
 .slider__photo-11 {
   position: absolute;
   margin-left: -6%;
-  left: 1784px;
+  left: 116.15vw;
   top: 0px;
   z-index: 12;
 }
 .slider__photo-11 > img {
-  width: 400px;
-  height: 196px;
+  width: 26vw;
+  height: 20.42vh;
   object-fit: cover;
   object-position: 0 20%;
 }
 .slider__photo-12 {
   position: absolute;
   margin-left: -8%;
-  left: 1725px;
-  top: 353px;
+  left: 112.3vw;
+  top: 36.77vh;
   z-index: 13;
 }
 .slider__photo-12 > img {
-  width: 325px;
-  height: 171px;
+  width: 21.16vw;
+  height: 17.81vh;
   object-fit: cover;
   object-position: 0 50%;
 }
 .slider__photo-13 {
   position: absolute;
   margin-left: -10%;
-  left: 1989px;
-  top: 95px;
+  left: 129.5vw;
+  top: 9.9vh;
   z-index: 11;
 }
 .slider__photo-13 > img {
-  width: 384px;
-  height: 429px;
+  width: 25vw;
+  height: 44.7vh;
   object-fit: cover;
   object-position: 0 50%;
 }
 .slider__photo-14 {
   position: absolute;
   margin-left: -10%;
-  left: 2322px;
+  left: 151.17vw;
   top: 0px;
   z-index: 14;
 }
 .slider__photo-14 > img {
-  width: 248px;
-  height: 221px;
+  width: 16.15vw;
+  height: 23vh;
   object-fit: cover;
 }
 .slider__photo-15 {
   position: absolute;
   margin-left: -10%;
-  left: 2308px;
-  top: 284px;
+  left: 150.26vw;
+  top: 30vh;
   z-index: 15;
 }
 .slider__photo-15 > img {
-  width: 302px;
-  height: 210px;
+  width: 19.66vw;
+  height: 21.875vh;
   object-fit: cover;
 }
 
