@@ -37,13 +37,11 @@ export const Input = ({
         className='input'
       />
       {!errors ? (
-        <label className='' htmlFor=''>
-          {label}
-        </label>
+        <p className=''>{label}</p>
       ) : (
-        <label className='input__label__error' htmlFor=''>
+        <p className='input__label__error' htmlFor=''>
           {errors}
-        </label>
+        </p>
       )}
     </div>
   );
