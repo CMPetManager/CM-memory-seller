@@ -113,7 +113,7 @@ const Login = () => {
   return (
     <div className='login__wrap'>
       <div className='login__container'>
-        <Link to={'..'} className='login__close'>
+        <Link to={'/'} className='login__close'>
           <img src={imgX} alt='close button' className='login__close-icon' />
         </Link>
         <div className='login__head-wrap'>
