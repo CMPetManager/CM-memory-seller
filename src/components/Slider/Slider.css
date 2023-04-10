@@ -10,7 +10,7 @@ body {
   overflow: hidden;
 }
 .slider__container{
-  width: 161.78vw; /* на скільки довго прокручується контейнер */
+  width: 258vh; /* на скільки довго прокручується контейнер */
   height: inherit;
   /* overflow-x: auto;  Додала горизонтальну прокрутку */
   overflow: hidden;
@@ -34,8 +34,8 @@ body {
 }*/
 .slider__photo-1 {
   position: absolute;
-  margin-left: 3%;
-  left: 0px;
+  margin-left: 2.5%;
+  left: 0;
   top: 7.8vh;
   z-index: 1;
 }
@@ -48,7 +48,7 @@ body {
 .slider__photo-2 {
   position: absolute;
   margin-left: 2.5%;
-  left: 7.8vw;
+  left: 5vh;
   top: 0px;
   z-index: 0;
 }
@@ -61,7 +61,7 @@ body {
 .slider__photo-3 {
   position: absolute;
   margin-left: 2.5%;
-  left: 27.15vw;
+  left: 41vh;
   top: 2vh;
   z-index: 5;
 }
@@ -74,8 +74,8 @@ body {
 .slider__photo-4 {
   position: absolute;
   margin-left: 5%;
-  left: 24.8vw;
-  top: 33.77vh;
+  left: 35vh;
+  top: 36vh;
   z-index: 4;
 }
 .slider__photo-4 > img {
@@ -86,7 +86,7 @@ body {
 .slider__photo-5 {
   position: absolute;
   margin-left: 2%;
-  left: 36vw;
+  left: 55vh;
   top: 17vh;
   z-index: -4;
 }
@@ -99,8 +99,8 @@ body {
 
 .slider__photo-6 {
   position: absolute;
-  left: 49vw;
-  top: 66px;
+  left: 78vh;
+  top: 70px;
   z-index: 7;
 }
 .slider__photo-6 > img {
@@ -113,7 +113,7 @@ body {
 .slider__photo-7 {
   position: absolute;
   margin-left: -2%;
-  left: 65vw;
+  left: 104vh;
   top: 0px;
   z-index: 6;
 }
@@ -127,8 +127,8 @@ body {
 .slider__photo-8 {
   position: absolute;
   margin-left: -2%;
-  left: 72vw;
-  top: 31.56vh;
+  left: 113vh;
+  top: 31.6vh;
   z-index: 9;
 }
 .slider__photo-8 > img {
@@ -141,7 +141,7 @@ body {
 .slider__photo-9 {
   position: absolute;
   margin-left: -4%;
-  left: 85.4vw;
+  left: 136.7vh;
   top: 0;
   z-index: 8;
 }
@@ -155,7 +155,7 @@ body {
 .slider__photo-10 {
   position: absolute;
   margin-left: -6%;
-  left: 103.58vw;
+  left: 173vh;
   top: 5vh;
   z-index: 10;
 }
@@ -168,7 +168,7 @@ body {
 .slider__photo-11 {
   position: absolute;
   margin-left: -6%;
-  left: 116.15vw;
+  left: 186vh;
   top: 0px;
   z-index: 12;
 }
@@ -181,7 +181,7 @@ body {
 .slider__photo-12 {
   position: absolute;
   margin-left: -8%;
-  left: 112.3vw;
+  left: 180vh;
   top: 36.77vh;
   z-index: 13;
 }
@@ -194,7 +194,7 @@ body {
 .slider__photo-13 {
   position: absolute;
   margin-left: -10%;
-  left: 129.5vw;
+  left: 207.2vh;
   top: 9.9vh;
   z-index: 11;
 }
@@ -207,7 +207,7 @@ body {
 .slider__photo-14 {
   position: absolute;
   margin-left: -10%;
-  left: 151.17vw;
+  left: 242vh;
   top: 0px;
   z-index: 14;
 }
@@ -219,7 +219,7 @@ body {
 .slider__photo-15 {
   position: absolute;
   margin-left: -10%;
-  left: 150.26vw;
+  left: 240.5vh;
   top: 30vh;
   z-index: 15;
 }
