@@ -116,19 +116,30 @@ const Login = () => {
         <Link to={'/'} className='login__close'>
           <img src={imgX} alt='close button' className='login__close-icon' />
         </Link>
-        <div className='login__head-wrap'>
+        <div
+          className='login__head-wrap'
+          style={
+            errorMsg.isErrorResponse
+              ? { marginBottom: '1rem' }
+              : { marginBottom: '2rem' }
+          }
+        >
           <h2 className='login__title'>Welcome</h2>
-          <p
-            className={
-              errorMsg.isErrorResponse
-                ? 'error-message error-message_show'
-                : 'error-message'
-            }
-          >
-            Either Email or Password that you entered were incorrect
-          </p>
+          {errorMsg.isErrorResponse && (
+            <p className='error-message'>
+              Either Email or Password that you entered were incorrect
+            </p>
+          )}
         </div>
-        <form className='login__form form' onSubmit={onSubmit}>
+        <form
+          className='login__form form'
+          onSubmit={onSubmit}
+          style={
+            errorMsg.isErrorEmail || errorMsg.isErrorPsw
+              ? { gap: '1.5rem' }
+              : { gap: '2rem' }
+          }
+        >
           <fieldset className='form__input-wrap'>
             <input
               type='email'
@@ -140,15 +151,9 @@ const Login = () => {
               autoFocus
               required
             />
-            <p
-              className={
-                errorMsg.isErrorEmail
-                  ? 'error-message error-message_show'
-                  : 'error-message'
-              }
-            >
-              Please enter your Email
-            </p>
+            {errorMsg.isErrorEmail && (
+              <p className='error-message'>Please enter your Email</p>
+            )}
           </fieldset>
           <fieldset className='form__input-wrap'>
             <label className='form__password-label'>
@@ -168,15 +173,9 @@ const Login = () => {
                 alt='eye icon'
               />
             </label>
-            <p
-              className={
-                errorMsg.isErrorPsw
-                  ? 'error-message error-message_show'
-                  : 'error-message'
-              }
-            >
-              Please enter your Password
-            </p>
+            {errorMsg.isErrorPsw && (
+              <p className='error-message'>Please enter your Password</p>
+            )}
           </fieldset>
           <label className='form__label'>
             <input
@@ -195,16 +194,16 @@ const Login = () => {
           >
             Continue
           </button>
-          <Link to={'/forgot-password'} className='forgot-link'>
-            Forgot your password?
-          </Link>
-          <p className='form__register-text'>
-            Don't have an account yet?
-            <Link to={'/registration'} className='register-link'>
-              Register
-            </Link>
-          </p>
         </form>
+        <Link to={'/forgot-password'} className='forgot-link'>
+          Forgot your password?
+        </Link>
+        <p className='form__register-text'>
+          Don't have an account yet?
+          <Link to={'/registration'} className='register-link'>
+            Register
+          </Link>
+        </p>
       </div>
     </div>
   );
