@@ -1,6 +1,7 @@
 .wraper {
   min-height: 100vh;
   min-width: 100vh;
+  height: 60rem;
   display: flex;
   flex-direction: column;
   background-color: rgba(0, 0, 0, 0.5);
@@ -17,22 +18,24 @@
   position:relative;
   top: 9.37rem;
   flex: 1 1 auto;
-  max-width: 546px;
-  max-height: 715px;
-  width: 546px;
-  height: 715px;
+  max-width: 35rem;
+  max-height: 45rem;
+  width: 35rem;
+  height:45rem;
   background: #424141;
   display: flex;
   flex-direction: column;
+  font-size: 1rem;
   z-index: 50;
+  
 }
 
 .registration-form__exit {
   position: absolute;
-  top: 38px;
-  left: 496px;
-  height: 22px;
-  width: 22px;
+  top: 2.11rem;
+  left: 30rem;
+  height: 1.22rem;
+  width: 1.22rem;
   background: url(../../../assets/icons/x1.svg) no-repeat right center;
   margin: 0;
   padding: 0;
@@ -57,12 +60,11 @@
 
 .registration-form__email-already-exists {
   position: absolute;
-  top: 112px;
-  left: 77px;
+  top: 6.23rem;
+  left: 4.28rem;
   font-family: "Marcellus";
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
   line-height: 20px;
   text-align: center;
   color: #e86666;
@@ -79,40 +81,40 @@
   font-family: "Marcellus";
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
   line-height: 20px;
   padding-left: 22px;
   padding-right: 50px;
   outline: none;
+  width: 28rem;
+  height: 3.57rem;
 }
 
 .input_form::placeholder {
   font-family: "Marcellus";
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
   line-height: 20px;
   color: #ffffff;
   opacity: 0.7;
+  font-size: 1rem;
+}
+.input_form, textarea{
+  font-size: 1.1rem;
 }
 
 .input__user-name {
-  width: 448px;
-  height: 57px;
   margin-left: 49px;
-  top: 138px;
+  top: 8.63rem;
 }
 
 .input__email {
-  width: 448px;
-  height: 57px;
   margin-left: 49px;
-  top: 231px;
+  top: 14.44rem;
 }
 .input__password_eye-off {
   position: absolute;
-  top: 344px;
-  left: 455px;
+  top: 21.5rem;
+  left: 28.44rem;
   height: 22px;
   width: 22px;
   border: none;
@@ -124,31 +126,29 @@
 }
 
 .input__password {
-  width: 448px;
-  height: 57px;
   margin-left: 49px;
-  top: 324px;
+  top: 20.25rem;
 }
 
 .input__text {
   position: absolute;
   margin-left: 48px;
-  top: 389px;
+  top: 24.31rem;
   font-family: "Marcellus";
   font-style: normal;
   font-weight: 400;
-  font-size: 12px;
   line-height: 15px;
   color: #ffffff;
   opacity: 0.8;
 }
 
+
 .input__confirm-btn {
   position: absolute;
-  top: 457px;
-  left: 49px;
-  width: 448px;
-  height: 48px;
+  top: 28.57rem;
+  left: 3.07rem;
+  width: 28rem;
+  height: 3rem;
   background-color: #fbdba3;
   opacity: 0.8;
   border: 1px solid #fbdba3;
@@ -170,19 +170,18 @@
   font-family: "Marcellus";
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 30px;
   color: #000000;
 }
 
 .confirm__text-log {
   position: absolute;
-  margin-left: 176px;
-  top: 529px;
+  margin-left: 11rem;
+  top: 33.06rem;
   font-family: "Marcellus";
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
   line-height: 20px;
   color: #ffffff;
 }
@@ -194,12 +193,11 @@
 .body__warning-footer {
   position: absolute;
   margin-left: 65px;
-  top: 637px;
-  max-width: 415px;
+  top: 39.81rem;
+  max-width: 25.94rem;
   font-family: "Marcellus";
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
   line-height: 20px;
   text-align: center;
   color: #ffffff;
@@ -212,16 +210,15 @@
   font-family: "Marcellus";
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
   line-height: 20px;
   color: #e86666;
 }
 .empty-name {
-  top: 203px;
+  top: 12.69rem;
 }
 .empty-email {
-  top: 296px;
+  top: 18.5rem;
 }
 .empty-password {
-  top: 389px;
+  top: 24.31rem;
 }
