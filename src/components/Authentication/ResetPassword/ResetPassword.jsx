@@ -6,8 +6,16 @@ import { Button } from 'components/Button/Button';
 import { Input } from 'components/Input/Input';
 import { useState } from 'react';
 import { FormError } from 'components/FormError/FormError';
+import { clsx } from 'clsx';
+
+import { ReactComponent as HidePass } from 'assets/img/IconHidePass.svg';
+import { ReactComponent as ShowPass } from 'assets/img/IconShowPass.svg';
 const ResetPassword = () => {
   const [error, setError] = useState(true);
+  const [isPassword, setIsPassword] = useState({
+    password: true,
+    confirmpassword: true,
+  });
   const navigate = useNavigate();
   const {
     register,
@@ -27,9 +35,32 @@ const ResetPassword = () => {
   const InputPassValidate = (value) => {
     if (value.length < 6 || value.length > 25) {
       return 'Must be between 6 and 25 characters long.';
-    } else if (getValues('confirmpassword') != getValues('password')) {
+    } else if (getValues('confirmpassword') !== getValues('password')) {
       return 'Password mismatch';
     }
+  };
+  const ChooseImage = (data) => {
+    return isPassword[data] ? (
+      <HidePass
+        className='image_eye'
+        onClick={() =>
+          setIsPassword((prev) => ({
+            ...prev,
+            [data]: !isPassword[data],
+          }))
+        }
+      />
+    ) : (
+      <ShowPass
+        className='image_eye'
+        onClick={() =>
+          setIsPassword((prev) => ({
+            ...prev,
+            [data]: !isPassword[data],
+          }))
+        }
+      />
+    );
   };
 
   return error ? (
@@ -47,14 +78,7 @@ const ResetPassword = () => {
         </div>
         <form className='resetPassword__form' onSubmit={handleSubmit(onSubmit)}>
           <Input
-            label=' '
-            register={register}
-            placeholder='Enter your new password'
-            type='password'
-            visibleIcon={true}
-            name='password'
-            errors={errors.password?.message}
-            required={{
+            {...register('password', {
               required: true,
               minLength: {
                 value: 6,
@@ -64,29 +88,32 @@ const ResetPassword = () => {
                 value: 25,
                 message: 'Must be between 6 and 25 characters long.',
               },
-            }}
+            })}
+            placeholder='Enter your new password'
+            type={isPassword.password ? 'password' : 'text'}
+            icon={ChooseImage('password')}
+            errors={errors.password?.message}
           />
           <Input
-            label=' '
-            register={register}
+            icon={ChooseImage('confirmpassword')}
             placeholder='Confirm your new password'
-            type='password'
-            visibleIcon={true}
-            name='confirmpassword'
+            type={isPassword.confirmpassword ? 'password' : 'text'}
             errors={errors.confirmpassword?.message}
-            required={{
+            {...register('confirmpassword', {
               validate: InputPassValidate,
-            }}
+            })}
           />
+
           <Button
             titleButton='Change Password'
-            className={
+            className={clsx(
+              'submitBtn',
               Object.keys(errors).length === 0 &&
-              getValues('confirmpassword') &&
-              getValues('password')
-                ? 'submitBtnSuccess'
-                : 'submitBtn'
-            }
+                getValues('confirmpassword') &&
+                getValues('password')
+                ? 'submitBtnActive'
+                : 'submitBtnPassive'
+            )}
           />
         </form>
       </div>
