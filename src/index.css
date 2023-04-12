@@ -53,10 +53,10 @@ p {
   background: #FBDBA3;
   opacity: 0.8;
   border: 1px solid #000000;
-  border-radius: 15px;
+  border-radius: 1.5625vh;
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 2.5vh;
   line-height: 1.25;
   color: #000000;
   cursor: pointer;
@@ -71,7 +71,7 @@ p {
 }
 
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
+input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
   border: 1px solid #FBDBA3;
   -webkit-text-fill-color: #FFFFFF;

@@ -114,7 +114,7 @@ function MyLocomotiveScroll() {
             <div
               className='slider__photo-10 item'
               data-scroll
-              data-scroll-speed='3'
+              data-scroll-speed='1.2'
             >
               <img src={photo_10} alt='woman negative' />
             </div>
