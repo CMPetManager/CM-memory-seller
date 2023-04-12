@@ -49,7 +49,7 @@ body {
   position: absolute;
   margin-left: 2.5%;
   left: 5vh;
-  top: 0px;
+  top: 0;
   z-index: 0;
 }
 .slider__photo-2 > img {
@@ -100,7 +100,7 @@ body {
 .slider__photo-6 {
   position: absolute;
   left: 78vh;
-  top: 70px;
+  top: 7.3vh;
   z-index: 7;
 }
 .slider__photo-6 > img {
@@ -114,7 +114,7 @@ body {
   position: absolute;
   margin-left: -2%;
   left: 104vh;
-  top: 0px;
+  top: 0;
   z-index: 6;
 }
 .slider__photo-7 > img {
@@ -169,7 +169,7 @@ body {
   position: absolute;
   margin-left: -6%;
   left: 186vh;
-  top: 0px;
+  top: 0;
   z-index: 12;
 }
 .slider__photo-11 > img {
@@ -208,7 +208,7 @@ body {
   position: absolute;
   margin-left: -10%;
   left: 242vh;
-  top: 0px;
+  top: 0;
   z-index: 14;
 }
 .slider__photo-14 > img {

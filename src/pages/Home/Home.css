@@ -4,13 +4,13 @@ body {
 
 .home {
     position: relative;
-    height: 100hv;
+    height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
 .wrapper {
-    height: 100hv;
+    height: 100vh;
     background: #6F6D6D;
 }
 
@@ -37,7 +37,6 @@ main {
     height: 30vh;
 }
 .discription {
-    /* min-height: 100vh; */
     display: flex;
     flex-direction: column;
     padding: 5.625vh 6.51vw 10vh;
