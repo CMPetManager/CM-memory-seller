@@ -18,7 +18,7 @@ const Login = () => {
   const [errorMsg, setErrorMsg] = useState({
     isErrorEmail: false,
     isErrorPsw: false,
-    isErrorResponse: false,
+    isErrorResponse: '',
   });
 
   const [isChecked, setIsChecked] = useState(false);
@@ -49,7 +49,7 @@ const Login = () => {
     if (isErrorResponse) {
       setErrorMsg((prev) => ({
         ...prev,
-        isErrorResponse: false,
+        isErrorResponse: '',
       }));
     }
     setForm((prev) => ({ ...prev, [name]: value }));
@@ -97,16 +97,19 @@ const Login = () => {
       if (error.status === 400) {
         setErrorMsg((prev) => ({
           ...prev,
-          isErrorResponse: true,
+          isErrorResponse:
+            'Either Email or Password that you entered were incorrect',
         }));
-
-        setForm({
-          email: '',
-          password: '',
-        });
       } else {
-        console.log(error.message);
+        setErrorMsg((prev) => ({
+          ...prev,
+          isErrorResponse: error.message,
+        }));
       }
+      setForm({
+        email: '',
+        password: '',
+      });
     }
   };
 
@@ -126,9 +129,7 @@ const Login = () => {
         >
           <h2 className='login__title'>Welcome</h2>
           {errorMsg.isErrorResponse && (
-            <p className='error-message'>
-              Either Email or Password that you entered were incorrect
-            </p>
+            <p className='error-message'>{errorMsg.isErrorResponse}</p>
           )}
         </div>
         <form
