@@ -10,6 +10,7 @@
   grid-template-columns: minmax(auto, 34.125rem);
   grid-template-rows: minmax(auto, 41.1875rem);
   backdrop-filter: blur(12.5px);
+  z-index: 1000;
 }
 
 .login__container {
@@ -81,7 +82,7 @@
   max-height: 3.625rem;
   opacity: 0.7;
   border: 1px solid #FBDBA3;
-  border-radius: 0.9375rem;
+  border-radius: 15px;
   background-color: transparent;
   padding: 4%;
   color: #FFFFFF;
@@ -146,7 +147,7 @@
   border: 1px solid #97876B;
   text-align: center;
   opacity: 0.5;
-  border-radius: 0.3125rem;
+  border-radius: 5px;
   background-color: #424141;
   appearance: none;
   color: #ffffff;
