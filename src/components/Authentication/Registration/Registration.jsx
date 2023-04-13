@@ -6,29 +6,26 @@ import eyeOff from '../../../assets/icons/eye_crossed.svg';
 import eyeOpen from '../../../assets/icons/eye.svg';
 
 const Registration = (props) => {
-  // состояние, которое по умолчанию  есть пустой строкой
   const [nameInput, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  // отправка формы, но куда ее отправлять?
 
-  // состояние в котором значится нахождение юзера в инпуте
   const [nameDirty, setNameDirty] = useState(false);
   const [emailDirty, setEmailDirty] = useState(false);
-  const [passwordDirty, setPasswordDirty] = useState(false);
-  // отображение пароля
+
   const [passwordShown, setPasswordShown] = useState(false);
+
   const togglePassword = () => {
     setPasswordShown(!passwordShown);
   };
-  // ошибка если инпут пустой
+
   const [nameEmptyError, setNameEmptyError] = useState(
     'Please enter your Name'
   );
   const [emailEmptyError, setEmailEmptyError] = useState(
     'Please enter your Email'
   );
-  // ошибка: не соответствует критериям
+
   const nameHandler = (e) => {
     setName(e.target.value);
     if (e.target.value.length < 1 || e.target.value.length > 25) {
@@ -56,11 +53,7 @@ const Registration = (props) => {
       case 'email':
         setEmailDirty(true);
         break;
-      case 'password':
-        setPasswordDirty(true);
-        break;
     }
-    // no default
   };
   const submissionForm = () => {
     console.log(nameInput, email, password);
@@ -68,20 +61,15 @@ const Registration = (props) => {
 
   return (
     <div className='wraper'>
-      {' '}
       <div className='registration-form'>
         <div className='registration-form__body'>
           <div>
-            {' '}
             <Link to='../'>
               <div className='registration-form__exit'></div>
             </Link>
           </div>
           <h1 className='registration-form__title'>Welcome</h1>
-          <div className='registration-form__email-already-exists'>
-            {/* <p>This email already exists. <Link to={}> Click here to reset password</Link></p> */}
-          </div>
-
+          <div className='registration-form__email-already-exists'></div>
           <div className='registration-form__input '>
             <div>
               <input
@@ -123,7 +111,6 @@ const Registration = (props) => {
             </div>
             <div>
               <input
-                onBlur={blurHandler}
                 name='password'
                 className='input__password input_form'
                 type={passwordShown ? 'text' : 'password'}
@@ -134,8 +121,7 @@ const Registration = (props) => {
                 }}
               />
               <div className='input__text-error empty-password'></div>
-
-              {passwordDirty ? (
+              {password.length === ' ' ? (
                 <div className='input__text-error empty-password'>
                   {'Please enter your Password'}
                 </div>

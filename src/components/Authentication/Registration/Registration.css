@@ -1,33 +1,36 @@
 .wraper {
-  min-height: 100vh;
-  min-width: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 60rem;
   display: flex;
   flex-direction: column;
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(7px);
+  align-content: center;
+  justify-content: center;
+  z-index: 10000;
 }
+
 .registration-form {
   display: flex;
   align-items: center;
   justify-content: center;
-  position:relative;
+  position: relative;
 }
 
 .registration-form__body {
-  position:relative;
-  top: 9.37rem;
+  position: relative;
   flex: 1 1 auto;
   max-width: 35rem;
   max-height: 45rem;
   width: 35rem;
-  height:45rem;
+  height: 45rem;
   background: #424141;
   display: flex;
   flex-direction: column;
   font-size: 1rem;
-  z-index: 50;
-  
 }
 
 .registration-form__exit {
@@ -98,7 +101,8 @@
   opacity: 0.7;
   font-size: 1rem;
 }
-.input_form, textarea{
+.input_form,
+textarea {
   font-size: 1.1rem;
 }
 
@@ -141,7 +145,6 @@
   color: #ffffff;
   opacity: 0.8;
 }
-
 
 .input__confirm-btn {
   position: absolute;
