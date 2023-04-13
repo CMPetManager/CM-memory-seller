@@ -2,8 +2,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Registration.css';
-import eyeOff from '../../../assets/icons/eye_crossed.svg';
-import eyeOpen from '../../../assets/icons/eye.svg';
+import eyeOff from 'assets/icons/eye_crossed.svg';
+import eyeOpen from 'assets/icons/eye.svg';
 
 const Registration = (props) => {
   const [nameInput, setName] = useState('');
@@ -12,9 +12,9 @@ const Registration = (props) => {
 
   const [nameDirty, setNameDirty] = useState(false);
   const [emailDirty, setEmailDirty] = useState(false);
+  const [passwordDirty, setPasswordDirty] = useState(false);
 
   const [passwordShown, setPasswordShown] = useState(false);
-
   const togglePassword = () => {
     setPasswordShown(!passwordShown);
   };
@@ -53,6 +53,9 @@ const Registration = (props) => {
       case 'email':
         setEmailDirty(true);
         break;
+      case 'password':
+        setPasswordDirty(true);
+        break;
     }
   };
   const submissionForm = () => {
@@ -70,6 +73,7 @@ const Registration = (props) => {
           </div>
           <h1 className='registration-form__title'>Welcome</h1>
           <div className='registration-form__email-already-exists'></div>
+
           <div className='registration-form__input '>
             <div>
               <input
@@ -111,6 +115,7 @@ const Registration = (props) => {
             </div>
             <div>
               <input
+                onBlur={blurHandler}
                 name='password'
                 className='input__password input_form'
                 type={passwordShown ? 'text' : 'password'}
@@ -121,15 +126,12 @@ const Registration = (props) => {
                 }}
               />
               <div className='input__text-error empty-password'></div>
-              {password.length === ' ' ? (
+              {password.length === 0 && passwordDirty ? (
                 <div className='input__text-error empty-password'>
                   {'Please enter your Password'}
                 </div>
-              ) : (password.length > 0) & (password.length <= 6) ? (
-                <div className='input__text-error empty-password'>
-                  {'The password doesn’t match required criteria'}
-                </div>
-              ) : password.length >= 25 ? (
+              ) : (password.length > 0 && password.length <= 6) ||
+                password.length >= 25 ? (
                 <div className='input__text-error empty-password'>
                   {'The password doesn’t match required criteria'}
                 </div>
