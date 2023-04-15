@@ -119,28 +119,13 @@ const Login = () => {
         <Link to={'/'} className='login__close'>
           <img src={imgX} alt='close button' className='login__close-icon' />
         </Link>
-        <div
-          className='login__head-wrap'
-          style={
-            errorMsg.isErrorResponse
-              ? { marginBottom: '1rem' }
-              : { marginBottom: '2rem' }
-          }
-        >
+        <div className='login__head-wrap'>
           <h2 className='login__title'>Welcome</h2>
           {errorMsg.isErrorResponse && (
             <p className='error-message'>{errorMsg.isErrorResponse}</p>
           )}
         </div>
-        <form
-          className='login__form form'
-          onSubmit={onSubmit}
-          style={
-            errorMsg.isErrorEmail || errorMsg.isErrorPsw
-              ? { gap: '1.5rem' }
-              : { gap: '2rem' }
-          }
-        >
+        <form className='login__form form' onSubmit={onSubmit}>
           <fieldset className='form__input-wrap'>
             <input
               type='email'
