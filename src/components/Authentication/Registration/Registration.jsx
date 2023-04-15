@@ -85,7 +85,6 @@ const Registration = (props) => {
                 value={nameInput}
                 onChange={(e) => {
                   nameHandler(e);
-                  setName(e.target.value);
                 }}
               ></input>
               {nameDirty && nameEmptyError && (
@@ -104,7 +103,6 @@ const Registration = (props) => {
                 value={email}
                 onChange={(e) => {
                   emailHandler(e);
-                  setEmail(e.target.value);
                 }}
               ></input>
               {emailDirty && emailEmptyError && (
