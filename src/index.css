@@ -48,15 +48,13 @@ p {
 
 .btn {
   box-sizing: border-box;
-  width: 6.125rem;
-  height: 2.625rem;
   background: #FBDBA3;
   opacity: 0.8;
   border: 1px solid #000000;
   border-radius: 15px;
   font-style: normal;
   font-weight: 400;
-  font-size: 1.5rem;
+  font-size: 2.5vh;
   line-height: 1.25;
   color: #000000;
   cursor: pointer;
@@ -66,7 +64,7 @@ p {
 .btn:hover {
   background: transparent;
   color: #FFFFFF;
-  border: 1px solid #FBDBA3;
+  border: 1px solid #000000;
   transition: all 0.5s ease-in-out;
 }
 

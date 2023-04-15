@@ -61,7 +61,7 @@
   .login__title {
     font-style: normal;
     font-weight: 400;
-    font-size: 2rem;
+    font-size: 1.5rem;
     line-height: 1.25;
     color: #FFFFFF;
     text-align: center;
@@ -179,6 +179,7 @@
   .login__btn {
     width: 100%;
     max-height: 48px;
+    padding: 2%;
   }
 
   .login__btn:disabled {
@@ -236,7 +237,7 @@
     margin-top: 0.5rem;
   }
 }
-@media (max-width: 1000px){
+@media (max-width: 1100px){
   html {
     font-size: 14px;
   }
@@ -245,6 +246,9 @@
     padding: 4% 7% 8%;
   }
 
+  .login__form {
+    gap: 1.2rem;
+  }
   .form__eye {
     width: 1rem;
     height: 1rem;
@@ -253,6 +257,10 @@
   .form__input {
     max-height: 37px;
     padding: 2% 4%;
+  }
+
+  .login__head-wrap {
+    margin-bottom: 1.5rem;
   }
  
   .login__btn {
