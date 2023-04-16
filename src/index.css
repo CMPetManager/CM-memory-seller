@@ -48,8 +48,6 @@ p {
 
 .btn {
   box-sizing: border-box;
-  min-width: 10.2vh;
-  min-height: 4.375vh;
   background: #FBDBA3;
   opacity: 0.8;
   border: 1px solid #000000;
