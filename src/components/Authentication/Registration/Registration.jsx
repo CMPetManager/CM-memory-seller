@@ -128,7 +128,7 @@ const Registration = (props) => {
                 <div className='input__text-error empty-password'>
                   {'Please enter your Password'}
                 </div>
-              ) : (password.length > 0 && password.length <= 6) ||
+              ) : (password.length > 0 && password.length <= 5) ||
                 password.length >= 25 ? (
                 <div className='input__text-error empty-password'>
                   {'The password doesn’t match required criteria'}
@@ -168,7 +168,7 @@ const Registration = (props) => {
             <p className='confirm__text-log'>
               Already registered?{' '}
               <Link to={'/login'} className='confirm__text-log_green'>
-                Sign In
+                Log In
               </Link>
             </p>
           </div>
