@@ -84,28 +84,10 @@
 
   .form__input {
     width: 100%;
-    max-height: 57px;
     opacity: 0.7;
-    border: 1px solid #FBDBA3;
-    border-radius: 15px;
-    background-color: transparent;
-    padding: 4%;
-    color: #FFFFFF;
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 1.25;
-    caret-color: #FFFFFF;
   }
-
-  .form__input:focus-visible {
-    outline: none;
-  }
-
+  
   .form__input::placeholder {
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 1.25;
-    color: #FFFFFF;
     opacity: 0.7;
   }
 
