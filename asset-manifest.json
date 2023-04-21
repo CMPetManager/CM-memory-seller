@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/CM-memory-seller/static/css/main.cc4464c0.css",
-    "main.js": "/CM-memory-seller/static/js/main.1171a78f.js",
+    "main.css": "/CM-memory-seller/static/css/main.9f8674fc.css",
+    "main.js": "/CM-memory-seller/static/js/main.eb8f7cf9.js",
     "static/media/photo-10.webp": "/CM-memory-seller/static/media/photo-10.6e7485d417e139f7aa53.webp",
     "static/media/photo-7.webp": "/CM-memory-seller/static/media/photo-7.ddccb4069cd8ed1bd9ea.webp",
     "static/media/photo-13.webp": "/CM-memory-seller/static/media/photo-13.1952b41b9d04f462f290.webp",
@@ -24,11 +24,11 @@
     "static/media/eye.svg": "/CM-memory-seller/static/media/eye.e7cda6399a3bd7036b612ef4083abcad.svg",
     "static/media/IconCloseWindow.svg": "/CM-memory-seller/static/media/IconCloseWindow.83af43c5ad2451fc6cbcb8abd0ede7c5.svg",
     "static/media/x1.svg": "/CM-memory-seller/static/media/x1.83af43c5ad2451fc6cbcb8abd0ede7c5.svg",
-    "main.cc4464c0.css.map": "/CM-memory-seller/static/css/main.cc4464c0.css.map",
-    "main.1171a78f.js.map": "/CM-memory-seller/static/js/main.1171a78f.js.map"
+    "main.9f8674fc.css.map": "/CM-memory-seller/static/css/main.9f8674fc.css.map",
+    "main.eb8f7cf9.js.map": "/CM-memory-seller/static/js/main.eb8f7cf9.js.map"
   },
   "entrypoints": [
-    "static/css/main.cc4464c0.css",
-    "static/js/main.1171a78f.js"
+    "static/css/main.9f8674fc.css",
+    "static/js/main.eb8f7cf9.js"
   ]
 }
