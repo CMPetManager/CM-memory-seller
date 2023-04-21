@@ -82,3 +82,27 @@ input:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px #424141 inset;
   transition: background-color 5000s ease-in-out 0s;
 }
+
+.input {
+  max-height: 57px;
+  border: 1px solid #FBDBA3;
+  border-radius: 15px;
+  background-color: transparent;
+  padding: 4%;
+  color: #FFFFFF;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25;
+  caret-color: #FFFFFF;
+}
+
+.input:focus-visible {
+  outline: none;
+}
+
+.input::placeholder {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #FFFFFF;
+}
