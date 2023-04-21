@@ -7,6 +7,7 @@ import Login from './components/Authentication/Login/Login';
 import ForgotPassword from './components/Authentication/ForgotPassword/ForgotPassword';
 import ResetPassword from './components/Authentication/ResetPassword/ResetPassword';
 import Home from './pages/Home/Home';
+import { Album } from './pages/Album/Album';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             element={<ResetPassword />}
           />
         </Route>
+        <Route path='/album' element={<Album />} />
         <Route path='*' element={<div>Error</div>} />
       </Routes>
     </div>
