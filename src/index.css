@@ -68,7 +68,7 @@ p {
 }
 
 .btn:disabled {
-  background: #333333;
+  background: transparent;
   color: #8d8c8c;
   border: 1px solid #FBDBA3;
   transition: all 0.5s ease-in-out;
