@@ -18,8 +18,8 @@
   display: flex;
 }
 .header__buttons_login {
-  width: 10.2vh;
-  height: 4.375vh;
+  min-width: 10.2vh;
+  min-height: 4.375vh;
   line-height: 4.375vh;
   text-align: center;
   margin-right: 1.18vw;
@@ -28,7 +28,7 @@
 }
 .header__buttons_registration {
   min-width: 17.5vh;
-  height: 4.375vh;
+  min-height: 4.375vh;
   line-height: 4.375vh;
   text-align: center;
   padding: 0 2vh;
