@@ -8,6 +8,7 @@ import Login from './components/Authentication/Login/Login';
 import ForgotPassword from './components/Authentication/ForgotPassword/ForgotPassword';
 import ResetPassword from './components/Authentication/ResetPassword/ResetPassword';
 import Home from './pages/Home/Home';
+import Albums from './pages/Albums/Albums';
 
 function App() {
   const location = useLocation();
@@ -38,7 +39,7 @@ function App() {
               />
               <Route path='*' element={<div>Error</div>} />
             </Route>
-            <Route path='/albums' element={<div>My Albums</div>} />
+            <Route path='/albums' element={<Albums />} />
           </Routes>
         </animated.div>
       ))}
