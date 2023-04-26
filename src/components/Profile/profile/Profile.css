@@ -8,6 +8,9 @@
   backdrop-filter: blur(7px);
   z-index: 10000;
 }
+.profile__body{
+/* width: 1389px; */
+}
 
 .profile__background {
   display: flex;
@@ -47,6 +50,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-width: 384px;
 }
 
 .profile__user-photo {

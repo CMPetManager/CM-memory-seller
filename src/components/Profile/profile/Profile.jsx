@@ -39,7 +39,7 @@ const Profile = () => {
             <input
               className='profile__user-photo_hiden'
               type='file'
-              accept='.jpeg, .png, .jpg'
+              accept='.jpeg, .png, .jpg, heic'
               onChange={onUploadFile}
             ></input>
             <img
