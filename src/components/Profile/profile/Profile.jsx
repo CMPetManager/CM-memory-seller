@@ -4,7 +4,7 @@ import './Profile.css';
 import profilePhoto from 'assets/icons/profile_photo.svg';
 import addPhoto from 'assets/icons/Add-photo.svg';
 import { Link } from 'react-router-dom';
-import { ChangeEvent, useState } from 'react';
+import { useState } from 'react';
 
 const Profile = () => {
   const [nameInput, setName] = useState('');
@@ -12,9 +12,6 @@ const Profile = () => {
   const [image, setImage] = useState();
   const [imageURL, setImageURL] = useState();
 
-  // const submissionForm = () => {
-  //   console.log(nameInput, email);
-  // };
   const fileReader = new FileReader();
   fileReader.onloadend = () => {
     setImageURL(fileReader.result);
@@ -25,7 +22,7 @@ const Profile = () => {
     setImage(e.target.files[0]);
     fileReader.readAsDataURL(e.target.files[0]);
   };
-
+  const userName = 'Sandström';
   return (
     <div className='profile'>
       <div className='profile__body'>
@@ -46,7 +43,7 @@ const Profile = () => {
               onChange={onUploadFile}
             ></input>
             <img
-              src={imageURL}
+              src={imageURL ? imageURL : profilePhoto}
               alt='profile photo'
               className='profile__user-photo_user'
             />
@@ -58,7 +55,7 @@ const Profile = () => {
           </div>
 
           <div className='profile__user-name'>
-            <h2>Sandström</h2>
+            <h2>{userName}</h2>
             <h3>Free account</h3>
           </div>
           <div className='profile__inputs'>
@@ -66,7 +63,8 @@ const Profile = () => {
               <input
                 name='name'
                 type='text'
-                placeholder='Name'
+                disabled
+                placeholder={userName}
                 className='input_form'
                 onChange={(e) => setName(e.target.value)}
               ></input>
@@ -76,6 +74,7 @@ const Profile = () => {
                 name='email'
                 placeholder='Email address'
                 type='text'
+                disabled
                 className='input_form'
                 onChange={(e) => setEmail(e.target.value)}
               ></input>

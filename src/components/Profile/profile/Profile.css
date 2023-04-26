@@ -49,7 +49,7 @@
   align-items: center;
 }
 
-.profile__user-photo{
+.profile__user-photo {
   width: 128px;
   height: 135px;
   position: relative;
@@ -57,29 +57,28 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
 
 .profile__user-photo_user {
   width: 128px;
   height: 128px;
+  border-radius: 50%;
 }
 
 .profile__user-photo_add-photo {
   margin-top: -15px;
   width: 28px;
   height: 28px;
- }
+}
 
-.profile__user-photo_hiden{
-  
- position:absolute;
-top:0;
-left: 0;
- opacity: 0;
-width: 100%;
+.profile__user-photo_hiden {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
   height: 100%;
- cursor: pointer;
+  cursor: pointer;
 }
 
 .profile__user-name h2 {
