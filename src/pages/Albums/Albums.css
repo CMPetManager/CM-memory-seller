@@ -1,0 +1,53 @@
+.albums__wrap {
+  min-height: 100vh;
+  padding: clamp(40px, 4.2%, 64px) 6.6% clamp(20px, 2%, 40px);
+  position: relative;
+}
+
+.albums__back {
+  position: absolute;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20.37vh;
+  line-height: 1.21;
+  color: #EBEAE8;
+  opacity: 0.05;
+  white-space: nowrap;
+}
+.albums__back-part1 {
+  left: 1.19vw;
+  top: -3.87vh;
+}
+.albums__back-part2 {
+  left: 24.87vw;
+  top: 15.37vh;
+}
+
+.albums__logo {
+  font-family: 'Libre Caslon Display';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.25;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+
+.albums__profile-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.albums__profile-btn {
+  width: clamp(64px, 13vh, 128px);
+  height: clamp(64px, 13vh, 128px);
+  border: 1px solid #000000;
+  border-radius: 50%;
+  background-color: #FBDBA3;
+  font-family: 'Libre Caslon Display';
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(32px, 6.5vh, 64px);;
+  line-height: 1.191;
+  color: rgb(0, 0, 0, 0.5);
+}

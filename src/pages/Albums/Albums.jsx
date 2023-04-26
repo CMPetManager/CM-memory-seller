@@ -1,13 +1,13 @@
+import './Albums.css';
+
 const Albums = () => {
   return (
     <div>
       <div className='albums__wrap'>
-        <div className='albums__back-slogan'>
-          <p>Catch the</p>
-          <p>Memories</p>
-        </div>
+        <div className='albums__back albums__back-part1'>Catch the</div>
+        <div className='albums__back albums__back-part2'>Memories</div>
         <div className='albums__profile-wrap'>
-          <h1 className='logo'>Catch the moment</h1>
+          <h1 className='albums__logo'>Catch the moment</h1>
           <button className='albums__profile-btn'>S</button>
         </div>
         <div className='albums__text-wrap'>
