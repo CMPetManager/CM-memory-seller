@@ -125,11 +125,11 @@ const Login = () => {
             <p className='error-message'>{errorMsg.isErrorResponse}</p>
           )}
         </div>
-        <form className='login__form form' onSubmit={onSubmit}>
+        <form className='login__form' onSubmit={onSubmit}>
           <fieldset className='form__input-wrap'>
             <input
               type='email'
-              className='form__input input'
+              className='form__input login__form-input'
               placeholder='Email address'
               value={form.email}
               name='email'
@@ -145,7 +145,7 @@ const Login = () => {
             <label className='form__password-label'>
               <input
                 type={isShownPassword ? 'text' : 'password'}
-                className='form__input input'
+                className='form__input login__form-input'
                 placeholder='Password'
                 value={form.password}
                 name='password'
