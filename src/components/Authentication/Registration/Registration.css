@@ -6,7 +6,6 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(7px);
   align-items: center;
   justify-content: center;
@@ -75,7 +74,6 @@
 }
 
 .input_form {
-  position: absolute;
   opacity: 0.7;
   border: 1px solid #fbdba3;
   border-radius: 15px;
@@ -108,11 +106,13 @@ textarea {
 }
 
 .input__user-name {
+  position: absolute;
   margin-left: 49px;
   top: 8.63rem;
 }
 
 .input__email {
+  position: absolute;
   margin-left: 49px;
   top: 14.44rem;
 }
@@ -131,6 +131,7 @@ textarea {
 }
 
 .input__password {
+  position: absolute;
   margin-left: 49px;
   top: 20.25rem;
 }

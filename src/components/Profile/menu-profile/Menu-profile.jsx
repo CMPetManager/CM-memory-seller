@@ -1,7 +1,7 @@
 import './Menu-profile.css';
 import { Link } from 'react-router-dom';
 
-export const MenuProfile = () => {
+const MenuProfile = () => {
   return (
     <div className='wraper'>
       <div className='menu-profile'>
@@ -23,3 +23,5 @@ export const MenuProfile = () => {
     </div>
   );
 };
+
+export default MenuProfile;
