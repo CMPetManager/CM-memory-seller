@@ -129,7 +129,7 @@ const Login = () => {
           <fieldset className='form__input-wrap'>
             <input
               type='email'
-              className='form__input'
+              className='form__input input'
               placeholder='Email address'
               value={form.email}
               name='email'
@@ -145,7 +145,7 @@ const Login = () => {
             <label className='form__password-label'>
               <input
                 type={isShownPassword ? 'text' : 'password'}
-                className='form__input'
+                className='form__input input'
                 placeholder='Password'
                 value={form.password}
                 name='password'
