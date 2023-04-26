@@ -79,12 +79,12 @@
   align-self: start;
 }
 
-.form__input {
+.login__form-input {
   width: 100%;
   opacity: 0.7;
 }
 
-.form__input::placeholder {
+.login__form-input::placeholder {
   opacity: 0.7;
 }
 
@@ -93,7 +93,7 @@
   width: 100%;
 }
 
-.form__password-label .form__input {
+.form__password-label .login__form-input {
   padding-right: 2.875rem;
 }
 
