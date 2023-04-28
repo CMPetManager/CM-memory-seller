@@ -40,6 +40,7 @@ function App() {
               <Route path='*' element={<div>Error</div>} />
             </Route>
             <Route path='/albums' element={<div>My Albums</div>} />
+            <Route path='/album' element={<Album />} />
           </Routes>
         </animated.div>
       ))}

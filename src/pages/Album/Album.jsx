@@ -27,20 +27,12 @@ export const Album = () => {
 
   const [activeCarusel, setActiveCarusel] = useState(false);
   const [onenModalProfi, setOpenModalProfilUser] = useState(false);
-  const [isActiveMessageForm, setActiveMessageForm] = useState(false);
   const [templateCount, setTemplateCount] = useState();
   const [isOpen, setIsOpen] = useState(false);
   const [isLogout, setIsLogout] = useState(false);
   const navigate = useNavigate();
   const handleChange = (value) => {
     setOpenModalProfilUser(!onenModalProfi);
-  };
-  const handleChangeMessageForm = (value) => {
-    setActiveMessageForm(!isActiveMessageForm);
-  };
-
-  const handleChangeSavingAlbum = (value) => {
-    setActiveMessageForm(value);
   };
   const colorsArr = [
     '#6F6D6D',
@@ -77,7 +69,7 @@ export const Album = () => {
         return <TemplateFirst index={index} />;
     }
   };
-
+  document.body.style.overflow = 'scroll';
   const TemplateList = ({ count, data }) => {
     const list = [];
     for (let index = 0; index < count; index++) {
@@ -229,7 +221,7 @@ export const Album = () => {
       <DndProvider backend={HTML5Backend}>
         {activeCarusel ? <PhotoCarusel className='characters' /> : <></>}
 
-        <TemplateList count={3} data={templateCount} />
+        <TemplateList count={6} data={templateCount} />
       </DndProvider>
       <AlbomFooter />
     </div>

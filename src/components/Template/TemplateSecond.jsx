@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './TemplateFirst.css';
 import { CardForAlbum } from 'components/CardForAlbum/CardForAlbum';
 export const TemplateSecond = () => {

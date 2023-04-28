@@ -1,13 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import React, { useState } from 'react';
 import Slider from 'react-slick';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import './PhotoCarusel.css';
-import { Navigation } from 'swiper';
-import { Pagination } from 'swiper';
 
+import './PhotoCarusel.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { InputImage } from 'components/photoCarusel/InputImage';
