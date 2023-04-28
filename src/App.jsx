@@ -8,6 +8,7 @@ import Login from './components/Authentication/Login/Login';
 import ForgotPassword from './components/Authentication/ForgotPassword/ForgotPassword';
 import ResetPassword from './components/Authentication/ResetPassword/ResetPassword';
 import Home from './pages/Home/Home';
+import { Album } from './pages/Album/Album';
 
 function App() {
   const location = useLocation();
