@@ -28,15 +28,19 @@ const Albums = () => {
               <img
                 src={plus}
                 alt='increase button'
-                className='albums__checkbox-plus'
+                className='albums__checkbox-icon plus'
               />
               <img
                 src={minus}
                 alt='decrease button'
-                className='albums__checkbox-minus'
+                className='albums__checkbox-icon minus'
               />
             </div>
-            <input type='search' placeholder='Search' className='form__input' />
+            <input
+              type='search'
+              placeholder='Search'
+              className='form__input albums__search-input'
+            />
           </div>
         </div>
         <div className='albums__container'>

@@ -1,6 +1,6 @@
 .albums__wrap {
   min-height: 100vh;
-  padding: clamp(40px, 4.2%, 64px) 6.6% clamp(20px, 2%, 40px);
+  padding: 4.23vw 6.63vw 1.32vw;
   position: relative;
   overflow-y: auto;
 }
@@ -31,7 +31,7 @@
   font-family: 'Libre Caslon Display';
   font-style: normal;
   font-weight: 400;
-  font-size: 1.5rem;
+  font-size: 1.59vw;
   line-height: 1.25;
   color: #FFFFFF;
   text-transform: uppercase;
@@ -43,15 +43,15 @@
 }
 
 .albums__profile-btn {
-  width: clamp(64px, 13vh, 128px);
-  height: clamp(64px, 13vh, 128px);
+  width: 8.47vw;
+  height: 8.47vw;
   border: 1px solid #000000;
   border-radius: 50%;
   background-color: #FBDBA3;
   font-family: 'Libre Caslon Display';
   font-style: normal;
   font-weight: 400;
-  font-size: clamp(32px, 6.5vh, 64px);
+  font-size: 4.23vw;
   line-height: 1.191;
   color: rgb(0, 0, 0, 0.5);
 }
@@ -64,7 +64,7 @@
   font-family: 'Libre Caslon Display';
   font-style: normal;
   font-weight: 400;
-  font-size: 6.5vh;
+  font-size: 4.23vw;
   line-height: 1.191;
   color: #FFFFFF;
 }
@@ -72,40 +72,77 @@
 .albums__subtitle {
   font-style: normal;
   font-weight: 400;
-  font-size: 1.25rem;
+  font-size: 1.32vw;
   line-height: 1.56;
   color: #FFFFFF;
-  margin-top: 8px;
+  margin-top: 0.53vw;
 }
 
 .albums__control-panel {
-  margin-top: 8.35vh;
+  margin-top: 5.42vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .albums__control-btn {
-  width: 19vh;
-  height: 3.87vh;
-  font-size: 2vh;
+  width: 12.37vw;
+  height: 2.51vw;
+  font-size: 1.32vw;
+  border-radius: 0.99vw;
 }
 
 .albums__control-wrap {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 28px;
+  gap: 1.85vw;
 }
 
 .albums__checkbox-wrap {
-  width: 10.4vh;
-  height: 3.87vh;
   position: relative;
-  border: 1px solid #FBDBA3;
-  border-radius: 15px;
+  flex: 1 0 6.74vw;
+  width: 6.74vw;
+  height: 2.513vw;
+  border: 0.066vw solid #FBDBA3;
+  border-radius: 0.99vw;
 }
 
 .albums__checkbox-label input {
   visibility: hidden;
+}
+
+.albums__checkbox-icon {
+  position: absolute;
+  width: 1.59vw;
+  height: 1.59vw;
+  top: 50%;
+  transform: translate(50%, -50%);
+  cursor: pointer;
+}
+
+.minus {
+  right: 1vw;
+}
+
+.plus {
+  left: -0.5vw;
+}
+
+.albums__search-input {
+  width: 12.37vw;
+  height: 2.513vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.32vw;
+  padding: 0.46vw;
+}
+
+.albums__search-input::placeholder {
+  font-family: 'Inter';
+  font-size: 1.32vw;
+  opacity: 0.2;
+  text-align: center;
+  line-height: 1.2;
 }
