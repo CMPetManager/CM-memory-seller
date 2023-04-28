@@ -37,7 +37,7 @@ const ForgotPassword = () => {
           {errors.email && (
             <span className='forgot__form__error'>This field is required</span>
           )}
-          <button className='forgot__login__submitBtn' type='submit'>
+          <button className='btn' type='submit'>
             Request password
           </button>
         </form>
