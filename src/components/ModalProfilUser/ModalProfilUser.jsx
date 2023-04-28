@@ -6,9 +6,7 @@ export const ModalProfilUser = ({ onModalActive }) => {
   const handleChange = (msg) => {
     setIsWindowOpen(false);
     alert(msg);
-    console.log('Parent', isWindowOpen);
   };
-  console.log('isWindowOpen=', isWindowOpen);
   useEffect(() => {
     setIsWindowOpen(onModalActive ? true : false);
   }, [onModalActive]);

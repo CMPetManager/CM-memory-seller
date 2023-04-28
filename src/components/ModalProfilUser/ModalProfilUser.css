@@ -19,6 +19,7 @@
     position: absolute;
     top: 5%;
     left: 72%;
+    z-index: 5;
 }
 
 .modalProfilUser__logo {

@@ -18,6 +18,7 @@
     justify-content: space-around;
     flex-wrap: wrap;
     align-items: center;
+    position: relative;
 }
 
 .album__roundButton {
@@ -91,6 +92,7 @@
     width: 100%;
     max-height: 49vh;
     height: auto;
+    min-height: 508px;
 
 }
 
@@ -107,6 +109,13 @@
     width: 90%;
     z-index: 0;
 
+}
+
+.album__presentation_setting__container {
+    position: absolute;
+    margin-left: auto;
+    right: 5px;
+    top: 5px;
 }
 
 .button__addPhoto {
@@ -186,7 +195,7 @@
     margin-right: auto;
     flex-direction: column;
     left: 0;
-    z-index: 1;
+    z-index: 2;
 
 }
 
@@ -204,7 +213,33 @@
 
 }
 
+.album__presentation__input__img {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    height: 100%;
+}
 
+.album__presentation_setting {
+    width: 5px;
+    display: block;
+    height: 5px;
+    background-color: #FFFFFF;
+    margin: 5px;
+    border-radius: 50%;
+}
+
+.album__presentation__input__text {
+    font-family: 'Libre Caslon Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 128px;
+    line-height: 158px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    opacity: 0.5;
+    margin: auto;
+}
 
 
 .albom__button_view:hover .text_transform {
@@ -342,6 +377,15 @@
     grid-row-gap: 0px;
     grid-column-gap: 5px;
     grid-row-gap: 5px;
+}
+
+.album__presentation__text {
+    display: flex;
+    width: 100%;
+    max-height: 49vh;
+    min-height: 508px;
+    height: auto;
+    background: rgba(251, 219, 163, 0.2);
 }
 
 .div1 {

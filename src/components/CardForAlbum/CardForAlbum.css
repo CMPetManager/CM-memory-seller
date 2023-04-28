@@ -14,61 +14,70 @@
     height: 100%;
     background: rgba(251, 219, 163, 0.2);
     border: 1px solid #FBDBA3;
-}
 
+}
 
 .templateFirst__revert_icon {
     position: relative;
     margin-left: auto;
     display: block;
     top: 25px;
-    left: -5px;
+    right: 5px;
 }
 
 
 .big_landscope {
-    width: 1312px;
+    width: 100%;
+    max-width: 1312px;
     height: 798px;
 }
 
 .landscope {
     height: 574px;
-    width: 1312px;
+    width: 100%;
+    max-width: 1312px;
 }
 
 .big_vertical {
     height: 796px;
-    width: 635px;
+    width: 100%;
+    max-width: 635px;
 }
 
 .sqrt {
     height: 513px;
-    width: 644px;
+    width: 100%;
+    max-width: 644px;
 }
 
 .smal__sqrt {
     height: 330px;
-    width: 330px;
+    width: 100%;
+    max-width: 330px;
 
 }
 
 .big_srqt {
     height: 796px;
-    width: 924px;
+    width: 100%;
+    max-width: 924px;
 }
 
 .large_sqrt {
     height: 634px;
-    width: 734px;
+    width: 100%;
+    max-width: 734px;
 }
 
 .large_vertical__sqrt {
     height: 1005px;
-    width: 861px;
+    width: 100%;
+    max-width: 861px;
     margin: 0 auto;
 }
 
 .mini_srqt {
     height: 457px;
-    width: 411px;
+    width: 100%;
+    max-width: 411px;
 }

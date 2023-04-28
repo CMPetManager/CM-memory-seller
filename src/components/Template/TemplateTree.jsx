@@ -3,7 +3,7 @@ import './TemplateFirst.css';
 
 import { CardForAlbum } from 'components/CardForAlbum/CardForAlbum';
 export const TemplateTree = () => {
-  return [1, 2, 3, 4, 5, 6].map(() => (
+  return (
     <div className='templateFirst__container'>
       <div className='templateSecond_shortImage_container templateSecond__margin__bottom '>
         <CardForAlbum size='large_sqrt' />
@@ -18,5 +18,5 @@ export const TemplateTree = () => {
         <CardForAlbum size='mini_srqt' />
       </div>
     </div>
-  ));
+  );
 };

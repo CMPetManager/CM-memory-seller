@@ -4,7 +4,7 @@ export const Button = ({ titleButton, onClick, className }) => {
   return (
     <button
       onClick={onClick}
-      className={className ? className : 'submitBtn'}
+      className={className ? className : 'btn'}
       type='submit'
     >
       {titleButton}

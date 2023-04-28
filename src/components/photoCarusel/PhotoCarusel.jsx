@@ -1,127 +1,116 @@
 import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Droppable, Draggable } from 'react-beautiful-dnd';
+import Slider from 'react-slick';
 import 'swiper/css';
 import 'swiper/css/pagination';
-
+import 'swiper/css/navigation';
 import './PhotoCarusel.css';
+import { Navigation } from 'swiper';
+import { Pagination } from 'swiper';
 
-import { Inp } from 'components/photoCarusel/inp';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { InputImage } from 'components/photoCarusel/InputImage';
 export const PhotoCarusel = ({ ...props }, ref) => {
-  return (
-    <Droppable droppableId='siper' type='list' direction='horizontal'>
-      {(provided) => (
-        <div {...provided.droppableProps} ref={provided.innerRef}>
-          <Swiper
-            slidesPerView={5}
-            spaceBetween={30}
-            pagination={{
-              clickable: true,
-            }}
-            className='mySwiper photoCarusel_container'
-          >
-            {['1', '2', '3'].map((index) => {
-              return (
-                <Draggable
-                  key={index}
-                  draggableId={`Swiper+${index}`}
-                  index={index}
-                >
-                  {(provided) => (
-                    <div
-                      key={index}
-                      ref={provided.innerRef}
-                      {...provided.draggableProps}
-                      {...provided.dragHandleProps}
-                    >
-                      <SwiperSlide>
-                        <Inp />
-                      </SwiperSlide>
-                    </div>
-                  )}
-                </Draggable>
-              );
-            })}
-            {provided.placeholder}
-          </Swiper>
+  const [image, setImage] = useState();
+  const handleChange = (value) => {
+    setImage(value);
+  };
+
+  const CaruselList = ({ count, data }) => {
+    const list = [];
+    for (let index = 0; index < count; index++) {
+      list.push(
+        <div className='swiper-slide'>
+          <InputImage onChange={handleChange} index={index} />{' '}
         </div>
-      )}
-    </Droppable>
+      );
+    }
+    return list;
+  };
+  const settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 7,
+    slidesToScroll: 4,
+    initialSlide: 0,
+  };
+
+  return (
+    <Slider {...settings} className='photoCarusel_container'>
+      <div className='swiper-slide'>
+        <InputImage onChange={handleChange} index={1} />{' '}
+      </div>
+      <div className='swiper-slide'>
+        <InputImage onChange={handleChange} index={2} />{' '}
+      </div>
+      <div className='swiper-slide'>
+        <InputImage onChange={handleChange} index={3} />{' '}
+      </div>
+      <div className='swiper-slide'>
+        <InputImage onChange={handleChange} index={4} />{' '}
+      </div>
+      <div className='swiper-slide'>
+        <InputImage onChange={handleChange} index={5} />{' '}
+      </div>
+      <div className='swiper-slide'>
+        <InputImage onChange={handleChange} index={6} />{' '}
+      </div>
+      <div className='swiper-slide'>
+        <InputImage onChange={handleChange} index={7} />{' '}
+      </div>
+      <div className='swiper-slide'>
+        <InputImage onChange={handleChange} index={8} />{' '}
+      </div>
+      <div className='swiper-slide'>
+        <InputImage onChange={handleChange} index={9} />{' '}
+      </div>
+      <div className='swiper-slide'>
+        <InputImage onChange={handleChange} index={10} />{' '}
+      </div>
+      <div className='swiper-slide'>
+        <InputImage onChange={handleChange} index={11} />{' '}
+      </div>
+      <div className='swiper-slide'>
+        <InputImage onChange={handleChange} index={12} />{' '}
+      </div>
+      <div className='swiper-slide'>
+        <InputImage onChange={handleChange} index={13} />{' '}
+      </div>
+      <div className='swiper-slide'>
+        <InputImage onChange={handleChange} index={14} />{' '}
+      </div>
+      <div className='swiper-slide'>
+        <InputImage onChange={handleChange} index={15} />{' '}
+      </div>
+      <div className='swiper-slide'>
+        <InputImage onChange={handleChange} index={16} />{' '}
+      </div>
+      <div className='swiper-slide'>
+        <InputImage onChange={handleChange} index={17} />{' '}
+      </div>
+      <div className='swiper-slide'>
+        <InputImage onChange={handleChange} index={18} />{' '}
+      </div>
+      <div className='swiper-slide'>
+        <InputImage onChange={handleChange} index={19} />{' '}
+      </div>
+      <div className='swiper-slide'>
+        <InputImage onChange={handleChange} index={20} />{' '}
+      </div>
+      <div className='swiper-slide'>
+        <InputImage onChange={handleChange} index={21} />{' '}
+      </div>
+      <div className='swiper-slide'>
+        <InputImage onChange={handleChange} index={22} />{' '}
+      </div>
+      <div className='swiper-slide'>
+        <InputImage onChange={handleChange} index={23} />{' '}
+      </div>
+      <div className='swiper-slide'>
+        <InputImage onChange={handleChange} index={24} />{' '}
+      </div>
+    </Slider>
   );
 };
-
-////
-{
-  /* <div style={{ width: '100%', display: 'flex' }}>
-  <Droppable droppableId='Marvel_drop_area'>
-    {(provided, snapshot) => (
-  //    <div
-  {...provided.droppableProps}
-  ref={provided.innerRef}
-        style={getListStyle(snapshot.isDraggingOver)}
-      >
-        <ul
-          style={{
-            listStyleType: 'none',
-            textAlign: 'left',
-            padding: '0%',
-            width: '100%',
-          }}
-        >
-          <h6 style={{ paddingLeft: '2%' }}>Marvel SuperHeroes</h6>
-          {Marvel.map((data, index) => (
-            <Draggable key={data} draggableId={`${data}${index}`} index={index}>
-              {(provided, snapshot) => (
-                <li
-                  key={index}
-                  ref={provided.innerRef}
-                  {...provided.draggableProps}
-                  {...provided.dragHandleProps}
-                  style={getItemStyle(
-                    snapshot.isDragging,
-                    provided.draggableProps.style
-                  )}
-                >
-                  {data}
-                </li>
-              )}
-            </Draggable>
-          ))}
-        </ul>
-        {provided.placeholder}
-      </div>
-    )}
-  </Droppable>
-  <Droppable droppableId='DC_drop_area'>
-    {(provided, snapshot) => (
-      <div {...provided.droppableProps} ref={provided.innerRef}>
-        <ul
-          style={{
-            listStyleType: 'none',
-            textAlign: 'left',
-            padding: '0%',
-            width: '100%',
-          }}
-        >
-          <h6 style={{ paddingLeft: '2%' }}>DC SuperHeroes</h6>
-          {DC.map((data, index) => (
-            <Draggable key={data} draggableId={`${data}${index}`} index={index}>
-              {(provided, snapshot) => (
-                <li
-                  key={index}
-                  ref={provided.innerRef}
-                  {...provided.draggableProps}
-                  {...provided.dragHandleProps}
-                >
-                  {data}
-                </li>
-              )}
-            </Draggable>
-          ))}
-        </ul>
-        {provided.placeholder}
-      </div>
-    )}
-  </Droppable>
-</div>; */
-}

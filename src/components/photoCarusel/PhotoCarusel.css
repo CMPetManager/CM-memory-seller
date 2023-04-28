@@ -11,8 +11,9 @@
     align-items: center;
     border: 2px dashed #FBDBA3;
     border-radius: 2px;
-    width: 226px !important;
-    height: 308px;
+    width: 200px !important;
+    height: 250px !important;
+    margin: 18px;
 }
 
 .swiper-slide img {
@@ -27,19 +28,19 @@
 
 
 .photoCarusel_container {
-    box-sizing: border-box;
+    height: 315px;
+    width: 100%;
     background: #857F76;
     opacity: 0.8;
     border: 2px solid #FBDBA3;
     border-radius: 15px;
-    height: 436px;
-    padding: 64px 30px;
-    margin: 25px;
-    margin-left: 15%;
-    width: 100%;
-    height: 100%;
-    display: flex;
+    margin-left: 10%;
+    margin-bottom: 30px;
 
+}
+
+.slick-dots {
+    bottom: 0px !important;
 }
 
 .photoCarusel__input {
@@ -50,5 +51,23 @@
 }
 
 .plus {
-    position: absolute;
+    position: relative;
+    top: -60%;
+}
+
+.inputImage__container {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    padding: 40px;
+    background: #419be0;
+}
+
+.slick-slide img {
+    margin: auto;
 }

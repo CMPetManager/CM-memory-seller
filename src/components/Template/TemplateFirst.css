@@ -8,26 +8,30 @@
 .templateFirst_shortImage_container {
     display: flex;
     gap: 40px;
+    width: 100%;
     margin-top: 68px;
     margin-bottom: 68px;
+    justify-content: center;
 
 }
 
 .templateSecond_shortImage_container {
     display: flex;
     gap: 24px;
+    width: 100%;
     margin-bottom: 68px;
 }
 
 .templateSecond_MicroImage_container {
     display: flex;
     gap: 40px;
+
     margin-top: 68px;
     justify-content: center;
 }
 
 .cover__image__landscope__text {
-    font-size: 64px;
+    font-size: 4vw;
     line-height: 80px;
     color: #FBDBA3;
     margin: auto;

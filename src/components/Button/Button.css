@@ -1,26 +1,31 @@
-.submitBtn {
-    border: 1px solid #000000;
-    border-radius: 15px;
+.btn {
     box-sizing: border-box;
-    width: 100%;
+    background: #FBDBA3;
+    opacity: 0.8;
+    border: 1px solid #FBDBA3;
+    border-radius: 15px;
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
-    line-height: 30px;
-    align-items: center;
-
+    line-height: 1.25;
+    color: #000000;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
     padding-top: 8px;
     padding-bottom: 10px;
-
-
+    width: 100%;
+    font-size: 1.5vw;
 }
 
-.submitBtnPassive {
-    background: none;
+.btn:hover {
+    background: #333333;
     color: #ffffff;
+    border: 1px solid #FBDBA3;
+    transition: all 0.5s ease-in-out;
 }
 
-.submitBtnActive {
-    background: #FBDBA3;
-    color: #000000;
+.btn:disabled {
+    background: transparent;
+    color: #8d8c8c;
+    border: 1px solid #FBDBA3;
+    transition: all 0.5s ease-in-out;
 }

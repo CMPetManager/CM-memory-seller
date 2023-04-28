@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import './Album.css';
 import { ReactComponent as GoBackButton } from 'assets/icons/goBackButton.svg';
-import { ReactComponent as ListIcon } from 'assets/icons/listButton.svg';
+
 import { ReactComponent as AlbomLabelIcon } from 'assets/icons/alignIeftIcon.svg';
-import { ReactComponent as CheckIcon } from 'assets/icons/checkIcon.svg';
-import { ReactComponent as PensilIcon } from 'assets/icons/pensilIcon.svg';
-import { ReactComponent as TrashIcon } from 'assets/icons/trashIcon.svg';
-import { ReactComponent as CloseEyeIcon } from 'assets/icons/eyeoffIcon.svg';
+
 import { ReactComponent as UpIcon } from 'assets/icons/chevronsuUpIcon.svg';
 import { Button } from 'components/Button/Button';
 import { Logo } from 'components/Logo/Logo';
@@ -17,22 +14,34 @@ import { TemplateSecond } from 'components/Template/TemplateSecond';
 import { TemplateTree } from 'components/Template/TemplateTree';
 import { AlbomFooter } from 'components/AlbomFooter/AlbomFooter';
 import { ModalProfilUser } from 'components/ModalProfilUser/ModalProfilUser';
-import { MasterTemplate } from 'components/MasterTemplate/MasterTemplate';
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
+import { AlbumPreview } from 'components/AlbumPreview/ AlbumPreview';
+import { MessageForm } from 'components/MessageForm/MessageForm';
+import { useNavigate } from 'react-router-dom';
 export const Album = () => {
   const [isOpenTextLabel, setIsOpenTextLabel] = useState(false);
   const [activeMasterTemplate, setMasterTemplate] = useState();
   const [activeColor, setActiveColor] = useState(true);
   const [bgcolor, setBgcolor] = useState('#6F6D6D');
-  const [buttonSetting, setButtonSetting] = useState(false);
+
   const [activeCarusel, setActiveCarusel] = useState(false);
   const [onenModalProfi, setOpenModalProfilUser] = useState(false);
+  const [isActiveMessageForm, setActiveMessageForm] = useState(false);
   const [templateCount, setTemplateCount] = useState();
+  const [isOpen, setIsOpen] = useState(false);
+  const [isLogout, setIsLogout] = useState(false);
+  const navigate = useNavigate();
   const handleChange = (value) => {
     setOpenModalProfilUser(!onenModalProfi);
   };
+  const handleChangeMessageForm = (value) => {
+    setActiveMessageForm(!isActiveMessageForm);
+  };
 
+  const handleChangeSavingAlbum = (value) => {
+    setActiveMessageForm(value);
+  };
   const colorsArr = [
     '#6F6D6D',
     '#97876B',
@@ -56,28 +65,47 @@ export const Album = () => {
     '#36454F ',
   ];
 
-  const ChooseTemplate = (data) => {
+  const ChooseTemplate = ({ data, index }) => {
     switch (data) {
       case 'first':
-        return <TemplateFirst />;
+        return <TemplateFirst index={index} />;
       case 'second':
-        return <TemplateSecond />;
+        return <TemplateSecond index={index} />;
       case 'third':
-        return <TemplateTree />;
+        return <TemplateTree index={index} />;
       default:
-        return <TemplateFirst />;
+        return <TemplateFirst index={index} />;
     }
   };
 
-  const onDragEnd = (result, provided) => {
-    console.log(result, provided);
+  const TemplateList = ({ count, data }) => {
+    const list = [];
+    for (let index = 0; index < count; index++) {
+      list.push(<ChooseTemplate data={data} index={index} />);
+    }
+    return list;
   };
   return (
     <div
       style={{ backgroundColor: bgcolor }}
       className={clsx('album__container')}
     >
-      {' '}
+      {isOpen && (
+        <MessageForm
+          setIsOpen={setIsOpen}
+          textLabel='Are you sure you want to exit without saving the album?'
+          buttonOnClick={() => navigate('/')}
+        />
+      )}
+
+      {isLogout && (
+        <MessageForm
+          setIsOpen={setIsLogout}
+          textLabel='Are you sure you want to log out?'
+          buttonOnClick={() => navigate('/album')}
+        />
+      )}
+
       <ModalProfilUser onModalActive={onenModalProfi} />
       <Button
         onClick={() => window.scrollTo(0, 0)}
@@ -157,95 +185,53 @@ export const Album = () => {
         </button>
       </div>
       <nav className='album__NavHeadContainer'>
-        <Button titleButton={<GoBackButton />} className='album__roundButton' />
+        <Button
+          titleButton={<GoBackButton />}
+          className='album__roundButton'
+          onClick={() => setIsOpen(true)}
+        />
         <div onClick={handleChange}>
           <Logo />
         </div>
       </nav>
-      <section className='album__presentation'>
-        <img
-          className='albom__imgCover'
-          src='https://www.timeout.ru/wp-content/uploads/2021/08/pexels-matt-hardy-2179205-scaled.jpg'
-          alt='Album'
+      <AlbumPreview />
+      <Button
+        titleButton='Add photo'
+        onClick={() => setActiveCarusel(!activeCarusel)}
+        className='button__addPhoto'
+      />
+      <section className='album__wrapper'>
+        <AlbomLabelIcon
+          className={clsx(
+            'albom__labelIcon',
+            isOpenTextLabel ? 'albom__labelIcon__active' : ''
+          )}
+          onClick={() => setIsOpenTextLabel(!isOpenTextLabel)}
         />
-        <div
-          className='albom__listIcon__container'
-          onClick={() => setButtonSetting(!buttonSetting)}
-        >
-          <Button
-            titleButton={<ListIcon />}
-            className='album__roundButton albom__ListIcon '
-          />
-          <Button
-            titleButton={<CheckIcon />}
-            className={clsx(
-              'album__roundButton',
-              buttonSetting ? 'albom__ListIcon' : 'albom__ListIcon__chech'
-            )}
-          />
-          <Button
-            className={clsx(
-              'album__roundButton',
-              buttonSetting
-                ? 'albom__ListIcon'
-                : 'albom__ListIcon__closeEyeIcon'
-            )}
-            titleButton={<CloseEyeIcon />}
-          />
-          <Button
-            className={clsx(
-              'album__roundButton',
-              buttonSetting ? 'albom__ListIcon' : 'albom__ListIcon__pensilIcon'
-            )}
-            titleButton={<PensilIcon />}
-          />
-          <Button
-            className={clsx(
-              'album__roundButton',
-              buttonSetting ? 'albom__ListIcon' : 'albom__ListIcon__trashIcon'
-            )}
-            titleButton={<TrashIcon />}
-          />
-        </div>
-        <Button
-          titleButton='Add photo'
-          onClick={() => setActiveCarusel(!activeCarusel)}
-          className='button__addPhoto'
-        />
-      </section>
-      <DragDropContext onDragEnd={onDragEnd}>
-        {activeCarusel ? <PhotoCarusel className='characters' /> : <></>}
-        <section className='album__wrapper'>
-          <AlbomLabelIcon
-            className={clsx(
-              'albom__labelIcon',
-              isOpenTextLabel ? 'albom__labelIcon__active' : ''
-            )}
-            onClick={() => setIsOpenTextLabel(!isOpenTextLabel)}
-          />
 
-          <div
+        <div
+          className={
+            isOpenTextLabel
+              ? 'albom__labelText__container'
+              : 'albom__labelText__container__active'
+          }
+        >
+          <p
             className={
-              isOpenTextLabel
-                ? 'albom__labelText__container'
-                : 'albom__labelText__container__active'
+              isOpenTextLabel ? 'albom__labelText' : '.albom__labelText__active'
             }
           >
-            <p
-              className={
-                isOpenTextLabel
-                  ? 'albom__labelText'
-                  : '.albom__labelText__active'
-              }
-            >
-              Я текст и я не знаю как я сюда попал. Дизайнер забыл сказать
-              разработчику как и где меня нужно водить
-            </p>
-          </div>
+            Я текст и я не знаю как я сюда попал. Дизайнер забыл сказать
+            разработчику как и где меня нужно водить
+          </p>
+        </div>
+      </section>
+      <DndProvider backend={HTML5Backend}>
+        {activeCarusel ? <PhotoCarusel className='characters' /> : <></>}
 
-          {ChooseTemplate(templateCount)}
-        </section>
-      </DragDropContext>
+        <TemplateList count={3} data={templateCount} />
+      </DndProvider>
+      <AlbomFooter />
     </div>
   );
 };
