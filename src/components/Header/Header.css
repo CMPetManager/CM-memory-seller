@@ -1,0 +1,33 @@
+.header__wrapper {
+  padding: 0 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 60px;
+}
+
+.header__logo > a, .discription__wrapper > h1 {
+  font-family: 'Libre Caslon Display', Serif;
+  text-transform: uppercase;
+}
+.header__logo > a {
+    font-size: 24px;
+    color: #fff;
+}
+
+.header__buttons {
+  display: flex;
+}
+.header__buttons_login {
+  width: 98px;
+  height: 42px;
+  line-height: 42px;
+  text-align: center;
+  margin-right: 18px;
+  }
+.header__buttons_registration {
+  width: 168px;
+  height: 42px;
+  line-height: 42px;
+  text-align: center;
+}
