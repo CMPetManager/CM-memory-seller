@@ -2,11 +2,11 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 import './Login.css';
-import imgX from '../../../assets/icons/x1.svg';
-import eyeCrossed from '../../../assets/icons/eye_crossed.svg';
-import eye from '../../../assets/icons/eye.svg';
+import imgX from 'assets/icons/x1.svg';
+import eyeCrossed from 'assets/icons/eye_crossed.svg';
+import eye from 'assets/icons/eye.svg';
 
-import { loginUser } from '../../../services/users/userService';
+import { loginUser } from 'services/users/userService';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -18,7 +18,7 @@ const Login = () => {
   const [errorMsg, setErrorMsg] = useState({
     isErrorEmail: false,
     isErrorPsw: false,
-    isErrorResponse: false,
+    isErrorResponse: '',
   });
 
   const [isChecked, setIsChecked] = useState(false);
@@ -31,7 +31,7 @@ const Login = () => {
         isErrorEmail: false,
       }));
     }
-  }, [form.email]);
+  }, [form.email, errorMsg.isErrorEmail]);
 
   useEffect(() => {
     if (form.password && errorMsg.isErrorPsw) {
@@ -40,22 +40,19 @@ const Login = () => {
         isErrorPsw: false,
       }));
     }
-  }, [form.password]);
+  }, [form.password, errorMsg.isErrorPsw]);
 
   const onInputChange = (event) => {
     const { name, value } = event.target;
-    const { isErrorEmail, isErrorPsw } = errorMsg;
+    const { isErrorEmail, isErrorPsw, isErrorResponse } = errorMsg;
 
-    if (errorMsg.isErrorResponse) {
+    if (isErrorResponse) {
       setErrorMsg((prev) => ({
         ...prev,
-        isErrorResponse: false,
+        isErrorResponse: '',
       }));
     }
-    setForm((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setForm((prev) => ({ ...prev, [name]: value }));
 
     if (name === 'email' && !value && !isErrorEmail) {
       setErrorMsg((prev) => ({
@@ -86,52 +83,53 @@ const Login = () => {
     if (!form.email || !form.password) {
       return;
     }
+
     try {
       const response = await loginUser(email, password);
 
-      console.log(response);
-      navigate('../albums');
+      if (response.success) {
+        const userCredentials = await response.result;
+        localStorage.setItem('user', JSON.stringify(userCredentials));
+
+        navigate('/albums');
+      }
     } catch (error) {
-      console.log(error);
       if (error.status === 400) {
         setErrorMsg((prev) => ({
           ...prev,
-          isErrorResponse: true,
+          isErrorResponse:
+            'Either Email or Password that you entered were incorrect',
         }));
-
-        setForm({
-          email: '',
-          password: '',
-        });
       } else {
-        console.log(error.message);
+        setErrorMsg((prev) => ({
+          ...prev,
+          isErrorResponse: error.message,
+        }));
       }
+      setForm({
+        email: '',
+        password: '',
+      });
     }
   };
 
   return (
     <div className='login__wrap'>
       <div className='login__container'>
-        <Link to={'..'} className='login__close'>
+        <Link to={'/'} className='login__close'>
           <img src={imgX} alt='close button' className='login__close-icon' />
         </Link>
         <div className='login__head-wrap'>
           <h2 className='login__title'>Welcome</h2>
-          <p
-            className={
-              errorMsg.isErrorResponse
-                ? 'error-message error-message_show'
-                : 'error-message'
-            }
-          >
-            Either Email or Password that you entered were incorrect
-          </p>
+          {errorMsg.isErrorResponse && (
+            <p className='error-message'>{errorMsg.isErrorResponse}</p>
+          )}
         </div>
-        <form className='login__form form' onSubmit={onSubmit}>
+        <form className='login__form' onSubmit={onSubmit}>
           <fieldset className='form__input-wrap'>
             <input
               type='email'
-              className='form__input'
+              className='form__input login__form-input'
               placeholder='Email address'
               value={form.email}
               name='email'
@@ -139,21 +137,15 @@ const Login = () => {
               autoFocus
               required
             />
-            <p
-              className={
-                errorMsg.isErrorEmail
-                  ? 'error-message error-message_show'
-                  : 'error-message'
-              }
-            >
-              Please enter your Email
-            </p>
+            {errorMsg.isErrorEmail && (
+              <p className='error-message'>Please enter your Email</p>
+            )}
           </fieldset>
           <fieldset className='form__input-wrap'>
             <label className='form__password-label'>
               <input
                 type={isShownPassword ? 'text' : 'password'}
-                className='form__input'
+                className='form__input login__form-input'
                 placeholder='Password'
                 value={form.password}
                 name='password'
@@ -167,15 +159,9 @@ const Login = () => {
                 alt='eye icon'
               />
             </label>
-            <p
-              className={
-                errorMsg.isErrorPsw
-                  ? 'error-message error-message_show'
-                  : 'error-message'
-              }
-            >
-              Please enter your Password
-            </p>
+            {errorMsg.isErrorPsw && (
+              <p className='error-message'>Please enter your Password</p>
+            )}
           </fieldset>
           <label className='form__label'>
             <input
@@ -187,19 +173,23 @@ const Login = () => {
             />
             Remember me
           </label>
-          <button className='btn login__btn' type='submit'>
+          <button
+            className='btn login__btn'
+            type='submit'
+            disabled={form.email && form.password ? false : true}
+          >
             Continue
           </button>
-          <Link to={'../forgot-password'} className='forgot-link'>
-            Forgot your password?
-          </Link>
-          <p className='form__register-text'>
-            Don't have an account yet?
-            <Link to={'../registration'} className='register-link'>
-              Register
-            </Link>
-          </p>
         </form>
+        <Link to={'/forgot-password'} className='forgot-link'>
+          Forgot your password?
+        </Link>
+        <p className='form__register-text'>
+          Don't have an account yet?
+          <Link to={'/registration'} className='register-link'>
+            Register
+          </Link>
+        </p>
       </div>
     </div>
   );

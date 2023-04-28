@@ -1,9 +1,8 @@
 .header__wrapper {
-  padding: 0 100px;
+  padding: 6.25vh 6.51vw 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 60px;
 }
 
 .header__logo > a, .discription__wrapper > h1 {
@@ -11,31 +10,27 @@
   text-transform: uppercase;
 }
 .header__logo > a {
-    font-size: 24px;
+    font-size: 2.5vh;
     color: #fff;
 }
 
 .header__buttons {
   display: flex;
 }
-.header__login {
-  position: relative;
-  width: 98px;
-  height: 42px;
-  margin-right: 18px;
+.header__buttons_login {
+  min-width: 10.2vh;
+  min-height: 4.375vh;
+  line-height: 4.375vh;
+  text-align: center;
+  margin-right: 1.18vw;
+  padding: 0 2vh;
+  font-size: 2.5vh;
 }
-.header__login > a {
-  position: absolute;
-  top: 14%;
-  left: 20%;
-  }
-.header__registration {
-  position: relative;
-  width: 168px;
-  height: 42px;
+.header__buttons_registration {
+  min-width: 17.5vh;
+  min-height: 4.375vh;
+  line-height: 4.375vh;
+  text-align: center;
+  padding: 0 2vh;
+  font-size: 2.5vh;
 }
-.header__registration > a {
-  position: absolute;
-  top: 14%;
-  left: 11.5%;
-  }

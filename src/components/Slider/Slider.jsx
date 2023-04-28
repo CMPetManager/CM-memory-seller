@@ -2,6 +2,21 @@ import React, { useRef, useEffect } from 'react';
 import LocomotiveScroll from 'locomotive-scroll';
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll';
 import './Slider.css';
+import photo_1 from '../../assets/img/photo-1.webp';
+import photo_2 from '../../assets/img/photo-2.webp';
+import photo_3 from '../../assets/img/photo-3.webp';
+import photo_4 from '../../assets/img/photo-4.webp';
+import photo_5 from '../../assets/img/photo-5.webp';
+import photo_6 from '../../assets/img/photo-6.webp';
+import photo_7 from '../../assets/img/photo-7.webp';
+import photo_8 from '../../assets/img/photo-8.webp';
+import photo_9 from '../../assets/img/photo-9.webp';
+import photo_10 from '../../assets/img/photo-10.webp';
+import photo_11 from '../../assets/img/photo-11.webp';
+import photo_12 from '../../assets/img/photo-12.webp';
+import photo_13 from '../../assets/img/photo-13.webp';
+import photo_14 from '../../assets/img/photo-14.webp';
+import photo_15 from '../../assets/img/photo-15.webp';
 
 function MyLocomotiveScroll() {
   const scrollRef = useRef(null);
@@ -38,111 +53,105 @@ function MyLocomotiveScroll() {
               data-scroll
               data-scroll-speed='1'
             >
-              <img src='/images/photo_1.webp' alt='girl' />
+              <img src={photo_1} alt='girl' />
             </div>
             <div
               className='slider__photo-2 item'
               data-scroll
               data-scroll-speed='0.5'
             >
-              <img src='/images/photo_2.webp ' alt='baby heels' />
+              <img src={photo_2} alt='baby heels' />
             </div>
             <div
               className='slider__photo-3 item'
               data-scroll
               data-scroll-speed='2'
             >
-              <img src='/images/photo_3.webp ' alt='mom and baby' />
+              <img src={photo_3} alt='mom and baby' />
             </div>
             <div
               className='slider__photo-4 item'
               data-scroll
               data-scroll-speed='3'
             >
-              <img src='/images/photo_4.webp ' alt='mom and daughter' />
+              <img src={photo_4} alt='mom and daughter' />
             </div>
             <div
               className='slider__photo-5 item'
               data-scroll
               data-scroll-speed='1.5'
             >
-              <img src='/images/photo_5.webp ' alt='half of a woman face' />
+              <img src={photo_5} alt='half of a woman face' />
             </div>
             <div
               className='slider__photo-6 item'
               data-scroll
               data-scroll-speed='1.5'
             >
-              <img src='/images/photo_6.webp ' alt='woman' />
+              <img src={photo_6} alt='woman' />
             </div>
             <div
               className='slider__photo-7 item'
               data-scroll
               data-scroll-speed='2'
             >
-              <img src='/images/photo_7.webp ' alt='bride and groom' />
+              <img src={photo_7} alt='bride and groom' />
             </div>
             <div
               className='slider__photo-8 item'
               data-scroll
               data-scroll-speed='2'
             >
-              <img src='/images/photo_8.webp ' alt='woman profile' />
+              <img src={photo_8} alt='woman profile' />
             </div>
             <div
               className='slider__photo-9 item'
               data-scroll
               data-scroll-speed='1.5'
             >
-              <img src='/images/photo_9.webp ' alt='man with glasses' />
+              <img src={photo_9} alt='man with glasses' />
             </div>
             <div
               className='slider__photo-10 item'
               data-scroll
-              data-scroll-speed='3'
+              data-scroll-speed='1.2'
             >
-              <img src='/images/photo_10.webp ' alt='woman negative' />
+              <img src={photo_10} alt='woman negative' />
             </div>
             <div
               className='slider__photo-11 item'
               data-scroll
               data-scroll-speed='1.5'
             >
-              <img
-                src='/images/photo_11.webp '
-                alt='mother and daughter with flowers'
-              />
+              <img src={photo_11} alt='mother and daughter with flowers' />
             </div>
             <div
               className='slider__photo-12 item'
               data-scroll
               data-scroll-speed='2.5'
             >
-              <img src='/images/photo_12.webp ' alt='woman profile negative' />
+              <img src={photo_12} alt='woman profile negative' />
             </div>
             <div
               className='slider__photo-13 item'
               data-scroll
               data-scroll-speed='3'
             >
-              <img src='/images/photo_13.webp ' alt='curly woman' />
+              <img src={photo_13} alt='curly woman' />
             </div>
             <div
               className='slider__photo-14 item'
               data-scroll
               data-scroll-speed='1'
             >
-              <img src='/images/photo_14.webp ' alt='rings on hand' />
+              <img src={photo_14} alt='rings on hand' />
             </div>
             <div
               className='slider__photo-15 item'
               data-scroll
               data-scroll-speed='2'
             >
-              <img
-                src='/images/photo_15.webp '
-                alt='mother and daughter with dog'
-              />
+              <img src={photo_15} alt='mother and daughter with dog' />
             </div>
           </div>
         </div>
