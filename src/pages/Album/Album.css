@@ -1,0 +1,480 @@
+.album__container {
+    width: 100%;
+    max-width: 2560px;
+    height: auto;
+    background: #6F6D6D;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+
+}
+
+.album__presentation {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+}
+
+.album__roundButton {
+    box-sizing: border-box;
+    width: 65px;
+    height: 65px;
+    left: 80px;
+    top: 64px;
+    background: #FBDBA3;
+    border-radius: 50%;
+    border: 1px solid #000000;
+    margin-left: 18px;
+}
+
+.album__roundButton:hover,
+.album__roundButton:hover svg>* {
+    stroke: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+.albom__ListIcon {
+    position: relative;
+    top: -35px;
+    left: 0%;
+    transition: 1s;
+
+}
+
+.albom__ListIcon__chech {
+    position: relative;
+    top: -35px;
+    left: -83px;
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.albom__ListIcon__closeEyeIcon {
+    position: relative;
+    top: -35px;
+    left: -166px;
+    transition: 1s;
+    opacity: 0;
+}
+
+.albom__ListIcon__pensilIcon {
+    position: relative;
+    top: -35px;
+    left: -250px;
+    transition: 1.5s;
+    z-index: 0;
+    opacity: 0;
+}
+
+.albom__ListIcon__trashIcon {
+    position: relative;
+    top: -35px;
+    left: -333px;
+    transition: 2s;
+    z-index: 0;
+    opacity: 0;
+}
+
+.album__upIcon {
+    position: fixed;
+    left: 93vw;
+    top: 90vh;
+}
+
+.albom__imgCover {
+    object-fit: cover;
+    width: 100%;
+    max-height: 49vh;
+    height: auto;
+    min-height: 508px;
+
+}
+
+.album__NavHeadContainer {
+    display: flex;
+    width: 90%;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 64px;
+    margin-bottom: 54px;
+}
+
+.albom__listIcon__container {
+    width: 90%;
+    z-index: 0;
+
+}
+
+.album__presentation_setting__container {
+    position: absolute;
+    margin-left: auto;
+    right: 5px;
+    top: 5px;
+}
+
+.button__addPhoto {
+
+    border: 1px solid #000000;
+    border-radius: 15px;
+    box-sizing: border-box;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+    align-items: center;
+    width: 448px;
+    height: 48px;
+    font-weight: 400;
+    background: #FBDBA3;
+    color: #000000;
+}
+
+.button__addPhoto:hover {
+    background: none;
+    color: #ffffff;
+}
+
+.albom__labelIcon {
+    margin-right: auto;
+    border: 1px;
+}
+
+.albom__labelIcon__active {
+    padding: 2px;
+    border: 1px solid #FBDBA3;
+
+}
+
+.albom__labelText__container {
+    padding: 38px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    border: 1px solid #FBDBA3;
+    transition: 4s;
+    text-align: center;
+    opacity: 1;
+    justify-content: center;
+
+}
+
+.albom__labelText__container__active {
+    opacity: 0;
+    height: 0px;
+    transition: 1s;
+    text-align: center;
+}
+
+.albom__labelText {
+    font-size: 24px;
+    opacity: 1;
+    transition: 4s;
+    text-align: center;
+}
+
+.albom__labelText__active {
+    opacity: 0;
+    transition: 1s;
+    text-align: center;
+}
+
+.album__wrapper_for_button_view {
+    position: fixed;
+    display: flex;
+    top: 250px;
+    width: 48px;
+    height: 0px;
+    margin-right: auto;
+    flex-direction: column;
+    left: 0;
+    z-index: 2;
+
+}
+
+.albom__button_view {
+    border: 1px solid #000000;
+    border-radius: 15px;
+    width: 38px;
+    min-height: 248px;
+    height: 100%;
+    margin-bottom: 30px;
+    padding-top: 8px;
+    padding-bottom: 10px;
+    background: #FBDBA3;
+
+
+}
+
+.album__presentation__input__img {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    height: 100%;
+}
+
+.album__presentation_setting {
+    width: 5px;
+    display: block;
+    height: 5px;
+    background-color: #FFFFFF;
+    margin: 5px;
+    border-radius: 50%;
+}
+
+.album__presentation__input__text {
+    font-family: 'Libre Caslon Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 128px;
+    line-height: 158px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    opacity: 0.5;
+    margin: auto;
+}
+
+
+.albom__button_view:hover .text_transform {
+
+    color: #ffffff;
+}
+
+.albom__button_view:hover {
+    background: none;
+}
+
+.text_transform {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+    align-items: center;
+    color: #000000;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+}
+
+.album__wrapper {
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.masterTemplate__container {
+    box-sizing: border-box;
+    background: #FBDBA3;
+    border: 1px solid #000000;
+    border-radius: 15px;
+    height: 248px;
+    width: 268px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 38px;
+    justify-content: space-evenly;
+    bottom: -248px;
+    transition: 1s;
+    z-index: 2;
+}
+
+.masterTemplate__container__Active {
+    box-sizing: border-box;
+    background: #FBDBA3;
+    border: 1px solid #000000;
+    border-radius: 15px;
+    height: 268px;
+    width: 268px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: -268px;
+    justify-content: space-evenly;
+    bottom: -268px;
+    transition: 1s;
+    z-index: 2;
+
+}
+
+.masterTemplat__label {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-decoration-line: underline;
+    color: #000000;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.masterTemplat__item {
+    font-size: 24px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+
+.masterColor__container {
+    box-sizing: border-box;
+    background: #FBDBA3;
+    border: 1px solid #000000;
+    border-radius: 15px;
+    height: 246px;
+    width: 268px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: -268px;
+    justify-content: space-evenly;
+    bottom: -525px;
+    transition: 1s;
+    z-index: 2;
+}
+
+.masterColor__container__Active {
+    box-sizing: border-box;
+    background: #FBDBA3;
+    border: 1px solid #000000;
+    border-radius: 15px;
+    height: 246px;
+    width: 268px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 38px;
+    justify-content: space-evenly;
+    bottom: -525px;
+    transition: 1s;
+    z-index: 2;
+
+}
+
+.color__container {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+.color_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+}
+
+.album__presentation__text {
+    display: flex;
+    width: 100%;
+    max-height: 49vh;
+    min-height: 508px;
+    height: auto;
+    background: rgba(251, 219, 163, 0.2);
+}
+
+.div1 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.div2 {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.div3 {
+    grid-area: 1 / 3 / 2 / 4;
+}
+
+.div4 {
+    grid-area: 1 / 4 / 2 / 5;
+}
+
+.div5 {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.div6 {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.div7 {
+    grid-area: 2 / 3 / 3 / 4;
+}
+
+.div8 {
+    grid-area: 2 / 4 / 3 / 5;
+}
+
+.div9 {
+    grid-area: 3 / 1 / 4 / 2;
+}
+
+.div10 {
+    grid-area: 3 / 2 / 4 / 3;
+}
+
+.div11 {
+    grid-area: 3 / 3 / 4 / 4;
+}
+
+.div12 {
+    grid-area: 3 / 4 / 4 / 5;
+}
+
+.div13 {
+    grid-area: 4 / 1 / 5 / 2;
+}
+
+.div14 {
+    grid-area: 4 / 2 / 5 / 3;
+}
+
+.div15 {
+    grid-area: 4 / 3 / 5 / 4;
+}
+
+.div16 {
+    grid-area: 4 / 4 / 5 / 5;
+}
+
+.div17 {
+    grid-area: 5 / 1 / 6 / 2;
+}
+
+.div18 {
+    grid-area: 5 / 2 / 6 / 3;
+}
+
+.div19 {
+    grid-area: 5 / 3 / 6 / 4;
+}
+
+.div20 {
+    grid-area: 5 / 4 / 6 / 5;
+}
+
+.color_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.color_content>p {
+    margin-bottom: 10px;
+
+}
