@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/CM-memory-seller/static/css/main.d85c7648.css",
-    "main.js": "/CM-memory-seller/static/js/main.f8320a42.js",
+    "main.css": "/CM-memory-seller/static/css/main.7cf4e31b.css",
+    "main.js": "/CM-memory-seller/static/js/main.671af05c.js",
     "static/media/photo-10.webp": "/CM-memory-seller/static/media/photo-10.6e7485d417e139f7aa53.webp",
     "static/media/photo-7.webp": "/CM-memory-seller/static/media/photo-7.ddccb4069cd8ed1bd9ea.webp",
     "static/media/photo-13.webp": "/CM-memory-seller/static/media/photo-13.1952b41b9d04f462f290.webp",
@@ -17,18 +17,32 @@
     "static/media/photo-5.webp": "/CM-memory-seller/static/media/photo-5.ad7c3a14e810cacec721.webp",
     "static/media/photo-12.webp": "/CM-memory-seller/static/media/photo-12.7f51df6b2df71cb5d42b.webp",
     "static/media/photo-14.webp": "/CM-memory-seller/static/media/photo-14.dee88e0b2a74c15b8c84.webp",
+    "static/media/slick.svg": "/CM-memory-seller/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/CM-memory-seller/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/CM-memory-seller/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/CM-memory-seller/static/media/slick.295183786cd8a1389865.woff",
+    "static/media/eyeoffIcon.svg": "/CM-memory-seller/static/media/eyeoffIcon.75f0b40c9ea260f193b67a58991ef480.svg",
     "static/media/IconHidePass.svg": "/CM-memory-seller/static/media/IconHidePass.ec66ed82cd40c9efbd80defa2d5aad15.svg",
     "static/media/eye_crossed.svg": "/CM-memory-seller/static/media/eye_crossed.ec66ed82cd40c9efbd80defa2d5aad15.svg",
+    "static/media/trashIcon.svg": "/CM-memory-seller/static/media/trashIcon.760e4790c46106c329f01a53cc7649ed.svg",
+    "static/media/revertPhoto.svg": "/CM-memory-seller/static/media/revertPhoto.380521dd712cc95424666c527c62970e.svg",
+    "static/media/listButton.svg": "/CM-memory-seller/static/media/listButton.3eff7e4237fccdcac1fcaffe2505e458.svg",
     "index.html": "/CM-memory-seller/index.html",
+    "static/media/pensilIcon.svg": "/CM-memory-seller/static/media/pensilIcon.feeb3bb89fb52423b27ba66e86babdc8.svg",
+    "static/media/checkIcon.svg": "/CM-memory-seller/static/media/checkIcon.cff6d8672075832dfe926e21ebe0af39.svg",
+    "static/media/alignIeftIcon.svg": "/CM-memory-seller/static/media/alignIeftIcon.69c640157de3a2791a3bab5c6ce0445e.svg",
     "static/media/IconShowPass.svg": "/CM-memory-seller/static/media/IconShowPass.e7cda6399a3bd7036b612ef4083abcad.svg",
     "static/media/eye.svg": "/CM-memory-seller/static/media/eye.e7cda6399a3bd7036b612ef4083abcad.svg",
+    "static/media/chevronsuUpIcon.svg": "/CM-memory-seller/static/media/chevronsuUpIcon.2a107b2d6cd723361aa598a25c7e792e.svg",
     "static/media/IconCloseWindow.svg": "/CM-memory-seller/static/media/IconCloseWindow.83af43c5ad2451fc6cbcb8abd0ede7c5.svg",
     "static/media/x1.svg": "/CM-memory-seller/static/media/x1.83af43c5ad2451fc6cbcb8abd0ede7c5.svg",
-    "main.d85c7648.css.map": "/CM-memory-seller/static/css/main.d85c7648.css.map",
-    "main.f8320a42.js.map": "/CM-memory-seller/static/js/main.f8320a42.js.map"
+    "static/media/plus.svg": "/CM-memory-seller/static/media/plus.54b90983c1366ac9c1919f9c767bf07a.svg",
+    "static/media/goBackButton.svg": "/CM-memory-seller/static/media/goBackButton.7a40491c1cd445d79bac7cf6ac718c44.svg",
+    "main.7cf4e31b.css.map": "/CM-memory-seller/static/css/main.7cf4e31b.css.map",
+    "main.671af05c.js.map": "/CM-memory-seller/static/js/main.671af05c.js.map"
   },
   "entrypoints": [
-    "static/css/main.d85c7648.css",
-    "static/js/main.f8320a42.js"
+    "static/css/main.7cf4e31b.css",
+    "static/js/main.671af05c.js"
   ]
 }
