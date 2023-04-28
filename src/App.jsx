@@ -12,21 +12,15 @@ import { Album } from './pages/Album/Album';
 
 function App() {
   const location = useLocation();
-  // console.log(location);
   const transitions = useTransition(location, {
     from: {
       opacity: 0,
-      transform: 'translateY(100%,0)',
-      transition: 'all 0.5s ease-in-out',
     },
     enter: {
       opacity: 1,
-      transform: 'translateY(0%,0)',
-      transition: 'all 0.5s ease-in-out',
     },
     leave: {
       opacity: 0,
-      transform: 'translateY(-50%,0)',
       transition: 'all 0.5s ease-in-out',
     },
   });

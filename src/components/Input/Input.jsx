@@ -16,7 +16,7 @@ export const Input = React.forwardRef(
           {...props}
         />
         {!errors ? (
-          <p>{label}' '</p>
+          <p>{label}</p>
         ) : (
           <p className='input__label__error' htmlFor=''>
             {errors}

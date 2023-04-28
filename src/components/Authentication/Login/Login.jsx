@@ -18,7 +18,7 @@ const Login = () => {
   const [errorMsg, setErrorMsg] = useState({
     isErrorEmail: false,
     isErrorPsw: false,
-    isErrorResponse: false,
+    isErrorResponse: '',
   });
 
   const [isChecked, setIsChecked] = useState(false);
@@ -45,11 +45,11 @@ const Login = () => {
   const onInputChange = (event) => {
     const { name, value } = event.target;
     const { isErrorEmail, isErrorPsw, isErrorResponse } = errorMsg;
-    console.log(name, value);
+
     if (isErrorResponse) {
       setErrorMsg((prev) => ({
         ...prev,
-        isErrorResponse: false,
+        isErrorResponse: '',
       }));
     }
     setForm((prev) => ({ ...prev, [name]: value }));
@@ -86,58 +86,50 @@ const Login = () => {
 
     try {
       const response = await loginUser(email, password);
-      // console.log(response);
 
       if (response.success) {
-        console.log(response.result);
-
         const userCredentials = await response.result;
         localStorage.setItem('user', JSON.stringify(userCredentials));
 
         navigate('/albums');
       }
     } catch (error) {
-      console.log(error);
-
       if (error.status === 400) {
         setErrorMsg((prev) => ({
           ...prev,
-          isErrorResponse: true,
+          isErrorResponse:
+            'Either Email or Password that you entered were incorrect',
         }));
-
-        setForm({
-          email: '',
-          password: '',
-        });
       } else {
-        console.log(error.message);
+        setErrorMsg((prev) => ({
+          ...prev,
+          isErrorResponse: error.message,
+        }));
       }
+      setForm({
+        email: '',
+        password: '',
+      });
     }
   };
 
   return (
     <div className='login__wrap'>
       <div className='login__container'>
-        <Link to={'..'} className='login__close'>
+        <Link to={'/'} className='login__close'>
           <img src={imgX} alt='close button' className='login__close-icon' />
         </Link>
         <div className='login__head-wrap'>
           <h2 className='login__title'>Welcome</h2>
-          <p
-            className={
-              errorMsg.isErrorResponse
-                ? 'error-message error-message_show'
-                : 'error-message'
-            }
-          >
-            Either Email or Password that you entered were incorrect
-          </p>
+          {errorMsg.isErrorResponse && (
+            <p className='error-message'>{errorMsg.isErrorResponse}</p>
+          )}
         </div>
-        <form className='login__form form' onSubmit={onSubmit}>
+        <form className='login__form' onSubmit={onSubmit}>
           <fieldset className='form__input-wrap'>
             <input
               type='email'
-              className='form__input'
+              className='form__input login__form-input'
               placeholder='Email address'
               value={form.email}
               name='email'
@@ -145,21 +137,15 @@ const Login = () => {
               autoFocus
               required
             />
-            <p
-              className={
-                errorMsg.isErrorEmail
-                  ? 'error-message error-message_show'
-                  : 'error-message'
-              }
-            >
-              Please enter your Email
-            </p>
+            {errorMsg.isErrorEmail && (
+              <p className='error-message'>Please enter your Email</p>
+            )}
           </fieldset>
           <fieldset className='form__input-wrap'>
             <label className='form__password-label'>
               <input
                 type={isShownPassword ? 'text' : 'password'}
-                className='form__input'
+                className='form__input login__form-input'
                 placeholder='Password'
                 value={form.password}
                 name='password'
@@ -173,15 +159,9 @@ const Login = () => {
                 alt='eye icon'
               />
             </label>
-            <p
-              className={
-                errorMsg.isErrorPsw
-                  ? 'error-message error-message_show'
-                  : 'error-message'
-              }
-            >
-              Please enter your Password
-            </p>
+            {errorMsg.isErrorPsw && (
+              <p className='error-message'>Please enter your Password</p>
+            )}
           </fieldset>
           <label className='form__label'>
             <input
@@ -200,16 +180,16 @@ const Login = () => {
           >
             Continue
           </button>
-          <Link to={'/forgot-password'} className='forgot-link'>
-            Forgot your password?
-          </Link>
-          <p className='form__register-text'>
-            Don't have an account yet?
-            <Link to={'/registration'} className='register-link'>
-              Register
-            </Link>
-          </p>
         </form>
+        <Link to={'/forgot-password'} className='forgot-link'>
+          Forgot your password?
+        </Link>
+        <p className='form__register-text'>
+          Don't have an account yet?
+          <Link to={'/registration'} className='register-link'>
+            Register
+          </Link>
+        </p>
       </div>
     </div>
   );

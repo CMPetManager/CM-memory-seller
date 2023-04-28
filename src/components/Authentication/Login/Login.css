@@ -1,20 +1,23 @@
 .login__wrap {
   position: fixed;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   top: 0;
   left: 0;
-  display: flex;
+  display: grid;
+  align-content: center;
   justify-content: center;
-  align-items: center;
+  grid-template-columns: minmax(auto, 546px);
+  grid-template-rows: minmax(auto, 659px);
   backdrop-filter: blur(12.5px);
+  z-index: 100000000010;
 }
 
 .login__container {
   position: relative;
-  width: 546px;
-  height: 659px;
-  padding: 32px 49px 58px;
+  align-self: center;
+  justify-self: center;
+  padding: 5% 9% 10%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -23,24 +26,27 @@
   box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25);
 }
 
-.login__head-wrap,
+.login__head-wrap {
+  margin-bottom: clamp(1.5rem, 5vh, 2rem);
+}
+
 .form__input-wrap {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 0.5rem;
 }
 
 .login__close {
   align-self: flex-end;
-  height: 24px;
+  height: 1.5rem;
 }
 
 .login__close-icon {
-  width: 24px;
-  height: 24px;
+  width: 1.5rem;
+  height: 1.5rem;
   transition: all 0.5s ease-in-out;
 }
 
@@ -50,18 +56,19 @@
 }
 
 .login__title {
-  width: 138px;
-  height: 40px;
   font-style: normal;
   font-weight: 400;
-  font-size: 32px;
+  font-size: clamp(1.5rem, 5vh, 2rem);
   line-height: 1.25;
   color: #FFFFFF;
+  text-align: center;
 }
 
-.login__form {  
+.login__form {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  gap: clamp(1rem, 3vh, 2rem);
 }
 
 .form__input-wrap {
@@ -72,44 +79,31 @@
   align-self: start;
 }
 
-.form__input {
-  width: 448px;
-  height: 58px;
-  opacity: 0.7;
-  border: 1px solid #FBDBA3;
-  border-radius: 15px;
-  background-color: transparent;
-  padding: 18px;
-  color: #FFFFFF;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.25;
-  caret-color: #FFFFFF;
-}
-
-.form__input:focus-visible {
-  outline: none;
-}
-
-.form__input::placeholder {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 20px;
-  color: #FFFFFF;
+.login__form-input {
+  width: 100%;
   opacity: 0.7;
 }
+
+.login__form-input::placeholder {
+  opacity: 0.7;
+}
+
 .form__password-label {
   position: relative;
+  width: 100%;
 }
 
-.form__password-label .form__input {
-  padding-right: 46px;
+.form__password-label .login__form-input {
+  padding-right: 2.875rem;
 }
 
 .form__eye {
+  width: 1.5rem;
+  height: 1.5rem;
   position: absolute;
-  right: 20px;
-  top: 18px;
+  right: 6%; 
+  top: 50%;
+  transform: translate(50%, -50%);
   cursor: pointer;
   transition: all 0.5s ease-in-out;
 }
@@ -120,23 +114,22 @@
 }
 
 .form__label {
-  height: 30px;
+  max-height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
   align-self: start;
-  gap: 8px;
+  gap: 0.5rem;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.25;
   color: #FFFFFF;
-  margin-bottom: 28px;
 }
 
 .form__checkbox {
   position: relative;
-  width: 30px;
-  height: 30px;
+  width: 1.875rem;
+  height: 1.875rem;
   border: 1px solid #97876B;
   text-align: center;
   opacity: 0.5;
@@ -151,10 +144,11 @@
 .form__checkbox:checked:before {
   content: "";
   position: absolute;
-  top: 3px;
-  left: 11px;
-  width: 6px;
-  height: 16px;
+  top: 8%;
+  left: 40%;
+  width: 20%;
+  height: 53.33%;
+  line-height: 1;
   border-right: 2px solid #60CD71;
   border-bottom: 2px solid #60CD71;
   transform: rotate(45deg);
@@ -162,32 +156,28 @@
 }
 
 .login__btn {
-  width: 448px;
-  height: 48px;
-}
-
-.login__btn:disabled{
-  background: transparent;
-  color: #FFFFFF;
-  border: 1px solid #FBDBA3;
-  transition: all 0.5s ease-in-out;
+  width: 100%;
+  max-height: 48px;
+  padding: 2%;
+  font-size: 1.5rem;
 }
 
 .forgot-link {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.25;
   text-decoration-line: underline;
   color: #FFFFFF;
-  margin-top: 24px;
+  margin-top: 1.5em;
   align-self: center;
   transition: all 0.5s ease-in-out;
 }
 
 .form__register-text {
-  margin-top: 69px;
+  margin-top: clamp(1.2rem, 4vh, 3rem);
+  max-height: 30px;
   font-weight: 400;
-  font-size: 24px;
+  font-size: clamp(1.2rem, 3.2vh, 1.5rem);
   line-height: 1.25;
   color: #FFFFFF;
   align-self: center;
@@ -206,19 +196,16 @@
 }
 
 .error-message {
-  max-width: 84%;
-  max-height: 41px;
+  max-width: 100%;
+  max-height: 2.5625rem;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.25;
   text-align: center;
   color: #E86666;
-  visibility: hidden;
-  opacity: 0;
-  margin-bottom: 8px;
 }
 
-.error-message_show{
-  visibility: visible;
-  opacity: 1;
+.login__head-wrap .error-message {
+  text-align: center;
+  margin-top: 0.5rem;
 }
