@@ -1,4 +1,4 @@
-.btn {
+.btnComponent {
     box-sizing: border-box;
     background: #FBDBA3;
     opacity: 0.8;
@@ -16,21 +16,21 @@
     font-size: 1.5vw;
 }
 
-.btn:hover {
+.btnComponent:hover {
     background: #333333;
     color: #ffffff;
     border: 1px solid #FBDBA3;
     transition: all 0.5s ease-in-out;
 }
 
-.btn:disabled {
+.btnComponent:disabled {
     background: transparent;
     color: #8d8c8c;
     border: 1px solid #FBDBA3;
     transition: all 0.5s ease-in-out;
 }
 
-.btn>svg {
+.btnComponent>svg {
     width: .4vw;
     height: .8vw;
 }
