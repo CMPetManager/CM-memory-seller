@@ -19,12 +19,12 @@ import { HTML5Backend } from 'react-dnd-html5-backend';
 import { AlbumPreview } from 'components/AlbumPreview/ AlbumPreview';
 import { MessageForm } from 'components/MessageForm/MessageForm';
 import { useNavigate } from 'react-router-dom';
+import { ButtonSide } from 'components/ButtonSide/ButtonSide';
 export const Album = () => {
   const [isOpenTextLabel, setIsOpenTextLabel] = useState(false);
-  const [activeMasterTemplate, setMasterTemplate] = useState();
+  const [activeTemplate, setactiveTemplate] = useState(true);
   const [activeColor, setActiveColor] = useState(true);
   const [bgcolor, setBgcolor] = useState('#6F6D6D');
-
   const [activeCarusel, setActiveCarusel] = useState(false);
   const [onenModalProfi, setOpenModalProfilUser] = useState(false);
   const [templateCount, setTemplateCount] = useState();
@@ -33,6 +33,26 @@ export const Album = () => {
   const navigate = useNavigate();
   const handleChange = (value) => {
     setOpenModalProfilUser(!onenModalProfi);
+  };
+  const ChooseTemplate = ({ data, index }) => {
+    switch (data) {
+      case 'first':
+        return <TemplateFirst index={index} />;
+      case 'second':
+        return <TemplateSecond index={index} />;
+      case 'third':
+        return <TemplateTree index={index} />;
+      default:
+        return <TemplateFirst index={index} />;
+    }
+  };
+  document.body.style.overflow = 'scroll';
+  const TemplateList = ({ count, data }) => {
+    const list = [];
+    for (let index = 0; index < count; index++) {
+      list.push(<ChooseTemplate data={data} index={index} />);
+    }
+    return list;
   };
   const colorsArr = [
     '#6F6D6D',
@@ -56,27 +76,6 @@ export const Album = () => {
     '#483C32',
     '#36454F ',
   ];
-
-  const ChooseTemplate = ({ data, index }) => {
-    switch (data) {
-      case 'first':
-        return <TemplateFirst index={index} />;
-      case 'second':
-        return <TemplateSecond index={index} />;
-      case 'third':
-        return <TemplateTree index={index} />;
-      default:
-        return <TemplateFirst index={index} />;
-    }
-  };
-  document.body.style.overflow = 'scroll';
-  const TemplateList = ({ count, data }) => {
-    const list = [];
-    for (let index = 0; index < count; index++) {
-      list.push(<ChooseTemplate data={data} index={index} />);
-    }
-    return list;
-  };
   return (
     <div
       style={{ backgroundColor: bgcolor }}
@@ -105,43 +104,48 @@ export const Album = () => {
         className='album__roundButton  album__upIcon '
       />
       <div className='album__wrapper_for_button_view'>
-        <button
-          className='albom__button_view'
-          onClick={() => setMasterTemplate(!activeMasterTemplate)}
+        <ButtonSide
+          madalactive={activeTemplate}
+          setModalActive={setactiveTemplate}
         >
           <div
             className={
-              activeMasterTemplate
+              !activeTemplate
                 ? 'masterTemplate__container'
                 : 'masterTemplate__container__Active'
             }
           >
-            <span className='masterTemplat__label'>MasterTemplate</span>
-            <p
-              className='masterTemplat__item'
-              onClick={() => setTemplateCount('first')}
+            {' '}
+            <div
+              onClick={(e) => {
+                e.stopPropagation();
+              }}
             >
-              1 Template
-            </p>
-            <p
-              className='masterTemplat__item'
-              onClick={() => setTemplateCount('second')}
-            >
-              2 Template
-            </p>
-            <p
-              className='masterTemplat__item'
-              onClick={() => setTemplateCount('third')}
-            >
-              3 Template
-            </p>
+              <span className='masterTemplat__label'>MasterTemplate</span>
+              <p
+                className='masterTemplat__item'
+                onClick={() => setTemplateCount('first')}
+              >
+                1 Template
+              </p>
+              <p
+                className='masterTemplat__item'
+                onClick={() => setTemplateCount('second')}
+              >
+                2 Template
+              </p>
+              <p
+                className='masterTemplat__item'
+                onClick={() => setTemplateCount('third')}
+              >
+                3 Template
+              </p>
+            </div>
           </div>
           <span className='text_transform'>Template</span>
-        </button>
-        <button
-          className='albom__button_view'
-          onClick={() => setActiveColor(!activeColor)}
-        >
+        </ButtonSide>
+        <ButtonSide madalactive={activeColor} setModalActive={setActiveColor}>
+          {' '}
           <div
             className={
               activeColor
@@ -149,7 +153,12 @@ export const Album = () => {
                 : 'masterColor__container__Active '
             }
           >
-            <div className='color_content'>
+            <div
+              className='color_content'
+              onClick={(e) => {
+                e.stopPropagation();
+              }}
+            >
               <p className='masterTemplat__label'>Color</p>
               <div className='color_grid'>
                 {colorsArr.map((color, index) => {
@@ -173,8 +182,7 @@ export const Album = () => {
             </div>
           </div>
           <p className='text_transform'>Color</p>
-          <div className='color__container'></div>
-        </button>
+        </ButtonSide>
       </div>
       <nav className='album__NavHeadContainer'>
         <Button

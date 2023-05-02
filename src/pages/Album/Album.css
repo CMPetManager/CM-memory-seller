@@ -324,6 +324,7 @@
     align-items: center;
     text-align: center;
     color: #000000;
+    margin: 15px;
 }
 
 .masterColor__container {
@@ -477,4 +478,10 @@
 .color_content>p {
     margin-bottom: 10px;
 
+}
+
+.buttonSide__container {
+    width: 100%;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5);
 }
