@@ -39,7 +39,7 @@ const ForgotPassword = () => {
           ) : (
             <span className='forgot__form__error'></span>
           )}
-          <button className='btn btn__margin' type='submit'>
+          <button className='btnComponent btn__margin' type='submit'>
             Request password
           </button>
         </form>

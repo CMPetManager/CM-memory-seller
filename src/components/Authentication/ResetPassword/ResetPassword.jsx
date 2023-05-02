@@ -107,7 +107,7 @@ const ResetPassword = () => {
           <Button
             titleButton='Change Password'
             className={clsx(
-              'btn',
+              'btnComponent',
               Object.keys(errors).length === 0 &&
                 getValues('confirmpassword') &&
                 getValues('password')
