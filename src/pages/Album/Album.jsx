@@ -181,7 +181,7 @@ export const Album = () => {
               </div>
             </div>
           </div>
-          <p className='text_transform'>Color</p>
+          <span className='text_transform'>Color</span>
         </ButtonSide>
       </div>
       <nav className='album__NavHeadContainer'>

@@ -56,7 +56,10 @@ export const AlbumPreview = () => {
       )}
       <div
         className='albom__listIcon__container'
-        onClick={() => setButtonSetting(!buttonSetting)}
+        onClick={(e) => {
+          e.stopPropagation();
+          return setButtonSetting(!buttonSetting);
+        }}
       >
         <Button
           titleButton={<ListIcon />}

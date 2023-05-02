@@ -1,6 +1,5 @@
 .album__container {
     width: 100%;
-    max-width: 2560px;
     height: auto;
     background: #6F6D6D;
     display: flex;
@@ -23,25 +22,31 @@
 
 .album__roundButton {
     box-sizing: border-box;
-    width: 65px;
-    height: 65px;
-    left: 80px;
-    top: 64px;
+    width: 4.2vw;
+    height: 4.2vw;
+    left: 5.2vw;
+    top: 4.2vw;
     background: #FBDBA3;
     border-radius: 50%;
     border: 1px solid #000000;
-    margin-left: 18px;
+    margin-left: 10px;
 }
 
 .album__roundButton:hover,
 .album__roundButton:hover svg>* {
     stroke: #ffffff;
     border: 1px solid #ffffff;
+
+}
+
+.album__roundButton>svg {
+    width: 1.4vw;
+    height: 1.8vw;
 }
 
 .albom__ListIcon {
     position: relative;
-    top: -35px;
+    top: 0px;
     left: 0%;
     transition: 1s;
 
@@ -49,7 +54,7 @@
 
 .albom__ListIcon__chech {
     position: relative;
-    top: -35px;
+    top: 0px;
     left: -83px;
     transition: 0.5s;
     opacity: 0;
@@ -57,16 +62,16 @@
 
 .albom__ListIcon__closeEyeIcon {
     position: relative;
-    top: -35px;
-    left: -166px;
+    top: 0px;
+    left: -122px;
     transition: 1s;
     opacity: 0;
 }
 
 .albom__ListIcon__pensilIcon {
     position: relative;
-    top: -35px;
-    left: -250px;
+    top: 0px;
+    left: -183px;
     transition: 1.5s;
     z-index: 0;
     opacity: 0;
@@ -74,8 +79,8 @@
 
 .albom__ListIcon__trashIcon {
     position: relative;
-    top: -35px;
-    left: -333px;
+    top: 0px;
+    left: -245px;
     transition: 2s;
     z-index: 0;
     opacity: 0;
@@ -83,7 +88,7 @@
 
 .album__upIcon {
     position: fixed;
-    left: 93vw;
+    left: 93%;
     top: 90vh;
 }
 
@@ -106,9 +111,11 @@
 }
 
 .albom__listIcon__container {
-    width: 90%;
     z-index: 0;
-
+    position: relative;
+    top: -2vw;
+    left: 6%;
+    margin-right: auto;
 }
 
 .album__presentation_setting__container {
@@ -121,15 +128,15 @@
 .button__addPhoto {
 
     border: 1px solid #000000;
-    border-radius: 15px;
+    border-radius: 15vw;
     box-sizing: border-box;
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
+    font-size: 1.5vw;
     line-height: 30px;
     align-items: center;
-    width: 448px;
-    height: 48px;
+    width: 29.6vw;
+    height: 3.1vw;
     font-weight: 400;
     background: #FBDBA3;
     color: #000000;
@@ -201,16 +208,14 @@
 
 .albom__button_view {
     border: 1px solid #000000;
-    border-radius: 15px;
-    width: 38px;
-    min-height: 248px;
+    border-radius: 1vw;
+    width: 2.51vw;
+    min-height: 16.4vw;
     height: 100%;
     margin-bottom: 30px;
     padding-top: 8px;
     padding-bottom: 10px;
     background: #FBDBA3;
-
-
 }
 
 .album__presentation__input__img {
@@ -233,7 +238,7 @@
     font-family: 'Libre Caslon Display';
     font-style: normal;
     font-weight: 400;
-    font-size: 128px;
+    font-size: 8.4vw;
     line-height: 158px;
     text-transform: uppercase;
     color: #FFFFFF;
@@ -254,7 +259,7 @@
 .text_transform {
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
+    font-size: 1.58vw;
     line-height: 30px;
     align-items: center;
     color: #000000;
@@ -265,8 +270,13 @@
 .album__wrapper {
     width: 100%;
     box-sizing: border-box;
-    padding-left: 100px;
     padding-right: 100px;
+    margin-left: 15%;
+}
+
+.album__wrapper>svg {
+    width: 2.4vw;
+    height: 2.4vw;
 }
 
 .masterTemplate__container {

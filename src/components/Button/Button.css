@@ -29,3 +29,8 @@
     border: 1px solid #FBDBA3;
     transition: all 0.5s ease-in-out;
 }
+
+.btn>svg {
+    width: .4vw;
+    height: .8vw;
+}

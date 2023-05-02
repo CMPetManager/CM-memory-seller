@@ -7,10 +7,10 @@
 
 .templateFirst_shortImage_container {
     display: flex;
-    gap: 40px;
+    gap: 2.64vw;
     width: 100%;
-    margin-top: 68px;
-    margin-bottom: 68px;
+    margin-top: 4.94vw;
+    margin-bottom: 4.94vw;
     justify-content: center;
 
 }
@@ -25,7 +25,6 @@
 .templateSecond_MicroImage_container {
     display: flex;
     gap: 40px;
-
     margin-top: 68px;
     justify-content: center;
 }
