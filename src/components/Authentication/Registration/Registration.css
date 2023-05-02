@@ -1,4 +1,4 @@
-.wraper {
+.registration-form__wraper {
   position: fixed;
   top: 0;
   left: 0;
@@ -21,12 +21,13 @@
 }
 
 .registration-form__body {
-  position: absolute;
+  position: relative;
   flex: 1 1 auto;
-  max-width: 35rem;
-  max-height: 45rem;
-  width: 35rem;
-  height: 45rem;
+  max-width: 32vw;
+  /* min-width: 35vw; */
+  max-height: 82vh;
+  width: 32vw;
+  height: 82vh;
   background: #424141;
   display: flex;
   flex-direction: column;
@@ -34,13 +35,11 @@
 }
 
 .registration-form__exit {
-  position: absolute;
-  top: 2.11rem;
-  left: 30rem;
   height: 1.22rem;
   width: 1.22rem;
   background: url(../../../assets/icons/x1.svg) no-repeat right center;
-  margin: 0;
+  margin-left: 29vw;
+  margin-top: 4.5vh;
   padding: 0;
 }
 .registration-form__exit:hover {
@@ -50,7 +49,8 @@
 }
 
 .registration-form__title {
-  margin-top: 3.5rem;
+  position:absolute;
+  top: 7.5vh;
   font-family: "Marcellus";
   font-style: normal;
   font-weight: 400;
@@ -61,17 +61,6 @@
   align-self: center;
 }
 
-.registration-form__email-already-exists {
-  position: absolute;
-  top: 6.23rem;
-  left: 4.28rem;
-  font-family: "Marcellus";
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px;
-  text-align: center;
-  color: #e86666;
-}
 
 .input_form {
   position: absolute;
@@ -88,8 +77,9 @@
   padding-left: 22px;
   padding-right: 50px;
   outline: none;
-  width: 28rem;
-  height: 3.57rem;
+  width: 27.5vw;
+  height: 7.5vh;
+  margin-left: 2.5vw;
 }
 
 .input_form::placeholder {
@@ -107,20 +97,18 @@ textarea {
 }
 
 .input__user-name {
-  margin-left: 49px;
-  top: 8.63rem;
+  top: 16vh;
 }
 
 .input__email {
-  margin-left: 49px;
-  top: 14.44rem;
+  top: 28.5vh;
 }
 .input__password_eye-off {
   position: absolute;
-  top: 21.5rem;
-  left: 28.44rem;
-  height: 22px;
-  width: 22px;
+  top: 43.5vh;
+  left: 26.8vw;
+  height: 0,02vh;
+  width: 0,02vw;
   border: none;
 }
 .input__password_eye-off:hover {
@@ -130,14 +118,13 @@ textarea {
 }
 
 .input__password {
-  margin-left: 49px;
-  top: 20.25rem;
+  top: 41vh;
 }
 
 .input__text {
   position: absolute;
-  margin-left: 48px;
-  top: 24.31rem;
+  margin-left: 2.5vw;
+  top: 49.8vh;
   font-family: "Marcellus";
   font-style: normal;
   font-weight: 400;
@@ -148,22 +135,10 @@ textarea {
 
 .input__confirm-btn {
   position: absolute;
-  top: 28.57rem;
-  left: 3.07rem;
-  width: 28rem;
-  height: 3rem;
-  background-color: #fbdba3;
-  opacity: 0.8;
-  border: 1px solid #fbdba3;
-  border-radius: 15px;
-  transition-duration: 0.4s;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.input__confirm-btn:hover {
-  background-color: #6f6d6d;
-  cursor: pointer;
+  top: 57vh;
+  margin-left: 2.5vw;
+  width: 27.5vw;
+  height: 6.5vh;
 }
 
 .input__confirm-text {
@@ -180,8 +155,8 @@ textarea {
 
 .confirm__text-log {
   position: absolute;
-  margin-left: 11rem;
-  top: 33.06rem;
+  margin-left: 10vw;
+  top: 65vh;
   font-family: "Marcellus";
   font-style: normal;
   font-weight: 400;
@@ -195,8 +170,10 @@ textarea {
 
 .body__warning-footer {
   position: absolute;
-  margin-left: 65px;
-  top: 39.81rem;
+ left: 0;
+ right: 0;
+  top: 74vh;
+  margin: 0 auto;
   max-width: 25.94rem;
   font-family: "Marcellus";
   font-style: normal;
@@ -205,11 +182,13 @@ textarea {
   text-align: center;
   color: #ffffff;
   opacity: 0.8;
+ 
 }
+
 
 .input__text-error {
   position: absolute;
-  margin-left: 49px;
+  margin-left: 2.5vw;
   font-family: "Marcellus";
   font-style: normal;
   font-weight: 400;
@@ -217,11 +196,11 @@ textarea {
   color: #e86666;
 }
 .empty-name {
-  top: 12.69rem;
+  top: 24.5vh;
 }
 .empty-email {
-  top: 18.5rem;
+  top: 37vh;
 }
 .empty-password {
-  top: 24.31rem;
+  top: 49.8vh;
 }
