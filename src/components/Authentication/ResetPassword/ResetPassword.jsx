@@ -65,7 +65,7 @@ const ResetPassword = () => {
 
   return error ? (
     <div className='resetPassword__wrap'>
-      <div className='resetPassword__container'>
+      <div className='forgot__container'>
         <Link to={'/'} className='resetPassword__close'>
           <img
             src={closeWindow}
@@ -107,7 +107,7 @@ const ResetPassword = () => {
           <Button
             titleButton='Change Password'
             className={clsx(
-              'submitBtn',
+              'btn',
               Object.keys(errors).length === 0 &&
                 getValues('confirmpassword') &&
                 getValues('password')

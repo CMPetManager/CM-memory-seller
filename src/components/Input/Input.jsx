@@ -12,7 +12,7 @@ export const Input = React.forwardRef(
           ref={ref}
           type={type}
           placeholder={placeholder}
-          className={clsx('input', className)}
+          className={clsx('form__input input_margin', className)}
           {...props}
         />
         {!errors ? (

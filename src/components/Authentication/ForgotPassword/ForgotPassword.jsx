@@ -29,13 +29,15 @@ const ForgotPassword = () => {
         </div>
         <form className='forgot__form' onSubmit={handleSubmit(onSubmit)}>
           <input
-            className='forgot__form__input'
+            className='form__input '
             {...register('email', {
               required: 'Please enter your Password',
             })}
           />
-          {errors.email && (
+          {errors.email ? (
             <span className='forgot__form__error'>This field is required</span>
+          ) : (
+            <span className='forgot__form__error'></span>
           )}
           <button className='btn btn__margin' type='submit'>
             Request password
