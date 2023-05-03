@@ -167,7 +167,7 @@ const Registration = (props) => {
 
             <p className='confirm__text-log'>
               Already registered?{' '}
-              <Link to={'/login'} className='confirm__text-log_green'>
+              <Link to={'/profile'} className='confirm__text-log_green'>
                 Sign In
               </Link>
             </p>
