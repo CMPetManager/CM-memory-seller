@@ -6,36 +6,29 @@
 .swiper-slide {
     text-align: center;
     font-size: 18px;
-    display: flex;
+    display: flex !important;
     justify-content: center;
     align-items: center;
     border: 2px dashed #FBDBA3;
     border-radius: 2px;
-    width: 200px !important;
+    max-width: 200px !important;
+    width: auto;
     height: 250px !important;
-    margin: 18px;
+    margin: 18px !important;
 }
-
-.swiper-slide img {
-    display: block;
-    object-fit: cover;
-    width: 226px;
-    height: 308px;
-    left: 0px;
-    top: 0px;
-
-}
-
 
 .photoCarusel_container {
     height: 315px;
-    width: 100%;
+    width: 93%;
     background: #857F76;
     opacity: 0.8;
     border: 2px solid #FBDBA3;
     border-radius: 15px;
-    margin-left: 10%;
+    margin-left: 6%;
     margin-bottom: 30px;
+    position: sticky !important;
+    top: 65%;
+    z-index: 1;
 
 }
 
@@ -44,10 +37,15 @@
 }
 
 .photoCarusel__input {
+    position: relative;
     width: 100%;
     height: 100%;
     opacity: 0;
-    z-index: 2;
+    z-index: 9;
+}
+
+.photoCarusel_container>.slick-slid {
+    width: 10px;
 }
 
 .plus {

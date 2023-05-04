@@ -6,7 +6,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    overflow: hidden;
+    /* overflow: hidden; */
 
 }
 
@@ -260,7 +260,6 @@
     font-style: normal;
     font-weight: 400;
     font-size: 1.58vw;
-    line-height: 30px;
     align-items: center;
     color: #000000;
     writing-mode: vertical-rl;
@@ -494,4 +493,9 @@
     width: 100%;
     position: absolute;
     background-color: rgba(255, 255, 255, 0.5);
+}
+
+.sty {
+    position: sticky;
+    top: 0;
 }

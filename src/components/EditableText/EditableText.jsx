@@ -22,6 +22,8 @@ export const EditableText = ({ text, textSize }) => {
     if (editedText.trim() !== '') {
       setEditedText(editedText.trim());
       setIsEditing(false);
+    } else {
+      setEditedText('Add text');
     }
   }
   const style = {};
@@ -35,6 +37,7 @@ export const EditableText = ({ text, textSize }) => {
       onChange={handleInputChange}
       onKeyDown={handleKeyDown}
       onBlur={handleInputBlur}
+      onClick={() => setEditedText('')}
     />
   ) : (
     <span

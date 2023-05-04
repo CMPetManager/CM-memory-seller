@@ -20,6 +20,7 @@ import { AlbumPreview } from 'components/AlbumPreview/ AlbumPreview';
 import { MessageForm } from 'components/MessageForm/MessageForm';
 import { useNavigate } from 'react-router-dom';
 import { ButtonSide } from 'components/ButtonSide/ButtonSide';
+
 export const Album = () => {
   const [isOpenTextLabel, setIsOpenTextLabel] = useState(false);
   const [activeTemplate, setactiveTemplate] = useState(true);
@@ -88,7 +89,6 @@ export const Album = () => {
           buttonOnClick={() => navigate('/')}
         />
       )}
-
       {isLogout && (
         <MessageForm
           setIsOpen={setIsLogout}
@@ -96,7 +96,6 @@ export const Album = () => {
           buttonOnClick={() => navigate('/album')}
         />
       )}
-
       <ModalProfilUser onModalActive={onenModalProfi} />
       <Button
         onClick={() => window.scrollTo(0, 0)}
@@ -225,10 +224,9 @@ export const Album = () => {
             разработчику как и где меня нужно водить
           </p>
         </div>
-      </section>
-      <DndProvider backend={HTML5Backend}>
-        {activeCarusel ? <PhotoCarusel className='characters' /> : <></>}
-
+      </section>{' '}
+      <DndProvider backend={HTML5Backend} className='sty'>
+        {activeCarusel ? <PhotoCarusel /> : <></>}
         <TemplateList count={6} data={templateCount} />
       </DndProvider>
       <AlbomFooter />
