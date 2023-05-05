@@ -3,19 +3,25 @@ import { Link } from 'react-router-dom';
 
 const MenuProfile = () => {
   return (
-    <div className='wraper'>
+    <div className='menu-profile-wraper'>
       <div className='menu-profile'>
         <div className='menu-profile__title'>
-          <h1>CATCH THE MOMENT</h1>
+          <p>CATCH THE MOMENT</p>
         </div>
         <div className='menu-profile__link'>
-          <Link to={'/Profile/Profile'} className='menu-profile__profile'>
+          <Link to={'/profile'} className='menu-profile__profile menu-link'>
             Profile
           </Link>
-          <Link to={'/Profile/Settings'} className='menu-profile__settings'>
+          <Link
+            to={'/profile/settings'}
+            className='menu-profile__settings menu-link'
+          >
             Settings
           </Link>
-          <Link to={'/Profile/LogOut'} className='menu-profile__log-out'>
+          <Link
+            to={'/profile/logOut'}
+            className='menu-profile__log-out menu-link'
+          >
             Log out
           </Link>
         </div>

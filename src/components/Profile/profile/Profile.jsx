@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import './Profile.css';
-// import MenuProfile from '../menu-profile/Menu-profile';
+import MenuProfile from '../Profile-panel/Menu-profile';
 import profilePhoto from 'assets/icons/profile_photo.svg';
 import addPhoto from 'assets/icons/Add-photo.svg';
 import { Link } from 'react-router-dom';
@@ -26,7 +26,7 @@ const Profile = () => {
   return (
     <div className='profile'>
       <div className='profile__body'>
-        {/* <MenuProfile /> */}
+        <MenuProfile />
         <div className='profile__background'>
           <p className='profile__background_higher'>Catch the</p>
           <p className='profile__background_below'>Moment</p>
