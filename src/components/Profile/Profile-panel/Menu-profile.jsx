@@ -6,23 +6,20 @@ const MenuProfile = () => {
     <div className='menu-profile-wraper'>
       <div className='menu-profile'>
         <div className='menu-profile__title'>
-          <h1>CATCH THE MOMENT</h1>
+          <p>CATCH THE MOMENT</p>
         </div>
         <div className='menu-profile__link'>
-          <Link
-            to={'/Profile/Profile'}
-            className='menu-profile__profile menu-link'
-          >
+          <Link to={'/profile'} className='menu-profile__profile menu-link'>
             Profile
           </Link>
           <Link
-            to={'/Profile/Settings'}
+            to={'/profile/settings'}
             className='menu-profile__settings menu-link'
           >
             Settings
           </Link>
           <Link
-            to={'/Profile/LogOut'}
+            to={'/profile/logOut'}
             className='menu-profile__log-out menu-link'
           >
             Log out
