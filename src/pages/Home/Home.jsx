@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Slider from '../../components/Slider/Slider';
-
+import AnimatedPage from 'components/AnimatedPage/AnimatedPage';
 import './Home.css';
 
 function Home() {
@@ -26,7 +26,9 @@ function Home() {
             </div>
           </main>
         </div>
-        <Outlet />
+        <AnimatedPage>
+          <Outlet />
+        </AnimatedPage>
       </div>
     </>
   );

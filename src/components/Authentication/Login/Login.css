@@ -9,7 +9,7 @@
   justify-content: center;
   grid-template-columns: minmax(auto, 546px);
   grid-template-rows: minmax(auto, 659px);
-  backdrop-filter: blur(12.5px);
+  background-color: rgba(118, 115, 115, 0.71);
   z-index: 100000000010;
 }
 
