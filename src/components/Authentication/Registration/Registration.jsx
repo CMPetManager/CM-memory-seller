@@ -58,12 +58,9 @@ const Registration = (props) => {
         break;
     }
   };
-  const submissionForm = () => {
-    console.log(nameInput, email, password);
-  };
 
   return (
-    <div className='wraper'>
+    <div className='registration-form__wraper'>
       <div className='registration-form'>
         <div className='registration-form__body'>
           <div>
@@ -72,7 +69,7 @@ const Registration = (props) => {
             </Link>
           </div>
           <h1 className='registration-form__title'>Welcome</h1>
-          <div className='registration-form__email-already-exists'></div>
+          {/* <div className='registration-form__email-already-exists'></div> */}
 
           <div className='registration-form__input '>
             <div>
@@ -115,7 +112,7 @@ const Registration = (props) => {
               <input
                 onBlur={blurHandler}
                 name='password'
-                className='input__password input_form'
+                className='input__password input_form '
                 type={passwordShown ? 'text' : 'password'}
                 placeholder='Password'
                 value={password}
@@ -129,7 +126,7 @@ const Registration = (props) => {
                   {'Please enter your Password'}
                 </div>
               ) : (password.length > 0 && password.length <= 6) ||
-                password.length >= 25 ? (
+                password.length >= 24 ? (
                 <div className='input__text-error empty-password'>
                   {'The password doesn’t match required criteria'}
                 </div>
@@ -154,9 +151,10 @@ const Registration = (props) => {
           <div>
             <button
               type='submit'
-              className='input__confirm-btn'
+              className='input__confirm-btn btn'
+              disabled={nameInput && email && password ? false : true}
               onClick={() => {
-                submissionForm();
+                // submissionForm();
                 setName('');
                 setEmail('');
                 setPassword('');
@@ -168,11 +166,11 @@ const Registration = (props) => {
             <p className='confirm__text-log'>
               Already registered?{' '}
               <Link to={'/login'} className='confirm__text-log_green'>
-                Sign In
+                Log In
               </Link>
             </p>
           </div>
-          <div>
+          <div className='body__warning-footer_position'>
             <p className='body__warning-footer'>
               By creating an account, I accept (Name page) Terms and Privacy
               statement
