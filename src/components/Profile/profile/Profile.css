@@ -1,5 +1,5 @@
 .profile {
-  position: fixed;
+  position: fixed; 
   top: 0;
   left: 0;
   width: 100vw;
@@ -8,9 +8,6 @@
   backdrop-filter: blur(7px);
   z-index: 10000;
 }
-.profile__body{
-/* width: 1389px; */
-}
 
 .profile__background {
   display: flex;
@@ -18,29 +15,33 @@
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
-  font-size: 200px;
-  line-height: 242px;
+  font-size: 13.02vw;
+  line-height: 0.7;
   color: #ebeae8;
   opacity: 0.05;
-  margin-top: -40px;
+  margin-top: 0px;
 }
 
 .profile__background_higher {
-  margin-left: 188px;
+  margin-left: 12.239vw;
 }
 
 .profile__background_below {
-  margin-top: -90px;
-  margin-left: 615px;
+  margin-left: 40.039vw;
 }
+
 .profile__home {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  list-style: none;
+  padding-right: 6.51vw;
   position: absolute;
-  top: 56px;
-  right: 100px;
+  top: 3.645vw;
   font-family: "Marcellus";
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 30px;
   color: #ffffff;
 }
@@ -54,8 +55,8 @@
 }
 
 .profile__user-photo {
-  width: 128px;
-  height: 135px;
+  width: 8.33vw;
+  height: 8.37vw;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -64,15 +65,15 @@
 }
 
 .profile__user-photo_user {
-  width: 128px;
-  height: 128px;
+  width: 8.33vw;
+  height: 8.33vw;
   border-radius: 50%;
 }
 
 .profile__user-photo_add-photo {
-  margin-top: -15px;
-  width: 28px;
-  height: 28px;
+  margin-top: -0.976vw;
+  width: 1.822vw;
+  height: 1.822vw;
 }
 
 .profile__user-photo_hiden {
@@ -87,18 +88,31 @@
 
 .profile__user-name h2 {
   margin-top: 14px;
+  color: #ffffff;
+  font-family: "Marcellus";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
 }
 
 .profile__user-name h3 {
   margin-top: 7px;
+  font-family: "Marcellus";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+  opacity: 0.8;
 }
 
 .profile__name-input {
-  margin-top: 24px;
+  margin-top: 1.56vw;
 }
 
 .profile__email-input {
-  margin-top: 36px;
+  margin-top: 2.34375vw; 
 }
 
 .input_form {

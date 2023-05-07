@@ -7,8 +7,6 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 const Profile = () => {
-  const [nameInput, setName] = useState('');
-  const [email, setEmail] = useState('');
   const [image, setImage] = useState();
   const [imageURL, setImageURL] = useState();
 
@@ -32,7 +30,7 @@ const Profile = () => {
           <p className='profile__background_below'>Moment</p>
         </div>
         <div className='profile__home'>
-          <Link to='../'>Home</Link>
+          <Link to='/albums'>Home</Link>
         </div>
         <div className='profile__user'>
           <div className='profile__user-photo'>
@@ -65,8 +63,7 @@ const Profile = () => {
                 type='text'
                 disabled
                 placeholder={userName}
-                className='input_form'
-                onChange={(e) => setName(e.target.value)}
+                className='input_form input'
               ></input>
             </div>
             <div className='profile__name-input'>
@@ -75,8 +72,7 @@ const Profile = () => {
                 placeholder='Email address'
                 type='text'
                 disabled
-                className='input_form'
-                onChange={(e) => setEmail(e.target.value)}
+                className='input_form input'
               ></input>
             </div>
           </div>
