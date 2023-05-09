@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/CM-memory-seller/static/css/main.c9f3b08f.css",
-    "main.js": "/CM-memory-seller/static/js/main.05572795.js",
+    "main.css": "/CM-memory-seller/static/css/main.aea62ff2.css",
+    "main.js": "/CM-memory-seller/static/js/main.5beb1c41.js",
     "static/media/photo-10.webp": "/CM-memory-seller/static/media/photo-10.6e7485d417e139f7aa53.webp",
     "static/media/photo-7.webp": "/CM-memory-seller/static/media/photo-7.ddccb4069cd8ed1bd9ea.webp",
     "static/media/photo-13.webp": "/CM-memory-seller/static/media/photo-13.1952b41b9d04f462f290.webp",
@@ -20,6 +20,7 @@
     "static/media/slick.svg": "/CM-memory-seller/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/CM-memory-seller/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/CM-memory-seller/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/profile_photo.svg": "/CM-memory-seller/static/media/profile_photo.13d6d11ad8041fcd636e38cf88eae338.svg",
     "static/media/slick.woff": "/CM-memory-seller/static/media/slick.295183786cd8a1389865.woff",
     "static/media/eyeoffIcon.svg": "/CM-memory-seller/static/media/eyeoffIcon.75f0b40c9ea260f193b67a58991ef480.svg",
     "static/media/IconHidePass.svg": "/CM-memory-seller/static/media/IconHidePass.ec66ed82cd40c9efbd80defa2d5aad15.svg",
@@ -33,16 +34,17 @@
     "static/media/alignIeftIcon.svg": "/CM-memory-seller/static/media/alignIeftIcon.69c640157de3a2791a3bab5c6ce0445e.svg",
     "static/media/IconShowPass.svg": "/CM-memory-seller/static/media/IconShowPass.e7cda6399a3bd7036b612ef4083abcad.svg",
     "static/media/eye.svg": "/CM-memory-seller/static/media/eye.e7cda6399a3bd7036b612ef4083abcad.svg",
+    "static/media/Add-photo.svg": "/CM-memory-seller/static/media/Add-photo.81108c4cb9f52bb54d7321c6a7bbc3c5.svg",
     "static/media/chevronsuUpIcon.svg": "/CM-memory-seller/static/media/chevronsuUpIcon.2a107b2d6cd723361aa598a25c7e792e.svg",
     "static/media/IconCloseWindow.svg": "/CM-memory-seller/static/media/IconCloseWindow.83af43c5ad2451fc6cbcb8abd0ede7c5.svg",
     "static/media/x1.svg": "/CM-memory-seller/static/media/x1.83af43c5ad2451fc6cbcb8abd0ede7c5.svg",
     "static/media/plus.svg": "/CM-memory-seller/static/media/plus.54b90983c1366ac9c1919f9c767bf07a.svg",
     "static/media/goBackButton.svg": "/CM-memory-seller/static/media/goBackButton.7a40491c1cd445d79bac7cf6ac718c44.svg",
-    "main.c9f3b08f.css.map": "/CM-memory-seller/static/css/main.c9f3b08f.css.map",
-    "main.05572795.js.map": "/CM-memory-seller/static/js/main.05572795.js.map"
+    "main.aea62ff2.css.map": "/CM-memory-seller/static/css/main.aea62ff2.css.map",
+    "main.5beb1c41.js.map": "/CM-memory-seller/static/js/main.5beb1c41.js.map"
   },
   "entrypoints": [
-    "static/css/main.c9f3b08f.css",
-    "static/js/main.05572795.js"
+    "static/css/main.aea62ff2.css",
+    "static/js/main.5beb1c41.js"
   ]
 }
