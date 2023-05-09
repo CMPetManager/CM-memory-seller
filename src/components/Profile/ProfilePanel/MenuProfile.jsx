@@ -1,4 +1,4 @@
-import './Menu-profile.css';
+import './MenuProfile.css';
 import { Link } from 'react-router-dom';
 
 const MenuProfile = () => {
@@ -17,12 +17,6 @@ const MenuProfile = () => {
             className='menu-profile__settings menu-link'
           >
             Settings
-          </Link>
-          <Link
-            to={'/profile/logOut'}
-            className='menu-profile__log-out menu-link'
-          >
-            Log out
           </Link>
         </div>
       </div>
