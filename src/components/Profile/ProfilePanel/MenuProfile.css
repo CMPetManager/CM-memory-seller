@@ -30,8 +30,7 @@
 }
 .menu-link:hover{
   color: rgba(255, 255, 255, 1);
-  text-decoration: underline;
-  text-decoration-color:1px solid #FBDBA3; #FBDBA3;
+  text-decoration: underline #FBDBA3;
 }
 
 .menu-link {
