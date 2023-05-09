@@ -56,7 +56,7 @@
 
 .profile__user-photo {
   width: 8.33vw;
-  height: 8.37vw;
+  height: 8.33vw;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -65,15 +65,15 @@
 }
 
 .profile__user-photo_user {
-  width: 8.33vw;
-  height: 8.33vw;
+  width: 8rem;
+  height: 8rem;
   border-radius: 50%;
 }
 
 .profile__user-photo_add-photo {
   margin-top: -0.976vw;
-  width: 1.822vw;
-  height: 1.822vw;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .profile__user-photo_hiden {

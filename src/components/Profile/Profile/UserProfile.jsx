@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import './Profile.css';
+import './UserProfile.css';
 import MenuProfile from '../Profile-panel/Menu-profile';
 import profilePhoto from 'assets/icons/profile_photo.svg';
 import addPhoto from 'assets/icons/Add-photo.svg';
