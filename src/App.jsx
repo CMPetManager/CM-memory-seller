@@ -28,6 +28,8 @@ function App() {
             />
             <Route path='*' element={<div>Error</div>} />
           </Route>
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/album' element={<Album />} />
           <Route path='/albums' element={<div>My Albums</div>} />
         </Routes>
       </AnimatePresence>
