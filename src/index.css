@@ -113,7 +113,8 @@ input:-webkit-autofill:focus {
   outline: none;
 }
 
-.form__input::placeholder {
+.form__input::placeholder,
+.text {
   font-weight: 400;
   font-size: 1.042vw;
   line-height: 1.25;
