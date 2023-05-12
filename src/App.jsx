@@ -8,7 +8,7 @@ import Login from './components/Authentication/Login/Login';
 import ForgotPassword from './components/Authentication/ForgotPassword/ForgotPassword';
 import ResetPassword from './components/Authentication/ResetPassword/ResetPassword';
 import Home from './pages/Home/Home';
-import Profile from './components/Profile/Profile/UserProfile';
+import Profile from './components/Profile/UserProfile/UserProfile';
 
 function App() {
   const location = useLocation();
