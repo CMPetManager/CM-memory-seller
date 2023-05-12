@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Marcellus&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Libre+Caslon+Display&family=Marcellus&display=swap');
+
+@import 'variables.css';
 
 * {
   font-family: 'Marcellus', serif;
@@ -14,6 +14,7 @@ body,
 #root {
   width: 100%;
   height: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 ul,
@@ -49,53 +50,63 @@ p {
 }
 
 .btn {
+  width: 100%;
   box-sizing: border-box;
-  background: #FBDBA3;
+  background: var(--gold);
   opacity: 0.8;
-  border: 1px solid #FBDBA3;
-  border-radius: 15px;
+  border: 0.065vw solid var(--gold);
+  border-radius: 0.97vw;
+  padding: 0.59vw 1vw;
   font-style: normal;
+  font-size: 1.56vw;
   font-weight: 400;
   line-height: 1.25;
-  color: #000000;
+  color: var(--black);
   cursor: pointer;
   transition: all 0.5s ease-in-out;
 }
 
 .btn:hover {
   background: #333333;
-  color: #ffffff;
-  border: 1px solid #FBDBA3;
+  color: var(--white);
+  border: 0.065vw solid var(--gold);
   transition: all 0.5s ease-in-out;
 }
 
 .btn:disabled {
   background: transparent;
   color: #8d8c8c;
-  border: 1px solid #FBDBA3;
+  border: 0.065vw solid var(--gold);
   transition: all 0.5s ease-in-out;
 }
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
-  border: 1px solid #FBDBA3;
-  -webkit-text-fill-color: #FFFFFF;
-  -webkit-box-shadow: 0 0 0px 1000px #424141 inset;
+  border: 1px solid var(--gold);
+  -webkit-text-fill-color: var(--white);
+  -webkit-box-shadow: 0 0 0px 1000px var(--brown) inset;
   transition: background-color 5000s ease-in-out 0s;
 }
 
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .form__input {
-  max-height: 57px;
-  border: 1px solid #FBDBA3;
-  border-radius: 15px;
+  width: min(100%, 29.17vw);
+  height: 3.71vw;
+  border: 0.065vw solid var(--gold);
+  border-radius: 0.9765vw;
   background-color: transparent;
-  padding: 4%;
-  color: #FFFFFF;
+  padding: 1.24vw 1.43vw 1.17vw;
+  color: var(--white);
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 1.042vw;
   line-height: 1.25;
-  caret-color: #FFFFFF;
+  caret-color: var(--white);
 }
 
 .form__input:focus-visible {
@@ -104,7 +115,50 @@ input:-webkit-autofill:focus {
 
 .form__input::placeholder {
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 1.042vw;
   line-height: 1.25;
-  color: #FFFFFF;
+  color: var(--white);
+  opacity: 0.7;
+}
+
+.form__input-passw {
+  padding-right: 2.7vw;
+}
+
+.form__eye {
+  width: 1.5625vw;
+  height: 1.5625vw;
+  position: absolute;
+  right: 1.65vw;
+  top: 50%;
+  transform: translate(50%, -50%);
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.form__eye:hover {
+  filter: invert(98%) sepia(10%) saturate(20%) hue-rotate(32deg) brightness(43%) contrast(103%);
+  transition: all 0.5s ease-in-out;
+}
+
+.title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.08vw;
+  line-height: 1.25;
+  color: var(--white);
+  text-align: center;
+}
+
+.error-message {
+  max-width: 100%;
+  font-weight: 400;
+  font-size: 1.042vw;
+  line-height: 1.25;
+  text-align: left;
+  color: var(--error);
+}
+
+.error-message_margin {
+  margin: 0.83vh 0;
 }

@@ -1,4 +1,4 @@
-.btnComponent {
+/* .btnComponent {
     box-sizing: border-box;
     background: #FBDBA3;
     opacity: 0.8;
@@ -28,9 +28,9 @@
     color: #8d8c8c;
     border: 1px solid #FBDBA3;
     transition: all 0.5s ease-in-out;
-}
+} */
 
-.btnComponent>svg {
+.btn>svg {
     width: .4vw;
     height: .8vw;
 }
