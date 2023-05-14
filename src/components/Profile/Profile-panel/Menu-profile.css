@@ -1,0 +1,44 @@
+.menu-profile {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 20vw;
+  background-color: #817b74;
+  border: 1px solid #fbdba3;
+  box-shadow: 10px 0px 20px;
+  border-radius: 0px 15px 15px 0px;
+  z-index: 500;
+  opacity: 0.4;
+  display: flex;
+  flex-direction: column;
+}
+.menu-profile__title {
+  font-family: "Libre Caslon Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 30px;
+  color: #ffffff;
+  margin-top: 3.6vw;
+  padding-left: 0.9vw;
+}
+.menu-profile__link {
+  display: flex;
+  flex-direction: column;
+  padding-left: 3.13vw;
+  margin-top: 11.4vw;
+}
+
+.menu-link {
+  color: #ffffff;
+  font-family: "Marcellus";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 30px;
+  flex-wrap: wrap;
+}
+.menu-link:not(:first-child) {
+  padding-top: 1.3vw;
+}

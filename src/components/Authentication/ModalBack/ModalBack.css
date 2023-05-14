@@ -1,0 +1,44 @@
+.modal__wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  grid-template-columns: minmax(auto, 35.55vw);
+  background-color: rgba(118, 115, 115, 0.71);
+  z-index: 100000000010;
+}
+
+.modal__container {
+  width: min(100%, 33vw);
+  position: relative;
+  align-self: center;
+  justify-self: center;
+  padding: 5% 9% 10%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  background: var(--brown);
+  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25);
+}
+
+.modal__close {
+  align-self: flex-end;
+  height: 1.6vw;
+}
+
+.modal__close-icon {
+  display: block;
+  width: 1.56vw;
+  height: 1.56vw;
+  transition: all 0.5s ease-in-out;
+}
+
+.modal__close-icon:hover {
+  filter: invert(86%) sepia(27%) saturate(507%) hue-rotate(341deg) brightness(101%) contrast(97%);
+  transition: all 0.5s ease-in-out;
+}

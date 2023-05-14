@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+.FormError__container {
+    width: 100vw;
+    height: 100vh;
+    z-index: 6;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.FormError__windowContainer {
+    box-sizing: border-box;
+    width: 36vw;
+    background: #424141;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    padding: 3.7vw 3.2vw;
+
+}
+
+.FormError_bgText {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 6.3vw;
+    line-height: 116px;
+    color: #FFFFFF;
+    opacity: 0.2;
+
+
+}
+
+.FormError_bgSubText {
+    position: relative;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 4vw;
+    line-height: 77px;
+    color: #FFFFFF;
+    top: -56px;
+}
+
+.FormError_title {
+    font-family: 'Libre Caslon Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 40px;
+    color: #FFFFFF;
+    margin-bottom: 30px;
+}
+
+.button__container {
+    display: flex;
+    gap: 60px;
+}
