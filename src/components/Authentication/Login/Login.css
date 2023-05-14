@@ -1,21 +1,5 @@
-.form__input-wrap {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  border: none;
-}
-
 .login__form-input {
   opacity: 0.7;
-}
-
-.form__input-container {
-  position: relative;
-  display: flex;
-  width: 100%;
 }
 
 .form__label {
@@ -85,13 +69,12 @@
   align-self: center;
 }
 
-.register-link {  
+.link__green {  
   color: var(--green);
   margin-left: 5px;
   transition: all 0.5s ease-in-out;
 }
 
-.register-link:hover,
 .forgot-link:hover {
   color: var(--gold);
   transition: all 0.5s ease-in-out;
@@ -99,13 +82,4 @@
 
 .login__head-wrap .error-message {
   text-align: center;
-}
-
-.form__input-wrap .error-message {
-  align-self: start;
-}
-
-.error-message_hidden {
-  visibility: hidden;
-  user-select: none;
 }

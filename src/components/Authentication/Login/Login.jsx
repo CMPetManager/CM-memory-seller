@@ -201,7 +201,7 @@ const Login = () => {
       </Link>
       <p className='form__register-text'>
         Don't have an account yet?
-        <Link to={'/registration'} className='register-link'>
+        <Link to={'/registration'} className='link__green'>
           Register
         </Link>
       </p>

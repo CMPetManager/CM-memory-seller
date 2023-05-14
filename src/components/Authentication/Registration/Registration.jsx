@@ -2,8 +2,11 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Registration.css';
+
 import eyeOff from 'assets/icons/eye_crossed.svg';
 import eyeOpen from 'assets/icons/eye.svg';
+
+import ModalBack from '../ModalBack/ModalBack';
 
 const Registration = (props) => {
   const [nameInput, setName] = useState('');
@@ -15,6 +18,8 @@ const Registration = (props) => {
   const [passwordDirty, setPasswordDirty] = useState(false);
 
   const [passwordShown, setPasswordShown] = useState(false);
+  const [isErrorResponse, setIsErrorResponse] = useState(false);
+
   const togglePassword = () => {
     setPasswordShown(!passwordShown);
   };
@@ -59,127 +64,149 @@ const Registration = (props) => {
     }
   };
 
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    console.log(nameInput, email, password);
+    setName('');
+    setEmail('');
+    setPassword('');
+  };
+
+  const ErrorPasswMsg = () => {
+    return (
+      <>
+        {password.length === 0 && passwordDirty ? (
+          <p className='error-message error-message_margin'>
+            {'Please enter your Password'}
+          </p>
+        ) : (password.length > 0 && password.length <= 6) ||
+          password.length >= 24 ? (
+          <p className='error-message error-message_margin'>
+            {'The password doesn’t match required criteria'}
+          </p>
+        ) : (
+          <p className='text error-message_margin'>
+            {'Must be between 6 and 25 characters long.'}
+          </p>
+        )}
+      </>
+    );
+  };
+
   return (
-    <div className='registration-form__wraper'>
-      <div className='registration-form'>
-        <div className='registration-form__body'>
-          <div>
-            <Link to='../'>
-              <div className='registration-form__exit'></div>
-            </Link>
-          </div>
-          <h1 className='registration-form__title'>Welcome</h1>
-          {/* <div className='registration-form__email-already-exists'></div> */}
-
-          <div className='registration-form__input '>
-            <div>
-              <input
-                onBlur={(e) => blurHandler(e)}
-                name='name'
-                type='text'
-                className='input__user-name input_form'
-                placeholder='Name'
-                value={nameInput}
-                onChange={(e) => {
-                  nameHandler(e);
-                }}
-              ></input>
-              {nameDirty && nameEmptyError && (
-                <div className='input__text-error empty-name'>
-                  {nameEmptyError}
-                </div>
-              )}
-            </div>
-            <div>
-              <input
-                onBlur={(e) => blurHandler(e)}
-                name='email'
-                type='text'
-                className='input__email input_form'
-                placeholder='Email address'
-                value={email}
-                onChange={(e) => {
-                  emailHandler(e);
-                }}
-              ></input>
-              {emailDirty && emailEmptyError && (
-                <div className='input__text-error empty-email'>
-                  {emailEmptyError}
-                </div>
-              )}
-            </div>
-            <div>
-              <input
-                onBlur={blurHandler}
-                name='password'
-                className='input__password input_form '
-                type={passwordShown ? 'text' : 'password'}
-                placeholder='Password'
-                value={password}
-                onChange={(e) => {
-                  setPassword(e.target.value);
-                }}
-              />
-              <div className='input__text-error empty-password'></div>
-              {password.length === 0 && passwordDirty ? (
-                <div className='input__text-error empty-password'>
-                  {'Please enter your Password'}
-                </div>
-              ) : (password.length > 0 && password.length <= 6) ||
-                password.length >= 24 ? (
-                <div className='input__text-error empty-password'>
-                  {'The password doesn’t match required criteria'}
-                </div>
-              ) : (
-                <div className='input__text password__text_hidden'>
-                  {'Must be between 6 and 25 characters long.'}
-                </div>
-              )}
-              <div>
-                <img
-                  src={passwordShown ? eyeOpen : eyeOff}
-                  alt='eye off'
-                  className='input__password_eye-off'
-                  onClick={togglePassword}
-                ></img>
-              </div>
-
-              <p className='input__text password__text_hidden'></p>
-            </div>
-          </div>
-
-          <div>
-            <button
-              type='submit'
-              className='input__confirm-btn btn'
-              disabled={nameInput && email && password ? false : true}
-              onClick={() => {
-                // submissionForm();
-                setName('');
-                setEmail('');
-                setPassword('');
-              }}
-            >
-              <span className='input__confirm-text'>Confirm</span>
-            </button>
-
-            <p className='confirm__text-log'>
-              Already registered?{' '}
-              <Link to={'/login'} className='confirm__text-log_green'>
-                Log In
-              </Link>
-            </p>
-          </div>
-          <div className='body__warning-footer_position'>
-            <p className='body__warning-footer'>
-              By creating an account, I accept (Name page) Terms and Privacy
-              statement
-            </p>
-          </div>
-        </div>
+    <ModalBack>
+      <div className='login__head-wrap'>
+        <h2 className='title'>Welcome</h2>
+        <p
+          className={
+            isErrorResponse
+              ? 'error-message error-message_margin'
+              : 'error-message error-message_margin error-message_hidden'
+          }
+        >
+          This email already exists.
+          {<ResponseError />}
+          to reset password
+        </p>
       </div>
-    </div>
+      <form className='form' onSubmit={onSubmit}>
+        <div className='form__input-wrap'>
+          <input
+            onBlur={(e) => blurHandler(e)}
+            name='name'
+            type='text'
+            className='form__input'
+            placeholder='Name'
+            value={nameInput}
+            onChange={(e) => {
+              nameHandler(e);
+            }}
+            required
+          />
+          <p
+            className={
+              nameDirty && nameEmptyError
+                ? 'error-message error-message_margin'
+                : 'error-message error-message_margin error-message_hidden'
+            }
+          >
+            {nameEmptyError}
+          </p>
+        </div>
+        <div className='form__input-wrap'>
+          <input
+            onBlur={(e) => blurHandler(e)}
+            name='email'
+            type='text'
+            className='form__input'
+            placeholder='Email address'
+            value={email}
+            onChange={(e) => {
+              emailHandler(e);
+            }}
+            required
+          />
+          <p
+            className={
+              emailDirty && emailEmptyError
+                ? 'error-message error-message_margin'
+                : 'error-message error-message_margin error-message_hidden'
+            }
+          >
+            {emailEmptyError}
+          </p>
+        </div>
+        <div className='form__input-wrap'>
+          <div className='form__input-container'>
+            <input
+              onBlur={blurHandler}
+              name='password'
+              className='form__input form__input-passw '
+              type={passwordShown ? 'text' : 'password'}
+              placeholder='Password'
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
+              required
+            />
+            <img
+              onClick={togglePassword}
+              className='form__eye'
+              src={passwordShown ? eyeOpen : eyeOff}
+              alt='eye icon'
+            />
+          </div>
+          {<ErrorPasswMsg />}
+        </div>
+        <button
+          type='submit'
+          className='btn register__btn'
+          disabled={nameInput && email && password ? false : true}
+        >
+          Confirm
+        </button>
+      </form>
+
+      <p className='text register__text'>
+        Already registered?{' '}
+        <Link to={'/login'} className='link__green'>
+          Log In
+        </Link>
+      </p>
+
+      <p className='text terms-text'>
+        By creating an account, I accept (Name page) Terms and Privacy statement
+      </p>
+    </ModalBack>
   );
 };
 
+const ResponseError = () => {
+  return (
+    <Link to={'/forgot-password'} className='link__forgot'>
+      Click here
+    </Link>
+  );
+};
 export default Registration;

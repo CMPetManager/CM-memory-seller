@@ -83,7 +83,7 @@ p {
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
-  border: 1px solid var(--gold);
+  border: 0.065vw solid var(--gold);
   -webkit-text-fill-color: var(--white);
   -webkit-box-shadow: 0 0 0px 1000px var(--brown) inset;
   transition: background-color 5000s ease-in-out 0s;
@@ -93,6 +93,22 @@ input:-webkit-autofill:focus {
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+
+.form__input-container {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.form__input-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: none;
 }
 
 .form__input {
@@ -162,4 +178,26 @@ input:-webkit-autofill:focus {
 
 .error-message_margin {
   margin: 0.83vh 0;
+}
+
+.error-message_hidden {
+  visibility: hidden;
+  user-select: none;
+}
+
+.form__input-wrap .error-message,
+.form__input-wrap .text {
+  align-self: start;
+}
+
+.link__green {
+  color: var(--green);
+  margin-left: 5px;
+  transition: all 0.5s ease-in-out;
+}
+
+.link__green:hover,
+.link__forgot:hover {
+  color: var(--gold);
+  transition: all 0.5s ease-in-out;
 }
