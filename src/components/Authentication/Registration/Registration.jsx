@@ -1,6 +1,6 @@
 /* eslint-disable default-case */
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Registration.css';
 
 import eyeOff from 'assets/icons/eye_crossed.svg';
@@ -9,6 +9,8 @@ import eyeOpen from 'assets/icons/eye.svg';
 import ModalBack from '../ModalBack/ModalBack';
 
 const Registration = (props) => {
+  const navigate = useNavigate();
+
   const [nameInput, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -67,9 +69,8 @@ const Registration = (props) => {
   const onSubmit = async (e) => {
     e.preventDefault();
     console.log(nameInput, email, password);
-    setName('');
-    setEmail('');
-    setPassword('');
+
+    navigate('/login');
   };
 
   const ErrorPasswMsg = () => {
