@@ -1,32 +1,72 @@
 import './ResetPassword.css';
-import closeWindow from '../../assets/img/IconCloseWindow.svg';
+import closeWindow from 'assets/img/IconCloseWindow.svg';
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { Button } from '../../Button/Button';
-import { Input } from '../../Input/Input';
+import { Button } from 'components/Button/Button';
+import { Input } from 'components/Input/Input';
+import { useState } from 'react';
+import { FormError } from 'components/FormError/FormError';
+import { clsx } from 'clsx';
 
+import { ReactComponent as HidePass } from 'assets/img/IconHidePass.svg';
+import { ReactComponent as ShowPass } from 'assets/img/IconShowPass.svg';
 const ResetPassword = () => {
+  const [error, setError] = useState(true);
+  const [isPassword, setIsPassword] = useState({
+    password: true,
+    confirmpassword: true,
+  });
   const navigate = useNavigate();
   const {
     register,
     reset,
     handleSubmit,
+    getValues,
     formState: { errors },
   } = useForm({ mode: 'all' });
+
   const onSubmit = (data) => {
     if (data.password === data.confirmpassword) {
       console.log(data);
-      navigate('/login');
-    } else {
-      alert('Passwords don`t match');
+      setError(false);
+      reset();
     }
-    reset();
+  };
+  const InputPassValidate = (value) => {
+    if (value.length < 6 || value.length > 25) {
+      return 'Must be between 6 and 25 characters long.';
+    } else if (getValues('confirmpassword') !== getValues('password')) {
+      return 'Password mismatch';
+    }
+  };
+  const ChooseImage = (data) => {
+    return isPassword[data] ? (
+      <HidePass
+        className='image_eye'
+        onClick={() =>
+          setIsPassword((prev) => ({
+            ...prev,
+            [data]: !isPassword[data],
+          }))
+        }
+      />
+    ) : (
+      <ShowPass
+        className='image_eye'
+        onClick={() =>
+          setIsPassword((prev) => ({
+            ...prev,
+            [data]: !isPassword[data],
+          }))
+        }
+      />
+    );
   };
 
-  return (
+  return error ? (
     <div className='resetPassword__wrap'>
       <div className='resetPassword__container'>
-        <Link to={'..'} className='resetPassword__close'>
+        <Link to={'/'} className='resetPassword__close'>
           <img
             src={closeWindow}
             alt='close button'
@@ -38,31 +78,52 @@ const ResetPassword = () => {
         </div>
         <form className='resetPassword__form' onSubmit={handleSubmit(onSubmit)}>
           <Input
-            label=' '
-            register={register}
-            required
+            {...register('password', {
+              required: true,
+              minLength: {
+                value: 6,
+                message: 'Must be between 6 and 25 characters long.',
+              },
+              maxLength: {
+                value: 25,
+                message: 'Must be between 6 and 25 characters long.',
+              },
+            })}
             placeholder='Enter your new password'
-            type='password'
-            visibleIcon={true}
-            name='password'
+            type={isPassword.password ? 'password' : 'text'}
+            icon={ChooseImage('password')}
             errors={errors.password?.message}
-            textError='Enter your new password'
           />
           <Input
-            label=' '
-            register={register}
-            required
+            icon={ChooseImage('confirmpassword')}
             placeholder='Confirm your new password'
-            type='password'
-            visibleIcon={true}
-            name='confirmpassword'
+            type={isPassword.confirmpassword ? 'password' : 'text'}
             errors={errors.confirmpassword?.message}
-            textError='Your forgot confirm  new password'
+            {...register('confirmpassword', {
+              validate: InputPassValidate,
+            })}
           />
-          <Button titleButton='Change Password' />
+
+          <Button
+            titleButton='Change Password'
+            className={clsx(
+              'submitBtn',
+              Object.keys(errors).length === 0 &&
+                getValues('confirmpassword') &&
+                getValues('password')
+                ? 'submitBtnActive'
+                : 'submitBtnPassive'
+            )}
+          />
         </form>
       </div>
     </div>
+  ) : (
+    <FormError
+      textLabel='New data saved'
+      titleButton='Login'
+      buttonOnClick={() => navigate('/login')}
+    />
   );
 };
 

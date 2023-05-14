@@ -1,5 +1,4 @@
 .submitBtn {
-    background: #FBDBA3;
     border: 1px solid #000000;
     border-radius: 15px;
     box-sizing: border-box;
@@ -9,8 +8,19 @@
     font-size: 24px;
     line-height: 30px;
     align-items: center;
-    color: #000000;
+
     padding-top: 8px;
     padding-bottom: 10px;
     margin-top: 28px;
+
+}
+
+.submitBtnPassive {
+    background: none;
+    color: #ffffff;
+}
+
+.submitBtnActive {
+    background: #FBDBA3;
+    color: #000000;
 }

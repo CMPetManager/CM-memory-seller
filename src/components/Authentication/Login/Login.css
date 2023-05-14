@@ -166,6 +166,13 @@
   height: 48px;
 }
 
+.login__btn:disabled{
+  background: transparent;
+  color: #FFFFFF;
+  border: 1px solid #FBDBA3;
+  transition: all 0.5s ease-in-out;
+}
+
 .forgot-link {
   font-weight: 400;
   font-size: 16px;

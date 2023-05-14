@@ -2,11 +2,11 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 import './Login.css';
-import imgX from '../../../assets/icons/x1.svg';
-import eyeCrossed from '../../../assets/icons/eye_crossed.svg';
-import eye from '../../../assets/icons/eye.svg';
+import imgX from 'assets/icons/x1.svg';
+import eyeCrossed from 'assets/icons/eye_crossed.svg';
+import eye from 'assets/icons/eye.svg';
 
-import { loginUser } from '../../../services/users/userService';
+import { loginUser } from 'services/users/userService';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -31,7 +31,7 @@ const Login = () => {
         isErrorEmail: false,
       }));
     }
-  }, [form.email]);
+  }, [form.email, errorMsg.isErrorEmail]);
 
   useEffect(() => {
     if (form.password && errorMsg.isErrorPsw) {
@@ -40,22 +40,19 @@ const Login = () => {
         isErrorPsw: false,
       }));
     }
-  }, [form.password]);
+  }, [form.password, errorMsg.isErrorPsw]);
 
   const onInputChange = (event) => {
     const { name, value } = event.target;
-    const { isErrorEmail, isErrorPsw } = errorMsg;
-
-    if (errorMsg.isErrorResponse) {
+    const { isErrorEmail, isErrorPsw, isErrorResponse } = errorMsg;
+    console.log(name, value);
+    if (isErrorResponse) {
       setErrorMsg((prev) => ({
         ...prev,
         isErrorResponse: false,
       }));
     }
-    setForm((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setForm((prev) => ({ ...prev, [name]: value }));
 
     if (name === 'email' && !value && !isErrorEmail) {
       setErrorMsg((prev) => ({
@@ -86,13 +83,22 @@ const Login = () => {
     if (!form.email || !form.password) {
       return;
     }
+
     try {
       const response = await loginUser(email, password);
+      // console.log(response);
 
-      console.log(response);
-      navigate('../albums');
+      if (response.success) {
+        console.log(response.result);
+
+        const userCredentials = await response.result;
+        localStorage.setItem('user', JSON.stringify(userCredentials));
+
+        navigate('/albums');
+      }
     } catch (error) {
       console.log(error);
+
       if (error.status === 400) {
         setErrorMsg((prev) => ({
           ...prev,
@@ -187,15 +193,19 @@ const Login = () => {
             />
             Remember me
           </label>
-          <button className='btn login__btn' type='submit'>
+          <button
+            className='btn login__btn'
+            type='submit'
+            disabled={form.email && form.password ? false : true}
+          >
             Continue
           </button>
-          <Link to={'../forgot-password'} className='forgot-link'>
+          <Link to={'/forgot-password'} className='forgot-link'>
             Forgot your password?
           </Link>
           <p className='form__register-text'>
             Don't have an account yet?
-            <Link to={'../registration'} className='register-link'>
+            <Link to={'/registration'} className='register-link'>
               Register
             </Link>
           </p>
