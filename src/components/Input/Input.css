@@ -1,29 +1,8 @@
- .input__container {
-     position: relative;
- }
+.input__container {
+  margin-bottom: 1.38vw;
+}
 
- .image_eye {
-     position: absolute;
-     right: 1.65vw;
-     top: 15%;
-     cursor: pointer;
-     transition: all 0.5s ease-in-out;
-     z-index: 10;
-     width: 1.58vw;
-     height: 1.58vw;
- }
-
-
- .input__label__error {
-     font-style: normal;
-     font-weight: 400;
-     font-size: 16px;
-     line-height: 20px;
-     color: #E86666;
-     margin: 8px 0px;
- }
-
- .input_margin {
-     width: 100%;
-     margin-bottom: 1.38vw;
- }
+.input__wrap {
+  position: relative;
+  display: flex;
+}
