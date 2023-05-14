@@ -79,8 +79,8 @@ const Registration = (props) => {
           <p className='error-message error-message_margin'>
             {'Please enter your Password'}
           </p>
-        ) : (password.length > 0 && password.length <= 6) ||
-          password.length >= 24 ? (
+        ) : (password.length > 0 && password.length < 6) ||
+          password.length > 25 ? (
           <p className='error-message error-message_margin'>
             {'The password doesn’t match required criteria'}
           </p>
@@ -182,7 +182,16 @@ const Registration = (props) => {
         <button
           type='submit'
           className='btn register__btn'
-          disabled={nameInput && email && password ? false : true}
+          disabled={
+            nameInput &&
+            email &&
+            password.length > 5 &&
+            password.length <= 25 &&
+            !nameEmptyError &&
+            !emailEmptyError
+              ? false
+              : true
+          }
         >
           Confirm
         </button>
