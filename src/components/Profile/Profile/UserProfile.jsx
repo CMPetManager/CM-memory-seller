@@ -1,14 +1,12 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import './Profile.css';
-import MenuProfile from '../Profile-panel/Menu-profile';
+import './UserProfile.css';
+import MenuProfile from '../ProfilePanel/MenuProfile';
 import profilePhoto from 'assets/icons/profile_photo.svg';
 import addPhoto from 'assets/icons/Add-photo.svg';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 const Profile = () => {
-  const [nameInput, setName] = useState('');
-  const [email, setEmail] = useState('');
   const [image, setImage] = useState();
   const [imageURL, setImageURL] = useState();
 
@@ -32,14 +30,14 @@ const Profile = () => {
           <p className='profile__background_below'>Moment</p>
         </div>
         <div className='profile__home'>
-          <Link to='../'>Home</Link>
+          <Link to='/albums'>Home</Link>
         </div>
         <div className='profile__user'>
           <div className='profile__user-photo'>
             <input
               className='profile__user-photo_hiden'
               type='file'
-              accept='.jpeg, .png, .jpg'
+              accept='.jpeg, .png, .jpg, heic'
               onChange={onUploadFile}
             ></input>
             <img
@@ -65,8 +63,7 @@ const Profile = () => {
                 type='text'
                 disabled
                 placeholder={userName}
-                className='input_form'
-                onChange={(e) => setName(e.target.value)}
+                className='input_form input'
               ></input>
             </div>
             <div className='profile__name-input'>
@@ -75,8 +72,7 @@ const Profile = () => {
                 placeholder='Email address'
                 type='text'
                 disabled
-                className='input_form'
-                onChange={(e) => setEmail(e.target.value)}
+                className='input_form input'
               ></input>
             </div>
           </div>
