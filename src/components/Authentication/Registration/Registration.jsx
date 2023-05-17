@@ -1,6 +1,6 @@
 /* eslint-disable default-case */
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Registration.css';
 
 import eyeOff from 'assets/icons/eye_crossed.svg';
@@ -9,6 +9,8 @@ import eyeOpen from 'assets/icons/eye.svg';
 import ModalBack from '../ModalBack/ModalBack';
 
 const Registration = (props) => {
+  const navigate = useNavigate();
+
   const [nameInput, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -67,9 +69,8 @@ const Registration = (props) => {
   const onSubmit = async (e) => {
     e.preventDefault();
     console.log(nameInput, email, password);
-    setName('');
-    setEmail('');
-    setPassword('');
+
+    navigate('/login');
   };
 
   const ErrorPasswMsg = () => {
@@ -79,8 +80,8 @@ const Registration = (props) => {
           <p className='error-message error-message_margin'>
             {'Please enter your Password'}
           </p>
-        ) : (password.length > 0 && password.length <= 6) ||
-          password.length >= 24 ? (
+        ) : (password.length > 0 && password.length < 6) ||
+          password.length > 25 ? (
           <p className='error-message error-message_margin'>
             {'The password doesn’t match required criteria'}
           </p>
@@ -95,7 +96,7 @@ const Registration = (props) => {
 
   return (
     <ModalBack>
-      <div className='login__head-wrap'>
+      <div className='form__head-wrap'>
         <h2 className='title'>Welcome</h2>
         <p
           className={
@@ -129,6 +130,7 @@ const Registration = (props) => {
                 ? 'error-message error-message_margin'
                 : 'error-message error-message_margin error-message_hidden'
             }
+            style={!nameEmptyError ? { marginBottom: '1.8235vw' } : null}
           >
             {nameEmptyError}
           </p>
@@ -147,6 +149,7 @@ const Registration = (props) => {
             required
           />
           <p
+            style={!emailEmptyError ? { marginBottom: '1.8235vw' } : null}
             className={
               emailDirty && emailEmptyError
                 ? 'error-message error-message_margin'
@@ -182,7 +185,16 @@ const Registration = (props) => {
         <button
           type='submit'
           className='btn register__btn'
-          disabled={nameInput && email && password ? false : true}
+          disabled={
+            nameInput &&
+            email &&
+            password.length > 5 &&
+            password.length <= 25 &&
+            !nameEmptyError &&
+            !emailEmptyError
+              ? false
+              : true
+          }
         >
           Confirm
         </button>

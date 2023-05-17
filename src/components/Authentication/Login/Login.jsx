@@ -116,10 +116,10 @@ const Login = () => {
   return (
     <ModalBack>
       <div
-        className='login__head-wrap'
+        className='form__head-wrap'
         style={
           errorMsg.isErrorResponse
-            ? { marginBottom: '0.83vw' }
+            ? { marginBottom: '1.4275vw' }
             : { marginBottom: '2.73vw' }
         }
       >

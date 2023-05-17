@@ -69,17 +69,7 @@
   align-self: center;
 }
 
-.link__green {  
-  color: var(--green);
-  margin-left: 5px;
-  transition: all 0.5s ease-in-out;
-}
-
 .forgot-link:hover {
   color: var(--gold);
   transition: all 0.5s ease-in-out;
-}
-
-.login__head-wrap .error-message {
-  text-align: center;
 }
