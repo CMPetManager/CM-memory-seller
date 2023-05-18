@@ -96,7 +96,7 @@ const Registration = (props) => {
 
   return (
     <ModalBack>
-      <div className='login__head-wrap'>
+      <div className='form__head-wrap'>
         <h2 className='title'>Welcome</h2>
         <p
           className={
@@ -130,6 +130,7 @@ const Registration = (props) => {
                 ? 'error-message error-message_margin'
                 : 'error-message error-message_margin error-message_hidden'
             }
+            style={!nameEmptyError ? { marginBottom: '1.8235vw' } : null}
           >
             {nameEmptyError}
           </p>
@@ -148,6 +149,7 @@ const Registration = (props) => {
             required
           />
           <p
+            style={!emailEmptyError ? { marginBottom: '1.8235vw' } : null}
             className={
               emailDirty && emailEmptyError
                 ? 'error-message error-message_margin'

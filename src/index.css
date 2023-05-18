@@ -177,7 +177,7 @@ input:-webkit-autofill:focus {
 }
 
 .error-message_margin {
-  margin: 0.83vh 0;
+  margin: 0.521vw 0;
 }
 
 .error-message_hidden {
@@ -190,9 +190,13 @@ input:-webkit-autofill:focus {
   align-self: start;
 }
 
+.form__head-wrap .error-message {
+  text-align: center;
+}
+
 .link__green {
   color: var(--green);
-  margin-left: 5px;
+  margin-left: 0.326vw;
   transition: all 0.5s ease-in-out;
 }
 
