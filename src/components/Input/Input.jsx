@@ -4,9 +4,21 @@ import { clsx } from 'clsx';
 import './Input.css';
 
 export const Input = React.forwardRef(
-  ({ label, placeholder, type, errors, icon, className, ...props }, ref) => {
+  (
+    {
+      label,
+      placeholder,
+      type,
+      errors,
+      icon,
+      className,
+      classNameWrap,
+      ...props
+    },
+    ref
+  ) => {
     return (
-      <div className='input__container'>
+      <div className={clsx(!errors && 'input__container', classNameWrap)}>
         <div className='input__wrap'>
           {icon}
           <input
