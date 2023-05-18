@@ -2,11 +2,11 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 import './Login.css';
-import imgX from 'assets/icons/x1.svg';
 import eyeCrossed from 'assets/icons/eye_crossed.svg';
 import eye from 'assets/icons/eye.svg';
 
 import { loginUser } from 'services/users/userService';
+import ModalBack from '../ModalBack/ModalBack';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -114,84 +114,98 @@ const Login = () => {
   };
 
   return (
-    <div className='login__wrap'>
-      <div className='login__container'>
-        <Link to={'/'} className='login__close'>
-          <img src={imgX} alt='close button' className='login__close-icon' />
-        </Link>
-        <div className='login__head-wrap'>
-          <h2 className='login__title'>Welcome</h2>
-          {errorMsg.isErrorResponse && (
-            <p className='error-message'>{errorMsg.isErrorResponse}</p>
-          )}
-        </div>
-        <form className='login__form' onSubmit={onSubmit}>
-          <fieldset className='form__input-wrap'>
+    <ModalBack>
+      <div
+        className='form__head-wrap'
+        style={
+          errorMsg.isErrorResponse
+            ? { marginBottom: '1.4275vw' }
+            : { marginBottom: '2.73vw' }
+        }
+      >
+        <h2 className='title'>Welcome</h2>
+        {errorMsg.isErrorResponse && (
+          <p className='error-message'>{errorMsg.isErrorResponse}</p>
+        )}
+      </div>
+      <form className='form' onSubmit={onSubmit}>
+        <fieldset className='form__input-wrap'>
+          <input
+            type='email'
+            className='form__input login__form-input'
+            placeholder='Email address'
+            value={form.email}
+            name='email'
+            onChange={onInputChange}
+            autoFocus
+            required
+          />
+          <p
+            className={
+              errorMsg.isErrorEmail
+                ? 'error-message error-message_margin'
+                : 'error-message error-message_margin error-message_hidden'
+            }
+          >
+            Please enter your Email
+          </p>
+        </fieldset>
+        <fieldset className='form__input-wrap'>
+          <div className='form__input-container'>
             <input
-              type='email'
-              className='form__input login__form-input'
-              placeholder='Email address'
-              value={form.email}
-              name='email'
+              type={isShownPassword ? 'text' : 'password'}
+              className='form__input login__form-input form__input-passw'
+              placeholder='Password'
+              value={form.password}
+              name='password'
               onChange={onInputChange}
-              autoFocus
               required
             />
-            {errorMsg.isErrorEmail && (
-              <p className='error-message'>Please enter your Email</p>
-            )}
-          </fieldset>
-          <fieldset className='form__input-wrap'>
-            <label className='form__password-label'>
-              <input
-                type={isShownPassword ? 'text' : 'password'}
-                className='form__input login__form-input'
-                placeholder='Password'
-                value={form.password}
-                name='password'
-                onChange={onInputChange}
-                required
-              />
-              <img
-                onClick={onShowPassword}
-                className='form__eye'
-                src={isShownPassword ? eye : eyeCrossed}
-                alt='eye icon'
-              />
-            </label>
-            {errorMsg.isErrorPsw && (
-              <p className='error-message'>Please enter your Password</p>
-            )}
-          </fieldset>
-          <label className='form__label'>
-            <input
-              type='checkbox'
-              className='form__checkbox'
-              checked={isChecked}
-              onChange={onCheckedChange}
-              name='isChecked'
+            <img
+              onClick={onShowPassword}
+              className='form__eye'
+              src={isShownPassword ? eye : eyeCrossed}
+              alt='eye icon'
             />
-            Remember me
-          </label>
-          <button
-            className='btn login__btn'
-            type='submit'
-            disabled={form.email && form.password ? false : true}
+          </div>
+          <p
+            className={
+              errorMsg.isErrorPsw
+                ? 'error-message error-message_margin'
+                : 'error-message error-message_margin error-message_hidden'
+            }
           >
-            Continue
-          </button>
-        </form>
-        <Link to={'/forgot-password'} className='forgot-link'>
-          Forgot your password?
+            Please enter your Password
+          </p>
+        </fieldset>
+        <label className='form__label'>
+          <input
+            type='checkbox'
+            className='form__checkbox'
+            checked={isChecked}
+            onChange={onCheckedChange}
+            name='isChecked'
+          />
+          Remember me
+        </label>
+        <button
+          className='btn login__btn'
+          type='submit'
+          disabled={form.email && form.password ? false : true}
+        >
+          Continue
+        </button>
+      </form>
+      <Link to={'/forgot-password'} className='forgot-link'>
+        Forgot your password?
+      </Link>
+      <p className='form__register-text'>
+        Don't have an account yet?
+        <Link to={'/registration'} className='link__green'>
+          Register
         </Link>
-        <p className='form__register-text'>
-          Don't have an account yet?
-          <Link to={'/registration'} className='register-link'>
-            Register
-          </Link>
-        </p>
-      </div>
-    </div>
+      </p>
+    </ModalBack>
   );
 };
 export default Login;

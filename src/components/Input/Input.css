@@ -1,0 +1,8 @@
+.input__container {
+  margin-bottom: 1.38vw;
+}
+
+.input__wrap {
+  position: relative;
+  display: flex;
+}

@@ -1,0 +1,16 @@
+.logo {
+    box-sizing: border-box;
+    width: 8.4vw;
+    height: 8.4vw;
+    ;
+    border-radius: 50%;
+    background: #FBDBA3;
+    border: 1px solid #000000;
+    font-family: 'Libre Caslon Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 4vw;
+    line-height: 119.1%;
+    color: #000000;
+
+}
