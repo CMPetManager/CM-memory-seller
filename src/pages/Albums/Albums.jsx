@@ -1,4 +1,7 @@
 import './Albums.css';
+
+import { Logo } from 'components/Logo/Logo';
+
 import plus from 'assets/icons/plus-circle.svg';
 import minus from 'assets/icons/minus-circle.svg';
 
@@ -9,7 +12,7 @@ const Albums = () => {
       <div className='albums__back albums__back-bottom'>Memories</div>
       <div className='albums__profile-wrap'>
         <h1 className='albums__logo'>Catch the moment</h1>
-        <button className='albums__profile-btn'>S</button>
+        <Logo />
       </div>
       <div className='albums__text-wrap'>
         <h2 className='albums__title'>YOUR MEMORIES ALBUMS</h2>

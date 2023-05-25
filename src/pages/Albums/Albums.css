@@ -44,7 +44,7 @@
   justify-content: space-between;
 }
 
-.albums__profile-btn {
+/* .albums__profile-btn {
   width: 8vw;
   height: 8vw;
   border: 1px solid var(--black);
@@ -56,7 +56,7 @@
   font-size: 4.23vw;
   line-height: 1.191;
   color: rgb(0, 0, 0, 0.5);
-}
+} */
 
 .albums__text-wrap {
   margin-top: 9.47vh;
