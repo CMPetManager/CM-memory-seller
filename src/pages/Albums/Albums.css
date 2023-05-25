@@ -1,0 +1,194 @@
+.albums__wrap {
+  min-height: 100vh;
+  padding: 4.23vw 6.63vw 1.32vw;
+  position: relative;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.albums__back {
+  position: absolute;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20.37vh;
+  line-height: 1.21;
+  color: var(--back-text);
+  opacity: 0.05;
+  white-space: nowrap;
+  user-select: none;
+  z-index: -1;
+}
+.albums__back-top {
+  left: 1.19vw;
+  top: -3.87vh;
+}
+.albums__back-bottom {
+  left: 24.87vw;
+  top: 15.37vh;
+}
+
+.albums__logo {
+  font-family: 'Libre Caslon Display';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.59vw;
+  line-height: 1.25;
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+.albums__profile-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .albums__profile-btn {
+  width: 8vw;
+  height: 8vw;
+  border: 1px solid var(--black);
+  border-radius: 50%;
+  background-color: var(--gold);
+  font-family: 'Libre Caslon Display';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 4.23vw;
+  line-height: 1.191;
+  color: rgb(0, 0, 0, 0.5);
+} */
+
+.albums__text-wrap {
+  margin-top: 9.47vh;
+}
+
+.albums__title {
+  font-family: 'Libre Caslon Display';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 4.23vw;
+  line-height: 1.191;
+  color: var(--white);
+}
+
+.albums__subtitle {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.32vw;
+  line-height: 1.56;
+  color: var(--white);
+  margin-top: 0.53vw;
+}
+
+.albums__control-panel {
+  margin-top: 5.42vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.albums__control-btn {
+  width: 12.37vw;
+  height: 2.51vw;
+  font-size: 1.32vw;
+  border-radius: 0.99vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.albums__control-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.85vw;
+}
+
+.albums__checkbox-wrap {
+  position: relative;
+  flex: 1 0 6.74vw;
+  width: 6.74vw;
+  height: 2.513vw;
+  border: 0.066vw solid var(--gold);
+  border-radius: 2vw;
+}
+
+.checkbox {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  appearance: none;
+  outline: none;
+  z-index: 9;
+}
+
+.checkbox::before {
+  content: '';
+  position: absolute;
+  width: 1.98vw;
+  height: 1.98vw;
+  background-color: var(--gold);
+  border-radius: 50%;
+  top: 50%;
+  left: -0.5vw;
+  transform: translate(50%, -50%);
+  cursor: pointer;
+  transition: 0.5s;
+  z-index: 10;
+}
+
+.checkbox:checked:before {
+  left: 3.2vw;
+}
+
+.albums__checkbox-icon {
+  position: absolute;
+  width: 1.59vw;
+  height: 1.59vw;
+  top: 50%;
+  transform: translate(50%, -50%);
+  cursor: pointer;
+}
+
+.minus {
+  right: 1.3vw;
+}
+
+.plus {
+  left: -0.3vw;
+}
+
+.albums__search-input {
+  width: 12.37vw;
+  height: 2.513vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.32vw;
+  padding: 0.46vw 0.8vw;
+}
+
+.albums__search-input::placeholder {
+  font-family: 'Inter';
+  font-size: 1.32vw;
+  color: rgba(255, 255, 255, 0.2);
+  text-align: center;
+  line-height: 1.2;
+  background-image: url('assets/icons/search.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 0.6vw;
+  background-size: 1.5vw;
+}
+
+.albums__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.albums__btn {
+  width: 29.63vw;
+}

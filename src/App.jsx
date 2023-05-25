@@ -9,7 +9,8 @@ import ForgotPassword from './components/Authentication/ForgotPassword/ForgotPas
 import ResetPassword from './components/Authentication/ResetPassword/ResetPassword';
 import Home from './pages/Home/Home';
 import { Album } from './pages/Album/Album';
-import Profile from './components/Profile/UserProfile/UserProfile';
+import Profile from './components/Profile/profile/Profile';
+import Albums from './pages/Albums/Albums';
 
 function App() {
   const location = useLocation();
@@ -30,7 +31,7 @@ function App() {
           </Route>
           <Route path='/profile' element={<Profile />} />
           <Route path='/album' element={<Album />} />
-          <Route path='/albums' element={<div>My Albums</div>} />
+          <Route path='/albums' element={<Albums />} />
         </Routes>
       </AnimatePresence>
     </div>
