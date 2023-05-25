@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/CM-memory-seller/static/css/main.033be2e8.css",
-    "main.js": "/CM-memory-seller/static/js/main.efca66d4.js",
+    "main.css": "/CM-memory-seller/static/css/main.2fd58602.css",
+    "main.js": "/CM-memory-seller/static/js/main.35109a25.js",
     "static/media/photo-10.webp": "/CM-memory-seller/static/media/photo-10.6e7485d417e139f7aa53.webp",
     "static/media/photo-7.webp": "/CM-memory-seller/static/media/photo-7.ddccb4069cd8ed1bd9ea.webp",
     "static/media/photo-13.webp": "/CM-memory-seller/static/media/photo-13.1952b41b9d04f462f290.webp",
@@ -30,18 +30,21 @@
     "index.html": "/CM-memory-seller/index.html",
     "static/media/pensilIcon.svg": "/CM-memory-seller/static/media/pensilIcon.feeb3bb89fb52423b27ba66e86babdc8.svg",
     "static/media/checkIcon.svg": "/CM-memory-seller/static/media/checkIcon.cff6d8672075832dfe926e21ebe0af39.svg",
+    "static/media/plus-circle.svg": "/CM-memory-seller/static/media/plus-circle.9789f4923e1f28deb5e2545ac1d81d9b.svg",
     "static/media/alignIeftIcon.svg": "/CM-memory-seller/static/media/alignIeftIcon.69c640157de3a2791a3bab5c6ce0445e.svg",
     "static/media/eye.svg": "/CM-memory-seller/static/media/eye.e7cda6399a3bd7036b612ef4083abcad.svg",
+    "static/media/search.svg": "/CM-memory-seller/static/media/search.5c5b21831e794b26d3d7.svg",
+    "static/media/minus-circle.svg": "/CM-memory-seller/static/media/minus-circle.d522416147e6065efc5dc95c7470c666.svg",
     "static/media/Add-photo.svg": "/CM-memory-seller/static/media/Add-photo.81108c4cb9f52bb54d7321c6a7bbc3c5.svg",
     "static/media/chevronsuUpIcon.svg": "/CM-memory-seller/static/media/chevronsuUpIcon.2a107b2d6cd723361aa598a25c7e792e.svg",
     "static/media/x1.svg": "/CM-memory-seller/static/media/x1.83af43c5ad2451fc6cbcb8abd0ede7c5.svg",
     "static/media/plus.svg": "/CM-memory-seller/static/media/plus.54b90983c1366ac9c1919f9c767bf07a.svg",
     "static/media/goBackButton.svg": "/CM-memory-seller/static/media/goBackButton.7a40491c1cd445d79bac7cf6ac718c44.svg",
-    "main.033be2e8.css.map": "/CM-memory-seller/static/css/main.033be2e8.css.map",
-    "main.efca66d4.js.map": "/CM-memory-seller/static/js/main.efca66d4.js.map"
+    "main.2fd58602.css.map": "/CM-memory-seller/static/css/main.2fd58602.css.map",
+    "main.35109a25.js.map": "/CM-memory-seller/static/js/main.35109a25.js.map"
   },
   "entrypoints": [
-    "static/css/main.033be2e8.css",
-    "static/js/main.efca66d4.js"
+    "static/css/main.2fd58602.css",
+    "static/js/main.35109a25.js"
   ]
 }
