@@ -1,15 +1,21 @@
 .logo {
-    box-sizing: border-box;
-    width: 8.4vw;
-    height: 8.4vw;
-    border-radius: 50%;
-    background: var(--gold);
-    border: 1px solid var(--black);
-    font-family: 'Libre Caslon Display';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 4vw;
-    line-height: 119.1%;
-    color: rgb(0, 0, 0, 0.5);
-    cursor: pointer;
+  box-sizing: border-box;
+  width: 8.4vw;
+  height: 8.4vw;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 1px solid var(--black);
+  font-family: 'Libre Caslon Display';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 4vw;
+  line-height: 119.1%;
+  color: rgb(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.logo:hover {
+  color: rgba(255, 255, 255, 0.5);
+  border: 0.066vw solid var(--white);
+  transition: all 0.3s ease-in-out;
 }

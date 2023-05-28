@@ -1,7 +1,7 @@
 .album__container {
     width: 100%;
     height: auto;
-    background: #6F6D6D;
+    background: var(--back);
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -26,16 +26,16 @@
     height: 4.2vw;
     left: 5.2vw;
     top: 4.2vw;
-    background: #FBDBA3;
+    background: var(--gold);
     border-radius: 50%;
-    border: 1px solid #000000;
-    margin-left: 10px;
+    border: 1px solid var(--black);
+    margin-left: 18px;
 }
 
 .album__roundButton:hover,
 .album__roundButton:hover svg>* {
-    stroke: #ffffff;
-    border: 1px solid #ffffff;
+    stroke: var(--white);
+    border: 1px solid var(--white);
 
 }
 
@@ -127,7 +127,7 @@
 
 .button__addPhoto {
 
-    border: 1px solid #000000;
+    border: 1px solid var(--black);
     border-radius: 15vw;
     box-sizing: border-box;
     font-style: normal;
@@ -138,13 +138,13 @@
     width: 29.6vw;
     height: 3.1vw;
     font-weight: 400;
-    background: #FBDBA3;
-    color: #000000;
+    background: var(--gold);
+    color: var(--black);
 }
 
 .button__addPhoto:hover {
     background: none;
-    color: #ffffff;
+    color: var(--white);
 }
 
 .albom__labelIcon {
@@ -154,7 +154,7 @@
 
 .albom__labelIcon__active {
     padding: 2px;
-    border: 1px solid #FBDBA3;
+    border: 1px solid var(--gold);
 
 }
 
@@ -165,7 +165,7 @@
     margin: 0 auto;
     display: flex;
     align-items: center;
-    border: 1px solid #FBDBA3;
+    border: 1px solid var(--gold);
     transition: 4s;
     text-align: center;
     opacity: 1;
@@ -207,7 +207,7 @@
 }
 
 .albom__button_view {
-    border: 1px solid #000000;
+    border: 1px solid var(--black);
     border-radius: 1vw;
     width: 2.51vw;
     min-height: 16.4vw;
@@ -215,7 +215,9 @@
     margin-bottom: 30px;
     padding-top: 8px;
     padding-bottom: 10px;
-    background: #FBDBA3;
+    background: var(--gold);
+
+
 }
 
 .album__presentation__input__img {
@@ -229,7 +231,7 @@
     width: 5px;
     display: block;
     height: 5px;
-    background-color: #FFFFFF;
+    background-color: var(--white);
     margin: 5px;
     border-radius: 50%;
 }
@@ -241,7 +243,7 @@
     font-size: 8.4vw;
     line-height: 158px;
     text-transform: uppercase;
-    color: #FFFFFF;
+    color: var(--white);
     opacity: 0.5;
     margin: auto;
 }
@@ -249,7 +251,7 @@
 
 .albom__button_view:hover .text_transform {
 
-    color: #ffffff;
+    color: var(--white);
 }
 
 .albom__button_view:hover {
@@ -261,7 +263,7 @@
     font-weight: 400;
     font-size: 1.58vw;
     align-items: center;
-    color: #000000;
+    color: var(--black);
     writing-mode: vertical-rl;
     transform: rotate(180deg);
 }
@@ -280,8 +282,8 @@
 
 .masterTemplate__container {
     box-sizing: border-box;
-    background: #FBDBA3;
-    border: 1px solid #000000;
+    background: var(--gold);
+    border: 1px solid var(--black);
     border-radius: 15px;
     height: 248px;
     width: 268px;
@@ -298,8 +300,8 @@
 
 .masterTemplate__container__Active {
     box-sizing: border-box;
-    background: #FBDBA3;
-    border: 1px solid #000000;
+    background: var(--gold);
+    border: 1px solid var(--black);
     border-radius: 15px;
     height: 268px;
     width: 268px;
@@ -320,7 +322,7 @@
     align-items: center;
     text-align: center;
     text-decoration-line: underline;
-    color: #000000;
+    color: var(--black);
     font-weight: 400;
     font-size: 24px;
     line-height: 30px;
@@ -332,14 +334,14 @@
     display: flex;
     align-items: center;
     text-align: center;
-    color: #000000;
+    color: var(--black);
     margin: 15px;
 }
 
 .masterColor__container {
     box-sizing: border-box;
-    background: #FBDBA3;
-    border: 1px solid #000000;
+    background: var(--gold);
+    border: 1px solid var(--black);
     border-radius: 15px;
     height: 246px;
     width: 268px;
@@ -356,8 +358,8 @@
 
 .masterColor__container__Active {
     box-sizing: border-box;
-    background: #FBDBA3;
-    border: 1px solid #000000;
+    background: var(--gold);
+    border: 1px solid var(--black);
     border-radius: 15px;
     height: 246px;
     width: 268px;
@@ -488,6 +490,7 @@
     margin-bottom: 10px;
 
 }
+
 
 .buttonSide__container {
     width: 100%;

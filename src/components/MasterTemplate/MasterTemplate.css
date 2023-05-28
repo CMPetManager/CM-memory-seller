@@ -1,7 +1,7 @@
 .masterTemplate__container {
     box-sizing: border-box;
-    background: #FBDBA3;
-    border: 1px solid #000000;
+    background: var(--gold);
+    border: 1px solid var(--black);
     border-radius: 15px;
     height: 248px;
     width: 268px;
@@ -18,8 +18,8 @@
 
 .masterTemplate__container__Active {
     box-sizing: border-box;
-    background: #FBDBA3;
-    border: 1px solid #000000;
+    background: var(--gold);
+    border: 1px solid var(--black);
     border-radius: 15px;
     height: 268px;
     width: 268px;
@@ -40,7 +40,7 @@
     align-items: center;
     text-align: center;
     text-decoration-line: underline;
-    color: #000000;
+    color: var(--black);
     font-weight: 400;
     font-size: 24px;
     line-height: 30px;
@@ -52,7 +52,7 @@
     display: flex;
     align-items: center;
     text-align: center;
-    color: #000000;
+    color: var(--black);
     border-radius: 50%;
 
 }

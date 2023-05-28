@@ -32,6 +32,6 @@
 .cover__image__landscope__text {
     font-size: 4vw;
     line-height: 80px;
-    color: #FBDBA3;
+    color: var(--gold);
     margin: auto;
 }

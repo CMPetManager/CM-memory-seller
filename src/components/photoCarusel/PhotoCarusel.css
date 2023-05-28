@@ -9,7 +9,7 @@
     display: flex !important;
     justify-content: center;
     align-items: center;
-    border: 2px dashed #FBDBA3;
+    border: 2px dashed var(--gold);
     border-radius: 2px;
     max-width: 200px !important;
     width: auto;
@@ -22,7 +22,7 @@
     width: 93%;
     background: #857F76;
     opacity: 0.8;
-    border: 2px solid #FBDBA3;
+    border: 2px solid var(--gold);
     border-radius: 15px;
     margin-left: 6%;
     margin-bottom: 30px;
