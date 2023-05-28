@@ -9,7 +9,7 @@ import ForgotPassword from './components/Authentication/ForgotPassword/ForgotPas
 import ResetPassword from './components/Authentication/ResetPassword/ResetPassword';
 import Home from './pages/Home/Home';
 import { Album } from './pages/Album/Album';
-import UserProfile from './components/Profile/profile/Profile';
+import UserProfile from './components/Profile/UserProfile/UserProfile';
 import Albums from './pages/Albums/Albums';
 
 function App() {
