@@ -1,6 +1,6 @@
 .cover__input {
     line-height: 80px;
-    color: #FBDBA3;
+    color: var(--gold);
     margin: auto;
     border: none;
     text-align: center;
@@ -9,6 +9,6 @@
 
 .cover__imag__text {
     line-height: 80px;
-    color: #FBDBA3;
+    color: var(--gold);
     margin: auto;
 }

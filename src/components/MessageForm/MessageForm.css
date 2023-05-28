@@ -1,10 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-
 .FormError__container {
     width: 100vw;
     height: 100vh;
     z-index: 6;
-    background: rgba(255, 255, 255, 0.5);
+    background-color: rgba(118, 115, 115, 0.71);
     backdrop-filter: blur(5px);
     display: flex;
     align-items: center;
@@ -17,7 +15,7 @@
 .FormError__windowContainer {
     box-sizing: border-box;
     width: 36vw;
-    background: #424141;
+    background: var(--brown);
     box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25);
     text-align: center;
     padding: 3.7vw 3.2vw;
@@ -30,7 +28,7 @@
     font-weight: 400;
     font-size: 6.3vw;
     line-height: 116px;
-    color: #FFFFFF;
+    color: var(--white);
     opacity: 0.2;
 
 
@@ -43,7 +41,7 @@
     font-weight: 400;
     font-size: 4vw;
     line-height: 77px;
-    color: #FFFFFF;
+    color: var(--white);
     top: -56px;
 }
 
@@ -53,7 +51,7 @@
     font-weight: 400;
     font-size: 32px;
     line-height: 40px;
-    color: #FFFFFF;
+    color: var(--white);
     margin-bottom: 30px;
 }
 

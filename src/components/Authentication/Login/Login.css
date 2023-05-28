@@ -191,7 +191,7 @@
 
 .register-link:hover,
 .forgot-link:hover {
-  color: #FBDBA3;
+  color: var(--gold);
   transition: all 0.5s ease-in-out;
 }
 

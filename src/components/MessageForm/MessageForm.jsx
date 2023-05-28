@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './MessageForm.css';
 import { Button } from '../Button/Button';
 export const MessageForm = ({ textLabel, buttonOnClick, setIsOpen }) => {
