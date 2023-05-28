@@ -1,7 +1,7 @@
-import './MenuProfile.css';
+import './ProfilePanel.css';
 import { Link } from 'react-router-dom';
 
-const MenuProfile = () => {
+const ProfilePanel = () => {
   return (
     <div className='menu-profile-wraper'>
       <div className='menu-profile'>
@@ -12,10 +12,7 @@ const MenuProfile = () => {
           <Link to={'/profile'} className='menu-profile__profile menu-link'>
             Profile
           </Link>
-          <Link
-            to={'/profile/settings'}
-            className='menu-profile__settings menu-link'
-          >
+          <Link to={'/settings'} className='menu-profile__settings menu-link'>
             Settings
           </Link>
         </div>
@@ -24,4 +21,4 @@ const MenuProfile = () => {
   );
 };
 
-export default MenuProfile;
+export default ProfilePanel;
