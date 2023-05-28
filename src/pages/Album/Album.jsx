@@ -20,6 +20,7 @@ import { AlbumPreview } from 'components/AlbumPreview/ AlbumPreview';
 import { MessageForm } from 'components/MessageForm/MessageForm';
 import { useNavigate } from 'react-router-dom';
 import { ButtonSide } from 'components/ButtonSide/ButtonSide';
+import AnimatedPage from 'components/AnimatedPage/AnimatedPage';
 
 export const Album = () => {
   const [isOpenTextLabel, setIsOpenTextLabel] = useState(false);
@@ -27,14 +28,21 @@ export const Album = () => {
   const [activeColor, setActiveColor] = useState(true);
   const [bgcolor, setBgcolor] = useState('#6F6D6D');
   const [activeCarusel, setActiveCarusel] = useState(false);
-  const [onenModalProfi, setOpenModalProfilUser] = useState(false);
+  const [openModalProfi, setOpenModalProfilUser] = useState(false);
   const [templateCount, setTemplateCount] = useState();
   const [isOpen, setIsOpen] = useState(false);
   const [isLogout, setIsLogout] = useState(false);
+
   const navigate = useNavigate();
-  const handleChange = (value) => {
-    setOpenModalProfilUser(!onenModalProfi);
+
+  const handleChange = () => {
+    setOpenModalProfilUser((prev) => !prev);
   };
+
+  const handleIsLogout = () => {
+    setIsLogout((prev) => !prev);
+  };
+
   const ChooseTemplate = ({ data, index }) => {
     switch (data) {
       case 'first':
@@ -47,11 +55,11 @@ export const Album = () => {
         return <TemplateFirst index={index} />;
     }
   };
-  document.body.style.overflow = 'scroll';
+  document.body.style.overflowY = 'scroll';
   const TemplateList = ({ count, data }) => {
     const list = [];
     for (let index = 0; index < count; index++) {
-      list.push(<ChooseTemplate data={data} index={index} />);
+      list.push(<ChooseTemplate data={data} index={index} key={index} />);
     }
     return list;
   };
@@ -78,158 +86,167 @@ export const Album = () => {
     '#36454F ',
   ];
   return (
-    <div
-      style={{ backgroundColor: bgcolor }}
-      className={clsx('album__container')}
-    >
-      {isOpen && (
-        <MessageForm
-          setIsOpen={setIsOpen}
-          textLabel='Are you sure you want to exit without saving the album?'
-          buttonOnClick={() => navigate('/')}
+    <AnimatedPage>
+      <div
+        style={{ backgroundColor: bgcolor }}
+        className={clsx('album__container')}
+      >
+        {isOpen && (
+          <MessageForm
+            setIsOpen={setIsOpen}
+            textLabel='Are you sure you want to exit without saving the album?'
+            buttonOnClick={() => navigate('/albums')}
+          />
+        )}
+        {isLogout && (
+          <MessageForm
+            setIsOpen={setIsLogout}
+            textLabel='Are you sure you want to log out?'
+            buttonOnClick={() => navigate('/')}
+          />
+        )}
+        {openModalProfi && (
+          <ModalProfilUser
+            handleOpenModal={handleChange}
+            handleIsLogout={handleIsLogout}
+          />
+        )}
+        <Button
+          onClick={() => window.scrollTo(0, 0)}
+          titleButton={<UpIcon />}
+          className='album__roundButton  album__upIcon '
         />
-      )}
-      {isLogout && (
-        <MessageForm
-          setIsOpen={setIsLogout}
-          textLabel='Are you sure you want to log out?'
-          buttonOnClick={() => navigate('/album')}
-        />
-      )}
-      <ModalProfilUser onModalActive={onenModalProfi} />
-      <Button
-        onClick={() => window.scrollTo(0, 0)}
-        titleButton={<UpIcon />}
-        className='album__roundButton  album__upIcon '
-      />
-      <div className='album__wrapper_for_button_view'>
-        <ButtonSide
-          madalactive={activeTemplate}
-          setModalActive={setactiveTemplate}
-        >
-          <div
-            className={
-              !activeTemplate
-                ? 'masterTemplate__container'
-                : 'masterTemplate__container__Active'
-            }
-          >
-            {' '}
-            <div
-              onClick={(e) => {
-                e.stopPropagation();
-              }}
-            >
-              <span className='masterTemplat__label'>MasterTemplate</span>
-              <p
-                className='masterTemplat__item'
-                onClick={() => setTemplateCount('first')}
-              >
-                1 Template
-              </p>
-              <p
-                className='masterTemplat__item'
-                onClick={() => setTemplateCount('second')}
-              >
-                2 Template
-              </p>
-              <p
-                className='masterTemplat__item'
-                onClick={() => setTemplateCount('third')}
-              >
-                3 Template
-              </p>
-            </div>
-          </div>
-          <span className='text_transform'>Template</span>
-        </ButtonSide>
-        <ButtonSide madalactive={activeColor} setModalActive={setActiveColor}>
-          {' '}
-          <div
-            className={
-              activeColor
-                ? 'masterColor__container '
-                : 'masterColor__container__Active '
-            }
+        <div className='album__wrapper_for_button_view'>
+          <ButtonSide
+            madalactive={activeTemplate}
+            setModalActive={setactiveTemplate}
           >
             <div
-              className='color_content'
-              onClick={(e) => {
-                e.stopPropagation();
-              }}
+              className={
+                !activeTemplate
+                  ? 'masterTemplate__container'
+                  : 'masterTemplate__container__Active'
+              }
             >
-              <p className='masterTemplat__label'>Color</p>
-              <div className='color_grid'>
-                {colorsArr.map((color, index) => {
-                  return (
-                    <div
-                      onClick={() => {
-                        setBgcolor(color);
-                      }}
-                      className={'div' + (index + 1)}
-                      key={color}
-                      style={{
-                        backgroundColor: color,
-                        height: '34px',
-                        width: '34px',
-                        borderRadius: '50%',
-                      }}
-                    ></div>
-                  );
-                })}
+              {' '}
+              <div
+                onClick={(e) => {
+                  e.stopPropagation();
+                }}
+              >
+                <span className='masterTemplat__label'>MasterTemplate</span>
+                <p
+                  className='masterTemplat__item'
+                  onClick={() => setTemplateCount('first')}
+                >
+                  1 Template
+                </p>
+                <p
+                  className='masterTemplat__item'
+                  onClick={() => setTemplateCount('second')}
+                >
+                  2 Template
+                </p>
+                <p
+                  className='masterTemplat__item'
+                  onClick={() => setTemplateCount('third')}
+                >
+                  3 Template
+                </p>
               </div>
             </div>
-          </div>
-          <span className='text_transform'>Color</span>
-        </ButtonSide>
-      </div>
-      <nav className='album__NavHeadContainer'>
-        <Button
-          titleButton={<GoBackButton />}
-          className='album__roundButton'
-          onClick={() => setIsOpen(true)}
-        />
-        <div onClick={handleChange}>
-          <Logo />
+            <span className='text_transform'>Template</span>
+          </ButtonSide>
+          <ButtonSide madalactive={activeColor} setModalActive={setActiveColor}>
+            {' '}
+            <div
+              className={
+                activeColor
+                  ? 'masterColor__container '
+                  : 'masterColor__container__Active '
+              }
+            >
+              <div
+                className='color_content'
+                onClick={(e) => {
+                  e.stopPropagation();
+                }}
+              >
+                <p className='masterTemplat__label'>Color</p>
+                <div className='color_grid'>
+                  {colorsArr.map((color, index) => {
+                    return (
+                      <div
+                        onClick={() => {
+                          setBgcolor(color);
+                        }}
+                        className={'div' + (index + 1)}
+                        key={color}
+                        style={{
+                          backgroundColor: color,
+                          height: '34px',
+                          width: '34px',
+                          borderRadius: '50%',
+                        }}
+                      ></div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+            <span className='text_transform'>Color</span>
+          </ButtonSide>
         </div>
-      </nav>
-      <AlbumPreview />
-      <Button
-        titleButton='Add photo'
-        onClick={() => setActiveCarusel(!activeCarusel)}
-        className='button__addPhoto'
-      />
-      <section className='album__wrapper'>
-        <AlbomLabelIcon
-          className={clsx(
-            'albom__labelIcon',
-            isOpenTextLabel ? 'albom__labelIcon__active' : ''
-          )}
-          onClick={() => setIsOpenTextLabel(!isOpenTextLabel)}
+        <nav className='album__NavHeadContainer'>
+          <Button
+            titleButton={<GoBackButton />}
+            className='album__roundButton'
+            onClick={() => setIsOpen(true)}
+          />
+          <div onClick={handleChange}>
+            <Logo />
+          </div>
+        </nav>
+        <AlbumPreview />
+        <Button
+          titleButton='Add photo'
+          onClick={() => setActiveCarusel(!activeCarusel)}
+          className='button__addPhoto'
         />
+        <section className='album__wrapper'>
+          <AlbomLabelIcon
+            className={clsx(
+              'albom__labelIcon',
+              isOpenTextLabel ? 'albom__labelIcon__active' : ''
+            )}
+            onClick={() => setIsOpenTextLabel(!isOpenTextLabel)}
+          />
 
-        <div
-          className={
-            isOpenTextLabel
-              ? 'albom__labelText__container'
-              : 'albom__labelText__container__active'
-          }
-        >
-          <p
+          <div
             className={
-              isOpenTextLabel ? 'albom__labelText' : '.albom__labelText__active'
+              isOpenTextLabel
+                ? 'albom__labelText__container'
+                : 'albom__labelText__container__active'
             }
           >
-            Я текст и я не знаю как я сюда попал. Дизайнер забыл сказать
-            разработчику как и где меня нужно водить
-          </p>
-        </div>
-      </section>{' '}
-      <DndProvider backend={HTML5Backend} className='sty'>
-        {activeCarusel ? <PhotoCarusel /> : <></>}
-        <TemplateList count={6} data={templateCount} />
-      </DndProvider>
-      <AlbomFooter />
-    </div>
+            <p
+              className={
+                isOpenTextLabel
+                  ? 'albom__labelText'
+                  : '.albom__labelText__active'
+              }
+            >
+              Я текст и я не знаю как я сюда попал. Дизайнер забыл сказать
+              разработчику как и где меня нужно водить
+            </p>
+          </div>
+        </section>{' '}
+        <DndProvider backend={HTML5Backend} className='sty'>
+          {activeCarusel ? <PhotoCarusel /> : <></>}
+          <TemplateList count={6} data={templateCount} />
+        </DndProvider>
+        <AlbomFooter />
+      </div>
+    </AnimatedPage>
   );
 };
