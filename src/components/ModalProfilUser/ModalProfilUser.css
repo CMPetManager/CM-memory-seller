@@ -1,75 +1,84 @@
 .modalProfilUser__wrapper {
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    left: 0;
-    top: 0;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
-
-
 .modalProfilUser__container {
-    height: 278px;
-    width: 301px;
-    border-radius: 18px;
-    background: #6F6D6D;
-    border: 1px solid #FBDBA3;
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 5%;
-    left: 72%;
-    z-index: 5;
+  height: 18.38vw;
+  width: 19.91vw;
+  border-radius: 1.19vw;
+  background: var(--brown);
+  border: 0.066vw solid var(--gold);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  z-index: 5;
 }
 
 .modalProfilUser__logo {
-    width: 50px;
-    height: 50px;
-    background: #FBDBA3;
-    border: 1px solid #000000;
-    height: 50px;
-    margin-right: 15px;
-    border-radius: 50%;
-    margin-bottom: 15px;
-
+  width: 3.31vw;
+  height: 3.31vw;
+  background: var(--gold);
+  border: 0.066vw solid var(--white);
+  margin: 0 0.99vw 0.33vw 0;
+  border-radius: 50%;
+  font-size: 1.58vw;
+  line-height: 1.25;
+  color: rgba(0, 0, 0, 0.5);
+  outline: none;
 }
 
 .modalProfilUser__userName {
-    font-size: 20px;
-    line-height: 25px;
-    color: #FFFFFF;
+  font-size: 1.32vw;
+  line-height: 1.25;
+  color: var(--white);
 }
 
 .modalProfilUser__email {
-    font-size: 16px;
-    line-height: 20px;
-    color: #FFFFFF;
-    opacity: 0.6;
-
+  font-size: 0.86vw;
+  line-height: 1.25;
+  color: var(--white);
+  opacity: 0.6;
 }
 
 .modalProfilUser__header {
-    display: flex;
-    margin: 16px 28px;
-    justify-content: center;
-    border-bottom: 1px solid #FBDBA3;
+  display: flex;
+  padding: 1.58vw 1.12vw 1.26vw;
+  justify-content: start;
+  border-bottom: 0.066vw solid var(--gold);
+}
+
+.modalProfilUser__main {
+  padding: 1.12vw 0;
 }
 
 .modalProfilUser__title {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 25px;
-    color: #FFFFFF;
-    opacity: 0.7;
-    margin: 24px 48px;
-    width: 30%;
-    padding-left: 15px;
+  width: 100%;
+  height: 2.65vw;
+  display: flex;
+  align-items: center;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.32vw;
+  line-height: 1.25;
+  color: var(--white);
+  opacity: 0.7;
+  margin-bottom: 0.86vw;
+  padding-left: 0.99vw;
+}
 
+.modalProfilUser__title:last-child {
+  margin-bottom: 0
 }
 
 .modalProfilUser__title:hover {
-    cursor: pointer;
-    border-bottom: 1px solid #FBDBA3;
-
+  cursor: pointer;
+  background: rgba(251, 219, 163, 0.2);
+  border-radius: 0.33vw;
+  transition: all 0.5s ease-in-out;
 }
