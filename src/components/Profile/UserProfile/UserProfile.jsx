@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import './UserProfile.css';
-import MenuProfile from '../ProfilePanel/MenuProfile';
+import MenuProfile from '../ProfilePanel/ProfilePanel';
 import profilePhoto from 'assets/icons/profile_photo.svg';
 import addPhoto from 'assets/icons/Add-photo.svg';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
-const Profile = () => {
+const UserProfile = () => {
   const [image, setImage] = useState();
   const [imageURL, setImageURL] = useState();
 
@@ -39,7 +39,7 @@ const Profile = () => {
               type='file'
               accept='.jpeg, .png, .jpg, heic'
               onChange={onUploadFile}
-            ></input>
+            />
             <img
               src={imageURL ? imageURL : profilePhoto}
               alt='profile photo'
@@ -64,7 +64,7 @@ const Profile = () => {
                 disabled
                 placeholder={userName}
                 className='input_form input'
-              ></input>
+              />
             </div>
             <div className='profile__name-input'>
               <input
@@ -73,7 +73,7 @@ const Profile = () => {
                 type='text'
                 disabled
                 className='input_form input'
-              ></input>
+              />
             </div>
           </div>
         </div>
@@ -82,4 +82,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default UserProfile;

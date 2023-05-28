@@ -9,7 +9,7 @@ import ForgotPassword from './components/Authentication/ForgotPassword/ForgotPas
 import ResetPassword from './components/Authentication/ResetPassword/ResetPassword';
 import Home from './pages/Home/Home';
 import { Album } from './pages/Album/Album';
-import Profile from './components/Profile/profile/Profile';
+import UserProfile from './components/Profile/profile/Profile';
 import Albums from './pages/Albums/Albums';
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
             />
             <Route path='*' element={<div>Error</div>} />
           </Route>
-          <Route path='/profile' element={<Profile />} />
+          <Route path='/profile' element={<UserProfile />} />
           <Route path='/album' element={<Album />} />
           <Route path='/albums' element={<Albums />} />
         </Routes>

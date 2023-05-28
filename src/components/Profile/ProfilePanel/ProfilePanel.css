@@ -6,7 +6,7 @@
   width: 20vw;
   /* background-color: rgba(129, 123, 116, 0,8); */
   background-color: #817B74;
-  border: 1px solid #fbdba3;
+  border: 1px solid var(--gold);
   box-shadow: 10px 0px 20px;
   border-radius: 0px 15px 15px 0px;
   z-index: 100;
@@ -32,7 +32,7 @@
 }
 .menu-link:hover{
   color: rgba(255, 255, 255, 1);
-  text-decoration: underline #FBDBA3;
+  text-decoration: underline var(--gold);
 }
 
 .menu-link {
