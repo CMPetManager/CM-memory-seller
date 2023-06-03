@@ -1,4 +1,4 @@
-const baseUrl = 'http://35.158.8.207:8080/';
+const baseUrl = 'http://3.74.154.111:8080/';
 
 export const loginUser = async (email, password) => {
   const user = {
