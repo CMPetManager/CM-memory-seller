@@ -20,10 +20,12 @@
   user-select: none;
   z-index: -1;
 }
+
 .albums__back-top {
   left: 1.19vw;
   top: -3.87vh;
 }
+
 .albums__back-bottom {
   left: 24.87vw;
   top: 15.37vh;
@@ -43,20 +45,6 @@
   display: flex;
   justify-content: space-between;
 }
-
-/* .albums__profile-btn {
-  width: 8vw;
-  height: 8vw;
-  border: 1px solid var(--black);
-  border-radius: 50%;
-  background-color: var(--gold);
-  font-family: 'Libre Caslon Display';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 4.23vw;
-  line-height: 1.191;
-  color: rgb(0, 0, 0, 0.5);
-} */
 
 .albums__text-wrap {
   margin-top: 9.47vh;
@@ -185,7 +173,6 @@
 .albums__container {
   display: grid;
   grid-template-columns: 1fr;
-  /* grid-template-columns: repeat(2, 1fr); */
   gap: 2vw 0.8vw;
   flex: 1;
   width: 100%;
@@ -193,61 +180,13 @@
   padding-top: 3.3vw;
 }
 
+.albums__container_minimize {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .albums__btn {
   width: 29.63vw;
-}
-
-.albums__list {
-  display: inline-flex;
-  width: 100%;
-  justify-content: start;
-  align-content: start;
-  gap: 1.5%;
-  overflow: hidden;
-}
-
-.albums__list-item {
-  flex: 1;
-  /* max-width: 8vw;
-  height: 13vw; */
-  max-width: 16.47vw;
-  height: 26.46vw;
-  overflow: hidden;
-  transition: 0.5s ease-in-out;
-  cursor: pointer;
-  position: relative;
-}
-.albums__list-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: 0.5s ease-in-out;
-}
-
-.albums__list-item:hover {
-  flex: 1 1 50%;
-  max-width: 100%;
-  transition: 0.5s ease-in-out;
-}
-
-.albums__list-item:hover::after{
-  content: attr(data-title);
-  font-family: 'Libre Caslon Display';
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  color: var(--white);
-  text-transform: uppercase;
-  font-weight: 400;
-  font-size: 3.5vw;
-  line-height: 1.25;
-  /* text-shadow: #000 1px 1px 1px; */
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-}
-.albums__list-item:hover>img {
-  filter: blur(5px);
-  width: 100%;
-  height: 100%;
-  transition: 0.5s ease-in-out;
+  height: 3.17vw;
+  align-self: center;
+  justify-self: center;
 }
