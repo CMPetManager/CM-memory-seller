@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import './Albums.css';
@@ -7,6 +7,10 @@ import { Logo } from 'components/Logo/Logo';
 import { ModalProfilUser } from 'components/ModalProfilUser/ModalProfilUser';
 import AnimatedPage from 'components/AnimatedPage/AnimatedPage';
 import { MessageForm } from 'components/MessageForm/MessageForm';
+import AlbumsList from 'components/AlbumsList/AlbumsList';
+
+import { albumsMocked } from 'mocked_data';
+import { filterAlbums } from 'helpers/filterAlbums';
 
 import plus from 'assets/icons/plus-circle.svg';
 import minus from 'assets/icons/minus-circle.svg';
@@ -14,7 +18,23 @@ import minus from 'assets/icons/minus-circle.svg';
 const Albums = () => {
   const [isModalOpened, setIsModalOpened] = useState(false);
   const [isLogout, setIsLogout] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
+  const [search, setSearch] = useState('');
   const navigate = useNavigate();
+
+  const filteredAlbums = filterAlbums(albumsMocked, search);
+
+  const chunksAlbums = [];
+  const divideToChunks = (arr, num) => {
+    for (let i = 0; i < filteredAlbums.length; i += num) {
+      chunksAlbums.push(filteredAlbums.slice(i, i + num));
+    }
+  };
+  divideToChunks(filteredAlbums, 5);
+
+  useEffect(() => {
+    document.body.style.overflowY = 'scroll';
+  }, []);
 
   const handleOpenModal = () => {
     setIsModalOpened((prev) => !prev);
@@ -22,6 +42,15 @@ const Albums = () => {
 
   const handleIsLogout = () => {
     setIsLogout((prev) => !prev);
+  };
+
+  const handleIsChecked = (e) => {
+    setIsChecked(e.target.checked);
+    console.log('Click!', e.target.checked);
+  };
+
+  const handleOnSearch = (e) => {
+    setSearch(e.target.value);
   };
 
   const navigateToAlbum = () => {
@@ -62,7 +91,11 @@ const Albums = () => {
           </button>
           <div className='albums__control-wrap'>
             <div className='albums__checkbox-wrap'>
-              <input type='checkbox' className='checkbox' />
+              <input
+                type='checkbox'
+                className='checkbox'
+                onChange={handleIsChecked}
+              />
               <img
                 src={plus}
                 alt='increase button'
@@ -78,14 +111,25 @@ const Albums = () => {
               type='search'
               placeholder='Search'
               className='form__input albums__search-input'
+              value={search}
+              onChange={handleOnSearch}
             />
           </div>
         </div>
-        <div className='albums__container'>
-          <button className='btn albums__btn' onClick={navigateToAlbum}>
-            Create first Album
-          </button>
-          <div className='albums__list'></div>
+        <div
+          className={
+            isChecked
+              ? 'albums__container albums__container_minimize'
+              : 'albums__container'
+          }
+        >
+          {!albumsMocked.length ? (
+            <button className='btn albums__btn' onClick={navigateToAlbum}>
+              Create first Album
+            </button>
+          ) : (
+            <AlbumsList isChecked={isChecked} albums={chunksAlbums} />
+          )}
         </div>
       </div>
     </AnimatedPage>
