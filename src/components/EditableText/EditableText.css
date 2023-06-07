@@ -1,14 +1,15 @@
 .cover__input {
-    line-height: 80px;
-    color: var(--gold);
-    margin: auto;
-    border: none;
-    text-align: center;
-    background: transparent;
+  line-height: 80px;
+  color: var(--gold);
+  margin: auto;
+  border: none;
+  text-align: center;
+  background: transparent;
 }
 
 .cover__imag__text {
-    line-height: 80px;
-    color: var(--gold);
-    margin: auto;
+  line-height: 80px;
+  color: var(--gold);
+  margin: auto;
+  hyphens: auto;
 }
