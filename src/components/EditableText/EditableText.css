@@ -6,7 +6,9 @@
   text-align: center;
   background: transparent;
 }
-
+.cover__input:focus {
+  outline: none;
+}
 .cover__imag__text {
   line-height: 80px;
   color: var(--gold);

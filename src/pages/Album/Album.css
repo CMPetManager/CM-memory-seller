@@ -260,7 +260,7 @@
   width: 100%;
   box-sizing: border-box;
   padding-right: 100px;
-  margin-left: 15%;
+  padding-left: 7%;
 }
 
 .album__wrapper > svg {
