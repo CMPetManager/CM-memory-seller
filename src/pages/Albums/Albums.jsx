@@ -41,7 +41,6 @@ const Albums = () => {
 
   const handleIsChecked = (e) => {
     setIsChecked(e.target.checked);
-    console.log('Click!', e.target.checked);
   };
 
   const handleOnSearch = (e) => {
