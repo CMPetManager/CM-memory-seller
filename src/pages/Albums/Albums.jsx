@@ -11,26 +11,21 @@ import AlbumsList from 'components/AlbumsList/AlbumsList';
 
 import { albumsMocked } from 'mocked_data';
 import { filterAlbums } from 'helpers/filterAlbums';
+import { divideToChunks } from 'helpers/divideAlbumsToChuncks';
 
 import plus from 'assets/icons/plus-circle.svg';
 import minus from 'assets/icons/minus-circle.svg';
 
 const Albums = () => {
+  const [albums, setAlbums] = useState(albumsMocked);
   const [isModalOpened, setIsModalOpened] = useState(false);
   const [isLogout, setIsLogout] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
   const [search, setSearch] = useState('');
   const navigate = useNavigate();
 
-  const filteredAlbums = filterAlbums(albumsMocked, search);
-
-  const chunksAlbums = [];
-  const divideToChunks = (arr, num) => {
-    for (let i = 0; i < filteredAlbums.length; i += num) {
-      chunksAlbums.push(filteredAlbums.slice(i, i + num));
-    }
-  };
-  divideToChunks(filteredAlbums, 5);
+  const filteredAlbums = filterAlbums(albums, search);
+  const chunksAlbums = divideToChunks(filteredAlbums, 5);
 
   useEffect(() => {
     document.body.style.overflowY = 'scroll';
