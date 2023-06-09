@@ -5,6 +5,7 @@
   align-content: flex-start;
   gap: 1.5%;
   overflow: hidden;
+  padding: 0.7%;
 }
 
 .albums__list-item {
@@ -15,6 +16,10 @@
   transition: 0.5s ease-in-out;
   cursor: pointer;
   position: relative;
+  border-radius: 0.165vw;
+  -webkit-box-shadow: 3px 3px 19px 0px rgba(97, 96, 96, 1);
+  -moz-box-shadow: 3px 3px 19px 0px rgba(97, 96, 96, 1);
+  box-shadow: 3px 3px 19px 0px rgba(97, 96, 96, 1);
 }
 
 .albums__list-item_minimize {
