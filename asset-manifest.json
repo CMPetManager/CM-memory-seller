@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/CM-memory-seller/static/css/main.c3c7f956.css",
-    "main.js": "/CM-memory-seller/static/js/main.29d058b0.js",
+    "main.js": "/CM-memory-seller/static/js/main.b5fe2bd9.js",
     "static/media/photo-10.webp": "/CM-memory-seller/static/media/photo-10.6e7485d417e139f7aa53.webp",
     "static/media/photo-7.webp": "/CM-memory-seller/static/media/photo-7.ddccb4069cd8ed1bd9ea.webp",
     "static/media/photo-13.webp": "/CM-memory-seller/static/media/photo-13.1952b41b9d04f462f290.webp",
@@ -41,10 +41,10 @@
     "static/media/plus.svg": "/CM-memory-seller/static/media/plus.54b90983c1366ac9c1919f9c767bf07a.svg",
     "static/media/goBackButton.svg": "/CM-memory-seller/static/media/goBackButton.7a40491c1cd445d79bac7cf6ac718c44.svg",
     "main.c3c7f956.css.map": "/CM-memory-seller/static/css/main.c3c7f956.css.map",
-    "main.29d058b0.js.map": "/CM-memory-seller/static/js/main.29d058b0.js.map"
+    "main.b5fe2bd9.js.map": "/CM-memory-seller/static/js/main.b5fe2bd9.js.map"
   },
   "entrypoints": [
     "static/css/main.c3c7f956.css",
-    "static/js/main.29d058b0.js"
+    "static/js/main.b5fe2bd9.js"
   ]
 }
