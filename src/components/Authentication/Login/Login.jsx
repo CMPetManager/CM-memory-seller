@@ -5,11 +5,17 @@ import './Login.css';
 import eyeCrossed from 'assets/icons/eye_crossed.svg';
 import eye from 'assets/icons/eye.svg';
 
-import { loginUser } from 'services/users/userService';
 import ModalBack from '../ModalBack/ModalBack';
 
+import axios from 'api/axios';
+import useAuth from 'hooks/useAuth';
+
+const LOGIN_URL = '/users/login';
+
 const Login = () => {
+  const { setAuth } = useAuth();
   const navigate = useNavigate();
+
   const [form, setForm] = useState({
     email: '',
     password: '',
@@ -85,16 +91,30 @@ const Login = () => {
     }
 
     try {
-      const response = await loginUser(email, password);
+      const response = await axios.post(
+        LOGIN_URL,
+        JSON.stringify({ email, password }),
+        {
+          headers: { 'Content-Type': 'application/json' },
+        }
+      );
+      console.log(JSON.stringify(response));
+      console.log(JSON.stringify(response?.data));
 
-      if (response.success) {
-        const userCredentials = await response.result;
+      if (response.ok) {
+        const userCredentials = { ...response.data, email };
+        setAuth({ ...response.data, email, password });
         localStorage.setItem('user', JSON.stringify(userCredentials));
 
         navigate('/albums');
       }
     } catch (error) {
-      if (error.status === 400) {
+      if (!error?.response) {
+        setErrorMsg((prev) => ({
+          ...prev,
+          isErrorResponse: 'No Server Response',
+        }));
+      } else if (error.response?.status === 400) {
         setErrorMsg((prev) => ({
           ...prev,
           isErrorResponse:
@@ -106,11 +126,11 @@ const Login = () => {
           isErrorResponse: error.message,
         }));
       }
-      setForm({
-        email: '',
-        password: '',
-      });
     }
+    setForm({
+      email: '',
+      password: '',
+    });
   };
 
   return (

@@ -1,6 +1,8 @@
 /* eslint-disable default-case */
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+
+import axios from 'api/axios';
 import './Registration.css';
 
 import eyeOff from 'assets/icons/eye_crossed.svg';
@@ -9,18 +11,18 @@ import eyeOpen from 'assets/icons/eye.svg';
 import ModalBack from '../ModalBack/ModalBack';
 import { FormError } from 'components/FormError/FormError';
 
-import { registerUser } from 'services/users/userService';
 import { confirmInfoMsg } from 'constants';
 
 const USER_REGEX = /^[A-z0-9-_]{2,24}$/;
 const EMAIL_REGEX =
   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-const PSW_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{6,25}$/;
+const PSW_REGEX = /^[A-z0-9-_]{6,25}$/;
+const REGISTER_URL = '/users/confirm-account';
 
 const Registration = (props) => {
   const navigate = useNavigate();
 
-  const [nameInput, setName] = useState('');
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -29,8 +31,8 @@ const Registration = (props) => {
   const [passwordDirty, setPasswordDirty] = useState(false);
 
   const [passwordShown, setPasswordShown] = useState(false);
-  const [success, setSuccess] = useState(true);
-  const [isErrorResponse, setIsErrorResponse] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
 
   const togglePassword = () => {
     setPasswordShown(!passwordShown);
@@ -82,18 +84,40 @@ const Registration = (props) => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    console.log(nameInput, email, password);
-    const validName = USER_REGEX.test(nameInput);
+    console.log(name, email, password);
+    const validName = USER_REGEX.test(name);
     const validEmail = EMAIL_REGEX.test(email);
     const validPsw = PSW_REGEX.test(password);
 
     if (!validName || !validEmail || !validPsw) {
+      console.log('no valide');
       return;
     }
-    await registerUser(nameInput, email, password).catch((err) => {
-      console.log(err.message);
-      setIsErrorResponse(true);
-    });
+
+    try {
+      const response = await axios.post(
+        REGISTER_URL,
+        JSON.stringify({ name, email, password }),
+        {
+          headers: { 'Content-Type': 'application/json' },
+        }
+      );
+
+      console.log(JSON.stringify(response));
+      console.log('Success');
+
+      setSuccess(true);
+    } catch (err) {
+      if (!err.response) {
+        console.log('No Server Response');
+      } else {
+        console.log(err.message);
+        console.log(err.response.status);
+      }
+    }
+    setName('');
+    setEmail('');
+    setPassword('');
   };
 
   const ErrorPasswMsg = () => {
@@ -127,7 +151,7 @@ const Registration = (props) => {
             <h2 className='title'>Welcome</h2>
             <p
               className={
-                isErrorResponse
+                errorMsg
                   ? 'error-message error-message_margin'
                   : 'error-message error-message_margin error-message_hidden'
               }
@@ -145,7 +169,7 @@ const Registration = (props) => {
                 type='text'
                 className='form__input'
                 placeholder='Name'
-                value={nameInput}
+                value={name}
                 onChange={(e) => {
                   nameHandler(e);
                 }}
@@ -213,7 +237,7 @@ const Registration = (props) => {
               type='submit'
               className='btn register__btn'
               disabled={
-                nameInput &&
+                name &&
                 email &&
                 password.length > 5 &&
                 password.length <= 25 &&

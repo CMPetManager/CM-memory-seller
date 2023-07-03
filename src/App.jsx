@@ -12,6 +12,8 @@ import { Album } from './pages/Album/Album';
 import UserProfile from './components/Profile/UserProfile/UserProfile';
 import Albums from './pages/Albums/Albums';
 
+import RequireAuth from './components/RequireAuth/RequireAuth';
+
 function App() {
   const location = useLocation();
 
@@ -29,9 +31,11 @@ function App() {
             />
             <Route path='*' element={<div>Error</div>} />
           </Route>
-          <Route path='/profile' element={<UserProfile />} />
-          <Route path='/album' element={<Album />} />
-          <Route path='/albums' element={<Albums />} />
+          <Route element={<RequireAuth />}>
+            <Route path='/profile' element={<UserProfile />} />
+            <Route path='/album' element={<Album />} />
+            <Route path='/albums' element={<Albums />} />
+          </Route>
         </Routes>
       </AnimatePresence>
     </div>
