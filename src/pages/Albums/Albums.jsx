@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+import useAxiosPrivate from 'hooks/useAxiosPrivate';
 
 import './Albums.css';
 
@@ -23,6 +24,9 @@ const Albums = () => {
   const [isChecked, setIsChecked] = useState(false);
   const [search, setSearch] = useState('');
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const axiosPrivate = useAxiosPrivate();
 
   const filteredAlbums = filterAlbums(albums, search);
   const chunksAlbums = divideToChunks(filteredAlbums, 5);

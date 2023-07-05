@@ -27,11 +27,9 @@
     font-style: normal;
     font-weight: 400;
     font-size: 6.3vw;
-    line-height: 116px;
+    line-height: 1.2;
     color: var(--white);
     opacity: 0.2;
-
-
 }
 
 .FormError_bgSubText {
@@ -40,19 +38,19 @@
     font-style: normal;
     font-weight: 400;
     font-size: 4vw;
-    line-height: 77px;
+    line-height: 1.2;
     color: var(--white);
-    top: -56px;
+    top: -3.65vw;
 }
 
 .FormError_title {
     font-family: 'Libre Caslon Display';
     font-style: normal;
     font-weight: 400;
-    font-size: 32px;
-    line-height: 40px;
+    font-size: 2.08vw;
+    line-height: 1.25;
     color: var(--white);
-    margin-bottom: 30px;
+    margin-bottom: 3.77vw;
 }
 
 .button__container {

@@ -12,11 +12,11 @@
 
 .FormError__windowContainer {
     box-sizing: border-box;
-    width: 546px;
+    width: 36vw;
     background: var(--brown);
     box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25);
     text-align: center;
-    padding: 56px 49px;
+    padding: 3.7vw 3.2vw;
 
 }
 
@@ -24,12 +24,10 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 96px;
-    line-height: 116px;
+    font-size: 6.3vw;
+    line-height: 1.2;
     color: var(--white);
     opacity: 0.2;
-
-
 }
 
 .FormError_bgSubText {
@@ -37,8 +35,8 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 64px;
-    line-height: 77px;
+    font-size: 4vw;
+    line-height: 1.2;
     color: var(--white);
     top: -56px;
 }
@@ -47,8 +45,8 @@
     font-family: 'Libre Caslon Display';
     font-style: normal;
     font-weight: 400;
-    font-size: 32px;
-    line-height: 40px;
+    font-size: 1.25;
+    line-height: 1.25;
     color: var(--white);
-    margin-bottom: 30px;
+    margin-bottom: 3.77vw;
 }
