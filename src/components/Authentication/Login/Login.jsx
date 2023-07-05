@@ -102,8 +102,23 @@ const Login = () => {
       console.log(JSON.stringify(response?.data));
 
       if (response.ok) {
-        const userCredentials = { ...response.data, email };
-        setAuth({ ...response.data, email, password });
+        const {
+          userId,
+          name,
+          token: { accessToken, refreshToken },
+        } = response.data;
+
+        console.log(userId, name, accessToken, refreshToken);
+
+        const userCredentials = {
+          userId,
+          name,
+          accessToken,
+          refreshToken,
+          email,
+        };
+
+        setAuth({ userId, name, accessToken, refreshToken, email, password });
         localStorage.setItem('user', JSON.stringify(userCredentials));
 
         navigate('/albums');
