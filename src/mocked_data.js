@@ -21,7 +21,7 @@ export const albumsMocked = [
     albumName: 'weddings',
     coverDescription: 'weddings',
     coverUrl:
-      'https://queerforty.com/wp-content/uploads/2022/05/pexels-suzy-hazelwood-4542707-1024x628.jpg',
+      'https://i.insider.com/62cdb9828045920019aeaf45?width=1000&format=jpeg&auto=webp',
   },
   {
     id: 4,

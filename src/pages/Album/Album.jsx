@@ -22,6 +22,8 @@ import { useNavigate } from 'react-router-dom';
 import { ButtonSide } from 'components/ButtonSide/ButtonSide';
 import AnimatedPage from 'components/AnimatedPage/AnimatedPage';
 
+import useLogout from 'hooks/useLogout';
+
 export const Album = () => {
   const [isOpenTextLabel, setIsOpenTextLabel] = useState(false);
   const [activeTemplate, setactiveTemplate] = useState(true);
@@ -34,6 +36,7 @@ export const Album = () => {
   const [isLogout, setIsLogout] = useState(false);
 
   const navigate = useNavigate();
+  const logOut = useLogout();
 
   const handleChange = () => {
     setOpenModalProfilUser((prev) => !prev);
@@ -85,6 +88,12 @@ export const Album = () => {
     '#483C32',
     '#36454F ',
   ];
+
+  const handleConfirmLogoutMsg = () => {
+    logOut();
+    navigate('/');
+  };
+
   return (
     <AnimatedPage>
       <div
@@ -102,7 +111,7 @@ export const Album = () => {
           <MessageForm
             setIsOpen={setIsLogout}
             textLabel='Are you sure you want to log out?'
-            buttonOnClick={() => navigate('/')}
+            buttonOnClick={handleConfirmLogoutMsg}
           />
         )}
         {openModalProfi && (
