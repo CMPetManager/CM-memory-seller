@@ -13,6 +13,7 @@ import UserProfile from './components/Profile/UserProfile/UserProfile';
 import Albums from './pages/Albums/Albums';
 
 import RequireAuth from './components/RequireAuth/RequireAuth';
+import CheckAuth from './components/CheckAuth/CheckAuth';
 
 function App() {
   const location = useLocation();
@@ -21,21 +22,23 @@ function App() {
     <div className='app'>
       <AnimatePresence>
         <Routes key={location.pathname} location={location}>
-          <Route path='/' element={<Home />}>
-            <Route path='registration' element={<Registration />} />
-            <Route path='login' element={<Login />} />
-            <Route path='forgot-password' element={<ForgotPassword />} />
-            <Route
-              path='reset-password/:resetToken'
-              element={<ResetPassword />}
-            />
-            <Route path='*' element={<div>Error</div>} />
+          <Route path='/' element={<CheckAuth />}>
+            <Route path='/' element={<Home />}>
+              <Route path='registration' element={<Registration />} />
+              <Route path='login' element={<Login />} />
+              <Route path='forgot-password' element={<ForgotPassword />} />
+              <Route
+                path='reset-password/:resetToken'
+                element={<ResetPassword />}
+              />
+              <Route path='*' element={<div>Error</div>} />
+            </Route>
+            {/* <Route element={<RequireAuth />}> */}
+            <Route path='/profile' element={<UserProfile />} />
+            <Route path='/album' element={<Album />} />
+            <Route path='/albums' element={<Albums />} />
+            {/* </Route> */}
           </Route>
-          {/* <Route element={<RequireAuth />}> */}
-          <Route path='/profile' element={<UserProfile />} />
-          <Route path='/album' element={<Album />} />
-          <Route path='/albums' element={<Albums />} />
-          {/* </Route> */}
         </Routes>
       </AnimatePresence>
     </div>

@@ -16,6 +16,8 @@ import { divideToChunks } from 'helpers/divideAlbumsToChuncks';
 
 import plus from 'assets/icons/plus-circle.svg';
 import minus from 'assets/icons/minus-circle.svg';
+import useAuth from 'hooks/useAuth';
+import useLogout from 'hooks/useLogout';
 
 const Albums = () => {
   const [albums, setAlbums] = useState(albumsMocked);
@@ -25,14 +27,44 @@ const Albums = () => {
   const [search, setSearch] = useState('');
   const navigate = useNavigate();
   const location = useLocation();
-
+  const { auth } = useAuth();
   const axiosPrivate = useAxiosPrivate();
+
+  const logOut = useLogout();
 
   const filteredAlbums = filterAlbums(albums, search);
   const chunksAlbums = divideToChunks(filteredAlbums, 5);
 
   useEffect(() => {
     document.body.style.overflowY = 'scroll';
+  }, []);
+
+  useEffect(() => {
+    let isMounted = true;
+    const controller = new AbortController();
+
+    const { userId } = auth;
+
+    const getAlbums = async () => {
+      try {
+        const response = await axiosPrivate.get(`albums/${userId}`, {
+          signal: controller.signal,
+        });
+
+        console.log(response.data);
+        // isMounted && setAlbums(response.data);
+      } catch (err) {
+        console.error(err);
+        navigate('/login', { state: { from: location }, replace: true });
+      }
+    };
+
+    // getAlbums();
+
+    return () => {
+      isMounted = false;
+      controller.abort();
+    };
   }, []);
 
   const handleOpenModal = () => {
@@ -55,6 +87,11 @@ const Albums = () => {
     navigate('/album');
   };
 
+  const handleConfirmLogoutMsg = () => {
+    logOut();
+    navigate('/');
+  };
+
   return (
     <AnimatedPage>
       <div className='albums__wrap'>
@@ -62,7 +99,7 @@ const Albums = () => {
           <MessageForm
             setIsOpen={setIsLogout}
             textLabel='Are you sure you want to log out?'
-            buttonOnClick={() => navigate('/')}
+            buttonOnClick={handleConfirmLogoutMsg}
           />
         )}
         <div className='albums__back albums__back-top'>Catch the</div>

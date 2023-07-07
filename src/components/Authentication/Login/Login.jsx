@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 import './Login.css';
@@ -13,8 +13,11 @@ import useAuth from 'hooks/useAuth';
 const LOGIN_URL = '/users/login';
 
 const Login = () => {
-  const { setAuth } = useAuth();
+  const { setAuth, persist, setPersist } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || '/albums';
+  console.log(from);
 
   const [form, setForm] = useState({
     email: '',
@@ -27,7 +30,6 @@ const Login = () => {
     isErrorResponse: '',
   });
 
-  const [isChecked, setIsChecked] = useState(false);
   const [isShownPassword, setShownPassword] = useState(false);
 
   useEffect(() => {
@@ -74,9 +76,13 @@ const Login = () => {
     }
   };
 
-  const onCheckedChange = () => {
-    setIsChecked((prev) => !prev);
+  const togglePersist = () => {
+    setPersist((prev) => !prev);
   };
+
+  useEffect(() => {
+    localStorage.setItem('persist', persist);
+  }, [persist]);
 
   const onShowPassword = () => {
     setShownPassword((prev) => !prev);
@@ -119,28 +125,33 @@ const Login = () => {
         };
 
         setAuth({ userId, name, accessToken, refreshToken, email, password });
-        localStorage.setItem('user', JSON.stringify(userCredentials));
+        persist &&
+          localStorage.setItem('user', JSON.stringify(userCredentials));
 
-        navigate('/albums');
+        //!NEED TO TEST
+        // navigate('/albums');
+
+        navigate(from, { replace: true });
       }
     } catch (error) {
-      if (!error?.response) {
-        setErrorMsg((prev) => ({
-          ...prev,
-          isErrorResponse: 'No Server Response',
-        }));
-      } else if (error.response?.status === 400) {
-        setErrorMsg((prev) => ({
-          ...prev,
-          isErrorResponse:
-            'Either Email or Password that you entered were incorrect',
-        }));
-      } else {
-        setErrorMsg((prev) => ({
-          ...prev,
-          isErrorResponse: error.message,
-        }));
-      }
+      console.error(error);
+      // if (!error?.response) {
+      //   setErrorMsg((prev) => ({
+      //     ...prev,
+      //     isErrorResponse: 'No Server Response',
+      //   }));
+      // } else if (error.response?.status === 400) {
+      //   setErrorMsg((prev) => ({
+      //     ...prev,
+      //     isErrorResponse:
+      //       'Either Email or Password that you entered were incorrect',
+      //   }));
+      // } else {
+      //   setErrorMsg((prev) => ({
+      //     ...prev,
+      //     isErrorResponse: error.message,
+      //   }));
+      // }
     }
     setForm({
       email: '',
@@ -217,9 +228,9 @@ const Login = () => {
           <input
             type='checkbox'
             className='form__checkbox'
-            checked={isChecked}
-            onChange={onCheckedChange}
-            name='isChecked'
+            checked={persist}
+            onChange={togglePersist}
+            name='rememberme'
           />
           Remember me
         </label>
