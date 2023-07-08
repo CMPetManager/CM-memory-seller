@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import './UserProfile.css';
-import MenuProfile from '../ProfilePanel/ProfilePanel';
+import ProfilePanel from '../ProfilePanel/ProfilePanel';
 import profilePhoto from 'assets/icons/profile_photo.svg';
 import addPhoto from 'assets/icons/Add-photo.svg';
 import { Link } from 'react-router-dom';
@@ -23,15 +23,16 @@ const UserProfile = () => {
   const userName = 'Sandström';
   return (
     <div className='profile'>
+      <ProfilePanel />
       <div className='profile__body'>
-        <MenuProfile />
-        <div className='profile__background'>
-          <p className='profile__background_higher'>Catch the</p>
-          <p className='profile__background_below'>Moment</p>
-        </div>
-        <div className='profile__home'>
-          <Link to='/albums'>Home</Link>
-        </div>
+        <p className='profile__background profile__background_higher'>
+          Catch the
+        </p>
+        <p className='profile__background profile__ background_below'>Moment</p>
+        <Link className='profile__home-link' to='/albums'>
+          Home
+        </Link>
+
         <div className='profile__user'>
           <div className='profile__user-photo'>
             <input
@@ -57,24 +58,20 @@ const UserProfile = () => {
             <h3>Free account</h3>
           </div>
           <div className='profile__inputs'>
-            <div className='profile__name-input'>
-              <input
-                name='name'
-                type='text'
-                disabled
-                placeholder={userName}
-                className='input_form input'
-              />
-            </div>
-            <div className='profile__name-input'>
-              <input
-                name='email'
-                placeholder='Email address'
-                type='text'
-                disabled
-                className='input_form input'
-              />
-            </div>
+            <input
+              name='name'
+              type='text'
+              disabled
+              placeholder={userName}
+              className='input form__input'
+            />
+            <input
+              name='email'
+              placeholder='Email address'
+              type='text'
+              disabled
+              className='input form__input'
+            />
           </div>
         </div>
       </div>
