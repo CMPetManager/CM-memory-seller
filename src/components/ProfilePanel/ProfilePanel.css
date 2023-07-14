@@ -38,8 +38,13 @@
   line-height: 1.25
 }
 
-.menu-link:hover{
-  color: var(--white);
+.menu-link:hover {
+  color: var(--black);
   text-decoration: underline var(--gold);
   transition: all 0.5s ease-in-out;
+}
+
+.active {
+  color: var(--white);
+  text-decoration: underline var(--gold);
 }

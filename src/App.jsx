@@ -9,8 +9,9 @@ import ForgotPassword from './components/Authentication/ForgotPassword/ForgotPas
 import ResetPassword from './components/Authentication/ResetPassword/ResetPassword';
 import Home from './pages/Home/Home';
 import { Album } from './pages/Album/Album';
-import UserProfile from './components/Profile/UserProfile/UserProfile';
+import Profile from './pages/Profile/Profile';
 import Albums from './pages/Albums/Albums';
+import Settings from './pages/Settings/Settings';
 
 import RequireAuth from './components/RequireAuth/RequireAuth';
 import CheckAuth from './components/CheckAuth/CheckAuth';
@@ -34,9 +35,10 @@ function App() {
               <Route path='*' element={<div>Error</div>} />
             </Route>
             {/* <Route element={<RequireAuth />}> */}
-            <Route path='/profile' element={<UserProfile />} />
+            <Route path='/profile' element={<Profile />} />
             <Route path='/album' element={<Album />} />
             <Route path='/albums' element={<Albums />} />
+            <Route path='/settings' element={<Settings />} />
             {/* </Route> */}
           </Route>
         </Routes>

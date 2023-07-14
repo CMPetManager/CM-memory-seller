@@ -13,12 +13,13 @@
   height: 100%;
   padding: 3.7vw 6.61vw;
 }
+
 .profile__background {
   position: absolute;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
-  font-size: 13.23vh;
+  font-size: 20.37vh;
   line-height: 1.21;
   color: var(--back-text);
   opacity: 0.05;
@@ -26,14 +27,14 @@
   user-select: none;
 }
 
-.profile__background_higher {
+.background_higher {
   left: 12.4vw;
-  top: -2.51vw;
+  top: -3.86vh;
 }
 
-.profile__background_below {
+.background_below {
   left: 43.05vw;
-  top: 7.8vw;
+  top: 11.7vh;
 }
 
 .profile__home-link {
@@ -50,7 +51,6 @@
 .profile__home-link:hover {
   color: var(--gold);
   transition: all 0.5s ease-in-out;
-
 }
 
 .profile__user {

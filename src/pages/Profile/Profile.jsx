@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import './UserProfile.css';
-import ProfilePanel from '../ProfilePanel/ProfilePanel';
+import './Profile.css';
+import ProfilePanel from 'components/ProfilePanel/ProfilePanel';
 import profilePhoto from 'assets/icons/profile_photo.svg';
 import addPhoto from 'assets/icons/Add-photo.svg';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
-const UserProfile = () => {
+const Profile = () => {
   const [image, setImage] = useState();
   const [imageURL, setImageURL] = useState();
 
@@ -23,12 +23,10 @@ const UserProfile = () => {
   const userName = 'Sandström';
   return (
     <div className='profile'>
-      <ProfilePanel />
+      <ProfilePanel activePage='profile' />
       <div className='profile__body'>
-        <p className='profile__background profile__background_higher'>
-          Catch the
-        </p>
-        <p className='profile__background profile__ background_below'>Moment</p>
+        <p className='profile__background background_higher'>Catch the</p>
+        <p className='profile__background background_below'>Moment</p>
         <Link className='profile__home-link' to='/albums'>
           Home
         </Link>
@@ -79,4 +77,4 @@ const UserProfile = () => {
   );
 };
 
-export default UserProfile;
+export default Profile;
