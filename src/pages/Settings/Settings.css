@@ -64,6 +64,9 @@
 .settings__item-wrap {
   width: 100%;
   padding: 1.19vw 2.05vw 1.72vw 1.85vw;
+}
+
+.settings__item-wrap_gold {
   border-radius: 1.39vw;
   border: 0.066vw solid var(--gold);
 }
@@ -75,13 +78,11 @@
 }
 
 .settings__subtitle-inner {
-  width: 44vw;
-  padding-bottom: 1.52vw;  
-  border-bottom: 0.066vw solid var(--gold);
+  padding-bottom: 1.52vw;
 }
 
 .settings__btn-expand {
-  width: 1.46vw;
+  width: 1.58vw;
   height: 1.58vw;
   background-color: transparent;
   border: none;
@@ -89,8 +90,7 @@
   appearance: none;
   cursor: pointer;
   outline: none;
-  transform: rotate(45deg);
-  
+  transform: rotate(45deg); 
 }
 
 .btn-expand_top {
@@ -98,9 +98,19 @@
   border-left: 0.39vw solid var(--white);
 }
 
-.settings__btn-expand_bottom {
+.btn-expand_top:hover {
+  border-top: 0.39vw solid var(--gold);
+  border-left: 0.39vw solid var(--gold);
+}
+
+.btn-expand_bottom {
   border-bottom: 0.39vw solid var(--white);
   border-right: 0.39vw solid var(--white);
+}
+
+.btn-expand_bottom:hover {
+  border-bottom: 0.39vw solid var(--gold);
+  border-right: 0.39vw solid var(--gold);
 }
 
 .settings__subtitle {
@@ -124,10 +134,16 @@
 }
 
 .settings__form {
+  width: 44vw;
   padding-top: 3.17vw;
+  border-top: 0.066vw solid var(--gold);
 }
 
 .form__btn {
   width: 29.37vw;
   margin-bottom: 1.72vw;
+}
+
+.form__btn:disabled {
+  color: var(--black);
 }

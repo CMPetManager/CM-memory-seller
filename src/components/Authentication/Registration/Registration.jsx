@@ -11,12 +11,9 @@ import eyeOpen from 'assets/icons/eye.svg';
 import ModalBack from '../ModalBack/ModalBack';
 import { FormError } from 'components/FormError/FormError';
 
-import { confirmInfoMsg } from 'constants';
+import { confirmInfoMsg, EMAIL_REGEX, PSW_REGEX } from 'constants';
 
 const USER_REGEX = /^[A-z0-9-_]{2,24}$/;
-const EMAIL_REGEX =
-  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-const PSW_REGEX = /^[A-z0-9-_]{6,25}$/;
 const REGISTER_URL = '/users/confirm-account';
 
 const Registration = (props) => {
