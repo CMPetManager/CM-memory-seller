@@ -162,7 +162,7 @@ function MyLocomotiveScroll() {
 
 function Slider() {
   return (
-    <LocomotiveScrollProvider>
+    <LocomotiveScrollProvider watch={[]}>
       <MyLocomotiveScroll />
     </LocomotiveScrollProvider>
   );
