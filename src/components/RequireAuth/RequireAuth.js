@@ -1,14 +1,21 @@
 import { useLocation, Navigate, Outlet } from 'react-router-dom';
 import useAuth from 'hooks/useAuth';
+import { useEffect } from 'react';
 
 const RequireAuth = () => {
-  const { auth } = useAuth();
+  const { auth, isLogout } = useAuth();
   const location = useLocation();
 
-  return auth?.name ? (
+  useEffect(() => {
+    console.log(location.pathname);
+  });
+
+  return auth?.accessToken ? (
     <Outlet />
+  ) : isLogout ? (
+    <Navigate to='/' state={{ previousUrl: '/' }} replace />
   ) : (
-    <Navigate to='/login' state={{ from: location }} replace />
+    <Navigate to='/login' state={{ previousUrl: location.pathname }} replace />
   );
 };
 

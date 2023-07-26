@@ -16,8 +16,7 @@ const Login = () => {
   const { setAuth, persist, setPersist } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.from?.pathname || '/albums';
-  console.log(from);
+  const from = location.state?.previousUrl;
 
   const [form, setForm] = useState({
     email: '',
@@ -107,7 +106,7 @@ const Login = () => {
       console.log(JSON.stringify(response));
       console.log(JSON.stringify(response?.data));
 
-      if (response.ok) {
+      if (response?.data) {
         const {
           userId,
           name,
@@ -128,30 +127,36 @@ const Login = () => {
         persist &&
           localStorage.setItem('user', JSON.stringify(userCredentials));
 
-        //!NEED TO TEST
-        // navigate('/albums');
+        setForm({
+          email: '',
+          password: '',
+        });
 
         navigate(from, { replace: true });
       }
     } catch (error) {
-      console.error(error);
-      // if (!error?.response) {
-      //   setErrorMsg((prev) => ({
-      //     ...prev,
-      //     isErrorResponse: 'No Server Response',
-      //   }));
-      // } else if (error.response?.status === 400) {
-      //   setErrorMsg((prev) => ({
-      //     ...prev,
-      //     isErrorResponse:
-      //       'Either Email or Password that you entered were incorrect',
-      //   }));
-      // } else {
-      //   setErrorMsg((prev) => ({
-      //     ...prev,
-      //     isErrorResponse: error.message,
-      //   }));
-      // }
+      console.log(error.response?.data?.message);
+      if (!error?.response) {
+        setErrorMsg((prev) => ({
+          ...prev,
+          isErrorResponse: 'No Server Response',
+        }));
+      } else if (
+        error.response?.data?.message === 'User not found' ||
+        error.response?.data?.message ===
+          'Problems on the server.Try it another time : Bad credentials'
+      ) {
+        setErrorMsg((prev) => ({
+          ...prev,
+          isErrorResponse:
+            'Either Email or Password that you entered were incorrect',
+        }));
+      } else {
+        setErrorMsg((prev) => ({
+          ...prev,
+          isErrorResponse: error.response?.data?.message,
+        }));
+      }
     }
     setForm({
       email: '',

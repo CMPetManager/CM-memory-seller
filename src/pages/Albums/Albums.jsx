@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import useAxiosPrivate from 'hooks/useAxiosPrivate';
 
 import './Albums.css';
@@ -26,7 +26,6 @@ const Albums = () => {
   const [isChecked, setIsChecked] = useState(false);
   const [search, setSearch] = useState('');
   const navigate = useNavigate();
-  const location = useLocation();
   const { auth } = useAuth();
   const axiosPrivate = useAxiosPrivate();
 
@@ -40,26 +39,27 @@ const Albums = () => {
   }, []);
 
   useEffect(() => {
+    console.log('useEffect from album 1');
     let isMounted = true;
     const controller = new AbortController();
-
     const { userId } = auth;
 
     const getAlbums = async () => {
       try {
-        const response = await axiosPrivate.get(`albums/${userId}`, {
+        console.log('useEffect from album 2');
+        console.log(controller.signal);
+        const response = await axiosPrivate.get(`albums/user/${userId}`, {
           signal: controller.signal,
         });
 
         console.log(response.data);
-        // isMounted && setAlbums(response.data);
+        isMounted && setAlbums(response.data);
       } catch (err) {
-        console.error(err);
-        navigate('/login', { state: { from: location }, replace: true });
+        console.log(err);
       }
     };
 
-    // getAlbums();
+    getAlbums();
 
     return () => {
       isMounted = false;
@@ -87,11 +87,6 @@ const Albums = () => {
     navigate('/album');
   };
 
-  const handleConfirmLogoutMsg = () => {
-    logOut();
-    navigate('/');
-  };
-
   return (
     <AnimatedPage>
       <div className='albums__wrap'>
@@ -99,7 +94,7 @@ const Albums = () => {
           <MessageForm
             setIsOpen={setIsLogout}
             textLabel='Are you sure you want to log out?'
-            buttonOnClick={handleConfirmLogoutMsg}
+            buttonOnClick={logOut}
           />
         )}
         <div className='albums__back albums__back-top'>Catch the</div>
@@ -158,7 +153,7 @@ const Albums = () => {
               : 'albums__container'
           }
         >
-          {!albumsMocked.length ? (
+          {!albums.length ? (
             <button className='btn albums__btn' onClick={navigateToAlbum}>
               Create first Album
             </button>
