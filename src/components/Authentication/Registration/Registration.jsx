@@ -29,7 +29,10 @@ const Registration = (props) => {
 
   const [passwordShown, setPasswordShown] = useState(false);
   const [success, setSuccess] = useState(false);
-  const [errorMsg, setErrorMsg] = useState('');
+  const [errorMsg, setErrorMsg] = useState({
+    state: false,
+    msg: '',
+  });
 
   const togglePassword = () => {
     setPasswordShown(!passwordShown);
@@ -104,17 +107,31 @@ const Registration = (props) => {
       console.log('Success');
 
       setSuccess(true);
-    } catch (err) {
-      if (!err.response) {
-        console.log('No Server Response');
+    } catch (error) {
+      console.log(error.response?.data?.message);
+      if (!error?.response) {
+        setErrorMsg((prev) => ({
+          ...prev,
+          isErrorResponse: 'No Server Response',
+        }));
+      } else if (
+        error.response?.data?.message === 'Already exists' ||
+        error.response?.data?.message ===
+          'Apology, but yours account has not been verified'
+      ) {
+        setErrorMsg((prev) => ({
+          ...prev,
+          state: true,
+          msg: error.response?.data?.message,
+        }));
       } else {
-        console.log(err.message);
-        console.log(err.response.status);
+        console.log(error.response?.data?.message);
       }
     }
     setName('');
     setEmail('');
     setPassword('');
+    setPasswordDirty(false);
   };
 
   const ErrorPasswMsg = () => {
@@ -146,18 +163,12 @@ const Registration = (props) => {
         <ModalBack>
           <div className='form__head-wrap'>
             <h2 className='title'>Welcome</h2>
-            <p
-              className={
-                errorMsg
-                  ? 'error-message error-message_margin'
-                  : 'error-message error-message_margin error-message_hidden'
-              }
-            >
-              This email already exists.
-              {<ResponseError />}
-              to reset password
-            </p>
           </div>
+          {errorMsg.state ? (
+            <ResponseError msg={errorMsg.msg} />
+          ) : (
+            <p className='error-message error-message_margin'></p>
+          )}
           <form className='form' onSubmit={onSubmit}>
             <div className='form__input-wrap'>
               <input
@@ -169,6 +180,11 @@ const Registration = (props) => {
                 value={name}
                 onChange={(e) => {
                   nameHandler(e);
+                  errorMsg &&
+                    setErrorMsg((prev) => ({
+                      state: false,
+                      msg: '',
+                    }));
                 }}
                 required
               />
@@ -193,6 +209,11 @@ const Registration = (props) => {
                 value={email}
                 onChange={(e) => {
                   emailHandler(e);
+                  errorMsg &&
+                    setErrorMsg((prev) => ({
+                      state: false,
+                      msg: '',
+                    }));
                 }}
                 required
               />
@@ -218,6 +239,11 @@ const Registration = (props) => {
                   value={password}
                   onChange={(e) => {
                     setPassword(e.target.value);
+                    errorMsg &&
+                      setErrorMsg((prev) => ({
+                        state: false,
+                        msg: '',
+                      }));
                   }}
                   required
                 />
@@ -265,11 +291,25 @@ const Registration = (props) => {
   );
 };
 
-const ResponseError = () => {
-  return (
-    <Link to={'/forgot-password'} className='link__forgot'>
-      Click here
-    </Link>
-  );
+const ResponseError = ({ msg }) => {
+  if (msg === 'Already exists') {
+    return (
+      <p className={'error-message error-message_margin'}>
+        This email already exists.
+        <Link to={'/forgot-password'} className='link__forgot'>
+          Click here
+        </Link>
+        to reset password
+      </p>
+    );
+  }
+  if (msg === 'Apology, but yours account has not been verified') {
+    return (
+      <p className={'error-message error-message_margin'}>
+        Your email address has not been verified. Please go to your mailbox and
+        verify your email address.
+      </p>
+    );
+  }
 };
 export default Registration;

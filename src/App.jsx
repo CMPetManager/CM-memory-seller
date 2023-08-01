@@ -23,7 +23,7 @@ function App() {
     <div className='app'>
       <AnimatePresence>
         <Routes key={location.pathname} location={location}>
-          <Route path='/' element={<CheckAuth />}>
+          <Route element={<CheckAuth />}>
             <Route path='/' element={<Home />}>
               <Route path='registration' element={<Registration />} />
               <Route path='login' element={<Login />} />
@@ -32,14 +32,14 @@ function App() {
                 path='reset-password/:resetToken'
                 element={<ResetPassword />}
               />
-              <Route path='*' element={<div>Error</div>} />
             </Route>
-            {/* <Route element={<RequireAuth />}> */}
+            <Route path='*' element={<div>Error</div>} />
+          </Route>
+          <Route element={<RequireAuth />}>
             <Route path='/profile' element={<Profile />} />
             <Route path='/album' element={<Album />} />
             <Route path='/albums' element={<Albums />} />
             <Route path='/settings' element={<Settings />} />
-            {/* </Route> */}
           </Route>
         </Routes>
       </AnimatePresence>
