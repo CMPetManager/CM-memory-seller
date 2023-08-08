@@ -14,8 +14,8 @@ import { clsx } from 'clsx';
 
 const PasswordSettings = ({ pswExpand, onClickPswExpand }) => {
   const [isPassword, setIsPassword] = useState({
-    password: false,
-    confirmpassword: false,
+    password: true,
+    confirmpassword: true,
   });
   const { auth } = useAuth();
 
@@ -28,9 +28,9 @@ const PasswordSettings = ({ pswExpand, onClickPswExpand }) => {
   } = useForm({ mode: 'all' });
 
   const InputPassValidate = (value) => {
-    if (PSW_REGEX.test(value)) {
+    if (!PSW_REGEX.test(value)) {
       return 'Must be between 6 and 25 characters long.';
-    } else if (getValues('confirmpassword') !== getValues('password')) {
+    } else if (getValues('password') !== getValues('confirmpassword')) {
       return 'Password mismatch';
     }
   };
@@ -90,37 +90,38 @@ const PasswordSettings = ({ pswExpand, onClickPswExpand }) => {
       </div>
       {pswExpand && (
         <form className='settings__form' onSubmit={handleSubmit(onSubmitPsw)}>
-          <Input
-            {...register('password', {
-              required: true,
-              minLength: {
-                value: 6,
-                message: 'Must be between 6 and 25 characters long.',
-              },
-              maxLength: {
-                value: 25,
-                message: 'Must be between 6 and 25 characters long.',
-              },
-            })}
-            placeholder='Enter your new password'
-            type={isPassword.password ? 'password' : 'text'}
-            icon={ChooseImage('password')}
-            errors={errors.password?.message}
-            className='form__input-passw'
-          />
-          <Input
-            icon={ChooseImage('confirmpassword')}
-            placeholder='Confirm your new password'
-            type={isPassword.confirmpassword ? 'password' : 'text'}
-            errors={errors.confirmpassword?.message}
-            {...register('confirmpassword', {
-              validate: InputPassValidate,
-            })}
-            className='form__input-passw'
-          />
+          <fieldset className='settings__input-wrap'>
+            <Input
+              {...register('password', {
+                required: 'Please enter new Password',
+                pattern: {
+                  value: PSW_REGEX,
+                  message: 'Must be between 6 and 25 characters long.',
+                },
+              })}
+              placeholder='New password'
+              type={isPassword.password ? 'password' : 'text'}
+              icon={ChooseImage('password')}
+              errors={errors.password?.message}
+              className='settings__psw-input form__input-passw'
+              classNameWrap='settings__input-container'
+            />
+            <Input
+              icon={ChooseImage('confirmpassword')}
+              placeholder='Repeat password'
+              type={isPassword.confirmpassword ? 'password' : 'text'}
+              errors={errors.confirmpassword?.message}
+              {...register('confirmpassword', {
+                required: 'Please confirm new Password',
+                validate: InputPassValidate,
+              })}
+              className='settings__psw-input form__input-passw'
+              classNameWrap='settings__input-container'
+            />
+          </fieldset>
           <Button
-            titleButton='Change Password'
-            className={clsx(' btn resetPassword__btn')}
+            titleButton='Change your password'
+            className={clsx('btn psw__btn')}
             disabled={
               Object.keys(errors).length === 0 &&
               getValues('confirmpassword') &&

@@ -139,11 +139,24 @@
   border-top: 0.066vw solid var(--gold);
 }
 
+.settings__input-wrap {
+  display: flex;
+  justify-content: space-between;
+  border: none;
+}
+
+.settings__input-container {
+  width: 21vw;
+}
+
 .form__btn {
   width: 29.37vw;
   margin-bottom: 1.72vw;
 }
 
+.psw__btn{
+  margin-bottom: 1.72vw;
+}
 .form__btn:disabled {
   color: var(--black);
 }

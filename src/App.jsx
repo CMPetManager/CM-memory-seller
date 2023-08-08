@@ -35,12 +35,12 @@ function App() {
             </Route>
             <Route path='*' element={<div>Error</div>} />
           </Route>
-          <Route element={<RequireAuth />}>
-            <Route path='/profile' element={<Profile />} />
-            <Route path='/album' element={<Album />} />
-            <Route path='/albums' element={<Albums />} />
-            <Route path='/settings' element={<Settings />} />
-          </Route>
+          {/* <Route element={<RequireAuth />}> */}
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/album' element={<Album />} />
+          <Route path='/albums' element={<Albums />} />
+          <Route path='/settings' element={<Settings />} />
+          {/* </Route> */}
         </Routes>
       </AnimatePresence>
     </div>
