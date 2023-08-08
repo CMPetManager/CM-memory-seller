@@ -10,7 +10,6 @@ import AnimatedPage from 'components/AnimatedPage/AnimatedPage';
 import { MessageForm } from 'components/MessageForm/MessageForm';
 import AlbumsList from 'components/AlbumsList/AlbumsList';
 
-import { albumsMocked } from 'mocked_data';
 import { filterAlbums } from 'helpers/filterAlbums';
 import { divideToChunks } from 'helpers/divideAlbumsToChuncks';
 
@@ -20,7 +19,7 @@ import useAuth from 'hooks/useAuth';
 import useLogout from 'hooks/useLogout';
 
 const Albums = () => {
-  const [albums, setAlbums] = useState(albumsMocked);
+  const [albums, setAlbums] = useState([]);
   const [isModalOpened, setIsModalOpened] = useState(false);
   const [isLogout, setIsLogout] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
