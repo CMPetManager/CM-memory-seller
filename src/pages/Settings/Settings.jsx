@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import './Settings.css';
 
 import ProfilePanel from 'components/ProfilePanel/ProfilePanel';
-import EmailSettings from 'components/EmailSettings/EmailSettings';
-import PasswordSettings from 'components/PasswordSettings/PasswordSettings';
+import EmailSettings from 'pages/Settings/components/EmailSettings/EmailSettings';
+import PasswordSettings from 'pages/Settings/components/PasswordSettings/PasswordSettings';
 
 const Settings = () => {
   const [emailExpand, setEmailExpand] = useState(false);
@@ -13,10 +13,12 @@ const Settings = () => {
 
   const onClickEmailExpand = () => {
     setEmailExpand((prev) => !prev);
+    pswExpand && setPswExpand((prev) => !prev);
   };
 
   const onClickPswExpand = () => {
     setPswExpand((prev) => !prev);
+    emailExpand && setEmailExpand((prev) => !prev);
   };
 
   return (

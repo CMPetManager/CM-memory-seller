@@ -77,7 +77,7 @@ const PasswordSettings = ({ pswExpand, onClickPswExpand }) => {
         <div className='settings__subtitle-inner'>
           <h3 className='settings__subtitle'>Change password</h3>
           <p className='settings__info-text'>
-            {auth.password.replace(/./g, '*')}
+            {auth?.password ? auth.password.replace(/./g, '*') : '********'}
           </p>
         </div>
         <button

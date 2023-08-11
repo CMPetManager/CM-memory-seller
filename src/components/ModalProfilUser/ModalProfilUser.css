@@ -49,7 +49,7 @@
 .modalProfilUser__header {
   display: flex;
   padding: 1.58vw 1.12vw 1.26vw;
-  justify-content: start;
+  justify-content: flex-start;
   border-bottom: 0.066vw solid var(--gold);
 }
 

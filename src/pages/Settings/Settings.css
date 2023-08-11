@@ -82,35 +82,35 @@
 }
 
 .settings__btn-expand {
-  width: 1.58vw;
-  height: 1.58vw;
+  width: 1.4vw;
+  height: 1.4vw;
   background-color: transparent;
   border: none;
   text-align: center;
   appearance: none;
   cursor: pointer;
   outline: none;
-  transform: rotate(45deg); 
+  transform: rotate(45deg);   
 }
 
 .btn-expand_top {
-  border-top: 0.39vw solid var(--white);
-  border-left: 0.39vw solid var(--white);
+  border-top: 0.35vw solid var(--white);
+  border-left: 0.35vw solid var(--white);
 }
 
 .btn-expand_top:hover {
-  border-top: 0.39vw solid var(--gold);
-  border-left: 0.39vw solid var(--gold);
+  border-top: 0.35vw solid var(--gold);
+  border-left: 0.35vw solid var(--gold);
 }
 
 .btn-expand_bottom {
-  border-bottom: 0.39vw solid var(--white);
-  border-right: 0.39vw solid var(--white);
+  border-bottom: 0.35vw solid var(--white);
+  border-right: 0.35vw solid var(--white);
 }
 
 .btn-expand_bottom:hover {
-  border-bottom: 0.39vw solid var(--gold);
-  border-right: 0.39vw solid var(--gold);
+  border-bottom: 0.35vw solid var(--gold);
+  border-right: 0.35vw solid var(--gold);
 }
 
 .settings__subtitle {
@@ -157,6 +157,7 @@
 .psw__btn{
   margin-bottom: 1.72vw;
 }
+
 .form__btn:disabled {
   color: var(--black);
 }
