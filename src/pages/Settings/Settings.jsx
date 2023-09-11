@@ -6,19 +6,28 @@ import './Settings.css';
 import ProfilePanel from 'components/ProfilePanel/ProfilePanel';
 import EmailSettings from 'pages/Settings/components/EmailSettings/EmailSettings';
 import PasswordSettings from 'pages/Settings/components/PasswordSettings/PasswordSettings';
+import DeleteSettings from './components/DeleteSettings/DeleteSettings';
 
 const Settings = () => {
-  const [emailExpand, setEmailExpand] = useState(false);
-  const [pswExpand, setPswExpand] = useState(false);
+  const [btnExpandState, setBtnExpandState] = useState({
+    emailExpand: false,
+    pswExpand: false,
+    deleteExpand: false,
+  });
 
-  const onClickEmailExpand = () => {
-    setEmailExpand((prev) => !prev);
-    pswExpand && setPswExpand((prev) => !prev);
+  const [isSuccessDeletedUser, setIsSuccessDeletedUser] = useState(false);
+
+  const onClickBtnExpand = (name) => {
+    setBtnExpandState(({ emailExpand, pswExpand, deleteExpand }) => ({
+      emailExpand: emailExpand ? !emailExpand : emailExpand,
+      pswExpand: pswExpand ? !pswExpand : pswExpand,
+      deleteExpand: deleteExpand ? !deleteExpand : deleteExpand,
+      [name]: !btnExpandState[name],
+    }));
   };
 
-  const onClickPswExpand = () => {
-    setPswExpand((prev) => !prev);
-    emailExpand && setEmailExpand((prev) => !prev);
+  const handleSuccessDeletMsg = () => {
+    setIsSuccessDeletedUser(true);
   };
 
   return (
@@ -33,12 +42,17 @@ const Settings = () => {
 
         <div className='settings__body'>
           <EmailSettings
-            emailExpand={emailExpand}
-            onClickEmailExpand={onClickEmailExpand}
+            emailExpand={btnExpandState.emailExpand}
+            onClickBtnExpand={onClickBtnExpand}
           />
           <PasswordSettings
-            pswExpand={pswExpand}
-            onClickPswExpand={onClickPswExpand}
+            pswExpand={btnExpandState.pswExpand}
+            onClickBtnExpand={onClickBtnExpand}
+          />
+          <DeleteSettings
+            deleteExpand={btnExpandState.deleteExpand}
+            onClickBtnExpand={onClickBtnExpand}
+            handleSuccessDeletMsg={handleSuccessDeletMsg}
           />
         </div>
       </div>

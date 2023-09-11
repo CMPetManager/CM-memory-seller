@@ -6,7 +6,7 @@ import { Button } from 'components/Button/Button';
 
 import { EMAIL_REGEX } from 'constants';
 
-const EmailSettings = ({ emailExpand, onClickEmailExpand }) => {
+const EmailSettings = ({ emailExpand, onClickBtnExpand }) => {
   const { auth } = useAuth();
 
   const {
@@ -40,16 +40,18 @@ const EmailSettings = ({ emailExpand, onClickEmailExpand }) => {
       }
     >
       <div className='settings__subtitle-wrap'>
-        <div className='settings__subtitle-inner'>
+        <div className={emailExpand ? 'settings__subtitle-inner' : ''}>
           <h3 className='settings__subtitle'>Email settings</h3>
-          <p className='settings__info-text'>{auth.email}</p>
+          <p className='settings__info-text'>
+            {auth.email || 'some@gmail.com'}
+          </p>
         </div>
         <button
           className={
             'settings__btn-expand ' +
             (emailExpand ? 'btn-expand_bottom' : 'btn-expand_top')
           }
-          onClick={onClickEmailExpand}
+          onClick={() => onClickBtnExpand('emailExpand')}
         ></button>
       </div>
       {emailExpand && (

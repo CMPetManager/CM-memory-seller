@@ -1,6 +1,6 @@
 .settings {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   display: flex;
   background-color: var(--back);
   position: relative;
@@ -11,7 +11,7 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
-  padding: 3.7vw 6.61vw;
+  padding: 3.7vw 6.61vw 2.84vw;
 }
 
 .settings__background {
@@ -46,7 +46,8 @@
 }
 
 .settings__title {
-  margin: 15.89vh 0 8.15vh 44.27vw;
+  margin: 5.5vh 26.52vw 5.14vh 0;
+  align-self: flex-end;
   color: var(--white);
   font-family: Marcellus;
   font-size: 2.12vw;
@@ -56,8 +57,10 @@
 }
 
 .settings__body {
+  display: flex;
+  flex-direction: column;
   width: 56vw;
-  align-self: center;
+  align-self: flex-start;
   flex: 1;
 }
 
@@ -90,7 +93,7 @@
   appearance: none;
   cursor: pointer;
   outline: none;
-  transform: rotate(45deg);   
+  transform: rotate(45deg);
 }
 
 .btn-expand_top {
@@ -135,7 +138,7 @@
 
 .settings__form {
   width: 44vw;
-  padding-top: 3.17vw;
+  padding-top: 2.17vw;
   border-top: 0.066vw solid var(--gold);
 }
 

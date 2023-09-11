@@ -12,7 +12,7 @@ import { ReactComponent as ShowPass } from 'assets/icons/eye.svg';
 import { PSW_REGEX } from 'constants';
 import { clsx } from 'clsx';
 
-const PasswordSettings = ({ pswExpand, onClickPswExpand }) => {
+const PasswordSettings = ({ pswExpand, onClickBtnExpand }) => {
   const [isPassword, setIsPassword] = useState({
     password: true,
     confirmpassword: true,
@@ -74,7 +74,7 @@ const PasswordSettings = ({ pswExpand, onClickPswExpand }) => {
       }
     >
       <div className='settings__subtitle-wrap'>
-        <div className='settings__subtitle-inner'>
+        <div className={pswExpand ? 'settings__subtitle-inner' : ''}>
           <h3 className='settings__subtitle'>Change password</h3>
           <p className='settings__info-text'>
             {auth?.password ? auth.password.replace(/./g, '*') : '********'}
@@ -85,7 +85,7 @@ const PasswordSettings = ({ pswExpand, onClickPswExpand }) => {
             'settings__btn-expand ' +
             (pswExpand ? 'btn-expand_bottom' : 'btn-expand_top')
           }
-          onClick={onClickPswExpand}
+          onClick={() => onClickBtnExpand('pswExpand')}
         ></button>
       </div>
       {pswExpand && (
