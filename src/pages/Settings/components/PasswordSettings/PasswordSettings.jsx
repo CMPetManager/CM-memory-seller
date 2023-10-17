@@ -1,7 +1,9 @@
-import useAuth from 'hooks/useAuth';
 import { useState } from 'react';
 
 import { useForm } from 'react-hook-form';
+
+import useAxiosPrivate from 'hooks/useAxiosPrivate';
+import useAuth from 'hooks/useAuth';
 
 import { Input } from 'components/Input/Input';
 import { Button } from 'components/Button/Button';
@@ -12,11 +14,18 @@ import { ReactComponent as ShowPass } from 'assets/icons/eye.svg';
 import { PSW_REGEX } from 'constants';
 import { clsx } from 'clsx';
 
-const PasswordSettings = ({ pswExpand, onClickBtnExpand }) => {
+const PasswordSettings = ({
+  pswExpand,
+  onClickBtnExpand,
+  handleSuccessChange,
+}) => {
   const [isPassword, setIsPassword] = useState({
     password: true,
     confirmpassword: true,
   });
+  const [isErrorResponse, setIsErrorResponse] = useState(false);
+
+  const axiosPrivate = useAxiosPrivate();
   const { auth } = useAuth();
 
   const {
@@ -59,10 +68,27 @@ const PasswordSettings = ({ pswExpand, onClickBtnExpand }) => {
     );
   };
 
-  const onSubmitPsw = (e, data) => {
-    e.preventDefault();
-    if (data.password === data.confirmpassword) {
-      console.log(data);
+  const onSubmitPsw = async (e, data) => {
+    // e.preventDefault();
+    console.log(data);
+    if (data.password === data.confirmpassword && errors.length === 0) {
+      const { userId } = auth;
+      const password = { password: data.password };
+
+      try {
+        const response = await axiosPrivate.put(
+          `users/${userId}`,
+          JSON.stringify({ password })
+        );
+        console.log(response.data);
+
+        if (response.data) {
+          handleSuccessChange('password');
+        }
+      } catch (err) {
+        console.log(err);
+        setIsErrorResponse(true);
+      }
       reset();
     }
   };
@@ -73,7 +99,10 @@ const PasswordSettings = ({ pswExpand, onClickBtnExpand }) => {
         'settings__item-wrap ' + (pswExpand ? 'settings__item-wrap_gold' : '')
       }
     >
-      <div className='settings__subtitle-wrap'>
+      <div
+        className='settings__subtitle-wrap'
+        onClick={() => onClickBtnExpand('pswExpand')}
+      >
         <div className={pswExpand ? 'settings__subtitle-inner' : ''}>
           <h3 className='settings__subtitle'>Change password</h3>
           <p className='settings__info-text'>

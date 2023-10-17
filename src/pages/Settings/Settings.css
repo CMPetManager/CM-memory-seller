@@ -78,6 +78,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
+}
+
+.settings__subtitle-wrap:hover .settings__subtitle,
+.settings__subtitle-wrap:hover .settings__info-text {
+  color: var(--gold);
+  transition: all 0.5s ease-in-out;
 }
 
 .settings__subtitle-inner {
@@ -101,7 +108,8 @@
   border-left: 0.35vw solid var(--white);
 }
 
-.btn-expand_top:hover {
+.btn-expand_top:hover,
+.settings__subtitle-wrap:hover .btn-expand_top {
   border-top: 0.35vw solid var(--gold);
   border-left: 0.35vw solid var(--gold);
 }
@@ -111,7 +119,8 @@
   border-right: 0.35vw solid var(--white);
 }
 
-.btn-expand_bottom:hover {
+.btn-expand_bottom:hover,
+.settings__subtitle-wrap:hover .btn-expand_bottom {
   border-bottom: 0.35vw solid var(--gold);
   border-right: 0.35vw solid var(--gold);
 }

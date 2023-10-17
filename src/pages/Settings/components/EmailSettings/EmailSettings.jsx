@@ -6,7 +6,11 @@ import { Button } from 'components/Button/Button';
 
 import { EMAIL_REGEX } from 'constants';
 
-const EmailSettings = ({ emailExpand, onClickBtnExpand }) => {
+const EmailSettings = ({
+  emailExpand,
+  onClickBtnExpand,
+  handleSuccessChange,
+}) => {
   const { auth } = useAuth();
 
   const {
@@ -39,7 +43,10 @@ const EmailSettings = ({ emailExpand, onClickBtnExpand }) => {
         'settings__item-wrap ' + (emailExpand ? 'settings__item-wrap_gold' : '')
       }
     >
-      <div className='settings__subtitle-wrap'>
+      <div
+        className='settings__subtitle-wrap'
+        onClick={() => onClickBtnExpand('emailExpand')}
+      >
         <div className={emailExpand ? 'settings__subtitle-inner' : ''}>
           <h3 className='settings__subtitle'>Email settings</h3>
           <p className='settings__info-text'>
@@ -58,7 +65,7 @@ const EmailSettings = ({ emailExpand, onClickBtnExpand }) => {
         <form className='settings__form' onSubmit={handleSubmit(onSubmitEmail)}>
           <Input
             placeholder='Email address'
-            type='text'
+            type='email'
             {...register('email', {
               required: 'Please enter your Email',
               pattern: {
@@ -70,7 +77,7 @@ const EmailSettings = ({ emailExpand, onClickBtnExpand }) => {
           />
           <Input
             placeholder='Email address repeat'
-            type='text'
+            type='email'
             {...register('emailRepeat', {
               required: 'Please confirm your Email',
               validate: InputEmailRepeatValidate,

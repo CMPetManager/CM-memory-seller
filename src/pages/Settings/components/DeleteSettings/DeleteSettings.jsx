@@ -3,21 +3,19 @@ import { useEffect, useState } from 'react';
 import { Button } from 'components/Button/Button';
 import { MessageForm } from 'components/MessageForm/MessageForm';
 
-import useLogout from 'hooks/useLogout';
 import useAxiosPrivate from 'hooks/useAxiosPrivate';
 import useAuth from 'hooks/useAuth';
 
 const DeleteSettings = ({
   deleteExpand,
   onClickBtnExpand,
-  handleSuccessDeletMsg,
+  handleSuccessChange,
 }) => {
   const [deleteAccount, setDeleteAccount] = useState(false);
   const [isOpenedMsgWindow, setIsOpenedMsgWindow] = useState(false);
   const [isErrorResponse, setIsErrorResponse] = useState(false);
 
   const axiosPrivate = useAxiosPrivate();
-  const logOut = useLogout();
   const { auth } = useAuth();
 
   const handleOpenMsgWindow = () => {
@@ -43,8 +41,7 @@ const DeleteSettings = ({
         console.log(response.data);
 
         if (response.data) {
-          handleSuccessDeletMsg();
-          logOut();
+          handleSuccessChange('delete');
         }
       } catch (err) {
         console.log(err);
@@ -69,7 +66,10 @@ const DeleteSettings = ({
         (deleteExpand ? 'settings__item-wrap_gold' : '')
       }
     >
-      <div className='settings__subtitle-wrap'>
+      <div
+        className='settings__subtitle-wrap'
+        onClick={() => onClickBtnExpand('deleteExpand')}
+      >
         <div className={deleteExpand ? 'settings__subtitle-inner' : ''}>
           <h3 className='settings__subtitle'>Delete your account</h3>
           <p className='settings__info-text'>
@@ -89,6 +89,7 @@ const DeleteSettings = ({
           <Button
             titleButton={'Delete your account'}
             className={'form__btn btn'}
+            onClick={handleOpenMsgWindow}
           />
           <p className='settings__info-text'>
             Note: When you delete your account, you go to the main page
@@ -98,7 +99,7 @@ const DeleteSettings = ({
     </div>
   ) : (
     <MessageForm
-      setIsOpen={handleOpenMsgWindow}
+      setIsOpen={setIsOpenedMsgWindow}
       textLabel='Are you sure you want to delete your account?'
       buttonOnClick={handleDeletingAccount}
     />
