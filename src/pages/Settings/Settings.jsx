@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import './Settings.css';
-
 import useLogout from 'hooks/useLogout';
 
 import ProfilePanel from 'components/ProfilePanel/ProfilePanel';
@@ -22,7 +21,7 @@ const formData = {
     description: 'Now log in to your account with the new data',
   },
   delete: {
-    textLabel: 'Your account was delete',
+    textLabel: 'Your account was deleted',
     description:
       'Note: All your data has been completely removed from our system, and you can create a new account at any time.',
   },
@@ -34,36 +33,19 @@ const Settings = () => {
     pswExpand: false,
     deleteExpand: false,
   });
-
-  // const [isSuccessChange, setIsSuccessChange] = useState({
-  //   email: false,
-  //   password: false,
-  //   delete: false,
-  // });
-
+  const [type, setType] = useState('');
   const [isOpenedMsgWindow, setIsOpenedMsgWindow] = useState(false);
   const logOut = useLogout();
-  let formMessage;
 
-  const handleConfirmDeleteMsg = () => {
-    handleOpeneWindow();
-    logOut();
-  };
-  const handleOpeneWindow = () => {
+  const handleOpenInfoModal = () => {
     setIsOpenedMsgWindow((prev) => !prev);
   };
 
-  const formMessageFn = (type) => {
-    return (
-      <FormError
-        textLabel={formData[type].textLabel}
-        titleButton='Confirm'
-        onClick={type === 'delete' ? handleConfirmDeleteMsg : handleOpeneWindow}
-      >
-        <p>{formData[type].description}</p>
-      </FormError>
-    );
+  const handleConfirmMsg = () => {
+    handleOpenInfoModal();
+    logOut();
   };
+
   const onClickBtnExpand = (name) => {
     setBtnExpandState(({ emailExpand, pswExpand, deleteExpand }) => ({
       emailExpand: emailExpand ? !emailExpand : emailExpand,
@@ -74,10 +56,9 @@ const Settings = () => {
   };
 
   const handleSuccessChange = (type) => {
-    formMessage = formMessageFn(type);
-    handleOpeneWindow();
+    setType(type);
+    handleOpenInfoModal();
   };
-
   return (
     <div className='settings'>
       <ProfilePanel activePage='settings' />
@@ -106,7 +87,15 @@ const Settings = () => {
           />
         </div>
       </div>
-      {isOpenedMsgWindow && formMessage}
+      {isOpenedMsgWindow && (
+        <FormError
+          textLabel={formData[type].textLabel}
+          titleButton='Confirm'
+          buttonOnClick={handleConfirmMsg}
+        >
+          <p className='settings__info-text'>{formData[type].description}</p>
+        </FormError>
+      )}
     </div>
   );
 };

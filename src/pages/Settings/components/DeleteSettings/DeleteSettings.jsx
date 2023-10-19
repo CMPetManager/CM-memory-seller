@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { Button } from 'components/Button/Button';
 import { MessageForm } from 'components/MessageForm/MessageForm';
-
+import { FormError } from 'components/FormError/FormError';
 import useAxiosPrivate from 'hooks/useAxiosPrivate';
 import useAuth from 'hooks/useAuth';
 
@@ -24,10 +24,10 @@ const DeleteSettings = ({
 
   const handleDeletingAccount = () => {
     setDeleteAccount(true);
+    handleOpenMsgWindow();
   };
 
   useEffect(() => {
-    console.log('useEffect 1');
     let isMounted = true;
     const controller = new AbortController();
     const { userId } = auth;
@@ -42,6 +42,8 @@ const DeleteSettings = ({
 
         if (response.data) {
           handleSuccessChange('delete');
+          localStorage.removeItem('user');
+          localStorage.removeItem('persist');
         }
       } catch (err) {
         console.log(err);
@@ -97,6 +99,12 @@ const DeleteSettings = ({
         </>
       )}
     </div>
+  ) : isErrorResponse ? (
+    <FormError
+      textLabel={'Oops! something went wrong'}
+      titleButton='Confirm'
+      buttonOnClick={setIsErrorResponse}
+    />
   ) : (
     <MessageForm
       setIsOpen={setIsOpenedMsgWindow}

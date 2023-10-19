@@ -173,3 +173,8 @@
 .form__btn:disabled {
   color: var(--black);
 }
+
+.settings__info-text {
+  margin-bottom: 1vw;
+  color: var(--white);
+}
