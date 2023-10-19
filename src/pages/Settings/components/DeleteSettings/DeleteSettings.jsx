@@ -5,6 +5,7 @@ import { MessageForm } from 'components/MessageForm/MessageForm';
 import { FormError } from 'components/FormError/FormError';
 import useAxiosPrivate from 'hooks/useAxiosPrivate';
 import useAuth from 'hooks/useAuth';
+import { clearUserFromLS } from 'helpers/clearUserFromLS';
 
 const DeleteSettings = ({
   deleteExpand,
@@ -42,8 +43,7 @@ const DeleteSettings = ({
 
         if (response.data) {
           handleSuccessChange('delete');
-          localStorage.removeItem('user');
-          localStorage.removeItem('persist');
+          clearUserFromLS();
         }
       } catch (err) {
         console.log(err);
@@ -60,6 +60,10 @@ const DeleteSettings = ({
       controller.abort();
     };
   }, [deleteAccount]);
+
+  const onFormErrorClick = () => {
+    setIsErrorResponse(false);
+  };
 
   return !isOpenedMsgWindow ? (
     <div
@@ -103,7 +107,7 @@ const DeleteSettings = ({
     <FormError
       textLabel={'Oops! something went wrong'}
       titleButton='Confirm'
-      buttonOnClick={setIsErrorResponse}
+      buttonOnClick={onFormErrorClick}
     />
   ) : (
     <MessageForm

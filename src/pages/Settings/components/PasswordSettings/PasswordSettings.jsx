@@ -1,18 +1,18 @@
 import { useState } from 'react';
-
 import { useForm } from 'react-hook-form';
+import { clsx } from 'clsx';
 
 import useAxiosPrivate from 'hooks/useAxiosPrivate';
 import useAuth from 'hooks/useAuth';
+import { clearUserFromLS } from 'helpers/clearUserFromLS';
 
 import { Input } from 'components/Input/Input';
 import { Button } from 'components/Button/Button';
-
+import { FormError } from 'components/FormError/FormError';
 import { ReactComponent as HidePass } from 'assets/icons/eye_crossed.svg';
 import { ReactComponent as ShowPass } from 'assets/icons/eye.svg';
 
 import { PSW_REGEX } from 'constants';
-import { clsx } from 'clsx';
 
 const PasswordSettings = ({
   pswExpand,
@@ -35,6 +35,9 @@ const PasswordSettings = ({
     getValues,
     formState: { errors },
   } = useForm({ mode: 'all' });
+  const onFormErrorClick = () => {
+    setIsErrorResponse(false);
+  };
 
   const InputPassValidate = (value) => {
     if (!PSW_REGEX.test(value)) {
@@ -68,32 +71,30 @@ const PasswordSettings = ({
     );
   };
 
-  const onSubmitPsw = async (e, data) => {
-    // e.preventDefault();
-    console.log(data);
-    if (data.password === data.confirmpassword && errors.length === 0) {
-      const { userId } = auth;
-      const password = { password: data.password };
+  const onSubmitPsw = async (data) => {
+    const { userId } = auth;
+    const { password } = data;
+    console.log(password);
 
-      try {
-        const response = await axiosPrivate.put(
-          `users/${userId}`,
-          JSON.stringify({ password })
-        );
-        console.log(response.data);
+    try {
+      const response = await axiosPrivate.put(
+        `users/${userId}`,
+        JSON.stringify({ password })
+      );
+      console.log(response.data);
 
-        if (response.data) {
-          handleSuccessChange('password');
-        }
-      } catch (err) {
-        console.log(err);
-        setIsErrorResponse(true);
+      if (response.data) {
+        handleSuccessChange('password');
+        clearUserFromLS();
       }
-      reset();
+    } catch (err) {
+      console.log(err);
+      setIsErrorResponse(true);
     }
+    reset();
   };
 
-  return (
+  return !isErrorResponse ? (
     <div
       className={
         'settings__item-wrap ' + (pswExpand ? 'settings__item-wrap_gold' : '')
@@ -165,6 +166,12 @@ const PasswordSettings = ({
         </form>
       )}
     </div>
+  ) : (
+    <FormError
+      textLabel={'Oops! something went wrong'}
+      titleButton='Confirm'
+      buttonOnClick={onFormErrorClick}
+    />
   );
 };
 

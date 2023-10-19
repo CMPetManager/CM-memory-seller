@@ -30,6 +30,7 @@
 }
 
 .settings__home-link {
+  position: relative;
   align-self: flex-end;
   list-style: none;
   font-family: "Marcellus";
@@ -38,6 +39,7 @@
   font-size: 1.59vw;
   line-height: 1.25;
   color: var(--white);
+  z-index: 100;
 }
 
 .settings__home-link:hover {
