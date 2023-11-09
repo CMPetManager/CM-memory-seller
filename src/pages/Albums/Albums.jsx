@@ -26,6 +26,7 @@ const Albums = () => {
   const [search, setSearch] = useState('');
   const navigate = useNavigate();
   const { auth } = useAuth();
+  const { userId, name } = auth;
   const axiosPrivate = useAxiosPrivate();
 
   const logOut = useLogout();
@@ -41,7 +42,6 @@ const Albums = () => {
     console.log('useEffect from album 1');
     let isMounted = true;
     const controller = new AbortController();
-    const { userId } = auth;
 
     const getAlbums = async () => {
       try {
@@ -100,7 +100,7 @@ const Albums = () => {
         <div className='albums__back albums__back-bottom'>Memories</div>
         <div className='albums__profile-wrap'>
           <h1 className='albums__logo'>Catch the moment</h1>
-          <Logo onClick={handleOpenModal} />
+          <Logo onClick={handleOpenModal} title={name[0]} />
           {isModalOpened && (
             <ModalProfilUser
               handleOpenModal={handleOpenModal}

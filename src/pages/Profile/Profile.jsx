@@ -1,17 +1,28 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import './Profile.css';
-import ProfilePanel from 'components/ProfilePanel/ProfilePanel';
-import profilePhoto from 'assets/icons/profile_photo.svg';
-import addPhoto from 'assets/icons/Add-photo.svg';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+
+import './Profile.css';
+
+import useAxiosPrivate from 'hooks/useAxiosPrivate';
+import useAuth from 'hooks/useAuth';
+
+import ProfilePanel from 'components/ProfilePanel/ProfilePanel';
+import addPhoto from 'assets/icons/Add-photo.svg';
+import { Logo } from 'components/Logo/Logo';
+
+const fileTypes = ['image/png', 'image/jpeg', 'image/jpg', 'image/heic'];
 
 const Profile = () => {
   const [image, setImage] = useState();
   const [imageURL, setImageURL] = useState();
 
+  const axiosPrivate = useAxiosPrivate();
+  const { auth } = useAuth();
+  const { userId, name, email } = auth;
+
   const fileReader = new FileReader();
-  fileReader.onloadend = () => {
+  fileReader.onload = () => {
     setImageURL(fileReader.result);
   };
   const onUploadFile = (e) => {
@@ -20,7 +31,38 @@ const Profile = () => {
     setImage(e.target.files[0]);
     fileReader.readAsDataURL(e.target.files[0]);
   };
-  const userName = 'Sandström';
+
+  useEffect(() => {
+    const uploadUserPhoto = async () => {
+      if (!image) {
+        console.log('no image');
+        return;
+      }
+      try {
+        const formData = new FormData();
+        formData.append('image', image);
+        console.log(formData);
+
+        const response = await axiosPrivate.post(`users/${userId}`, formData, {
+          headers: {
+            'content-type': 'multipart/form-data',
+          },
+        });
+
+        if (response.data) {
+          console.log(response.data);
+        }
+      } catch (err) {
+        console.log(err);
+        // setIsErrorResponse(true);
+      }
+    };
+
+    if (imageURL) {
+      uploadUserPhoto();
+    }
+  }, [imageURL]);
+
   return (
     <div className='profile'>
       <ProfilePanel activePage='profile' />
@@ -36,14 +78,18 @@ const Profile = () => {
             <input
               className='profile__user-photo_hiden'
               type='file'
-              accept='.jpeg, .png, .jpg, heic'
+              accept='.jpeg, .png, .jpg, .heic'
               onChange={onUploadFile}
             />
-            <img
-              src={imageURL ? imageURL : profilePhoto}
-              alt='profile photo'
-              className='profile__user-photo_user'
-            />
+            {imageURL ? (
+              <img
+                src={imageURL}
+                alt='profile photo'
+                className='profile__user-photo_user'
+              />
+            ) : (
+              <Logo title={name[0]} />
+            )}
             <img
               src={addPhoto}
               alt='add photo'
@@ -52,7 +98,7 @@ const Profile = () => {
           </div>
 
           <div className='profile__user-name'>
-            <h2>{userName}</h2>
+            <h2>{name}</h2>
             <h3>Free account</h3>
           </div>
           <div className='profile__inputs'>
@@ -60,12 +106,12 @@ const Profile = () => {
               name='name'
               type='text'
               disabled
-              placeholder={userName}
+              placeholder={name}
               className='input form__input'
             />
             <input
               name='email'
-              placeholder='Email address'
+              placeholder={email}
               type='text'
               disabled
               className='input form__input'
